@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,200..400&display=swap" />
+<style>
+  @font-face {
+    font-family: 'SUIT Variable';
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.woff2') format('woff2-variations');
+  }
+  a { color: #121614; text-decoration: none; }
+  a:hover { color: #2C7A6B; }
+  @media (max-width: 899px) {
+    footer a { display: inline-block !important; padding: 10px 0 !important; }
+  }
+</style>
+</helmet>
+
+<footer style="font-family: 'SUIT Variable', system-ui, sans-serif; color: #121614; background: #F9FAF9; border-top: 1px solid #121614; padding: clamp(40px, 6vh, 72px) clamp(16px, 3vw, 40px) 104px; word-break: keep-all;">
+  <div style="max-width: 1560px; margin: 0 auto;">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; padding-bottom: clamp(28px, 4.5vh, 52px); border-bottom: 1px solid #E4E9E6; margin-bottom: clamp(28px, 4.5vh, 52px);">
+      <div style="display: flex; align-items: flex-end; gap: clamp(16px, 2.4vw, 32px);">
+        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgaWQ9Il/roIjsnbTslrRfMiIgZGF0YS1uYW1lPSLroIjsnbTslrQgMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMzk2IDcxLjMxIj4KICA8ZGVmcz48L2RlZnM+CiAgPGcgaWQ9Il/roIjsnbTslrRfMS0yIiBkYXRhLW5hbWU9IuugiOydtOyWtCAxIj4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE3My4zNiwzMi4zMWwtMTQuNzguMDNjMS4zOC0xLjc3LDEuODUtMy4zMywxLjg0LTUuNDdsLS4wNy0yMS43MWMwLS44OS0xLjExLTIuMjEtMS41Ni0zLjIzbDE2LjExLjA5YzYuOTMuMDQsMTIuNDUsNS4zNiwxMy41MywxMS45NywxLjU1LDkuNTMtNS4yLDE4LjI5LTE1LjA3LDE4LjMxaDBaTTE4Mi4yOCwyMS45NmMxLjMzLTMuNjEsMS4wNy03LjQ5LS41Mi0xMC44Mi0xLjg1LTMuODUtNS43OC01Ljk2LTkuOTktNS45N2gtNS44OXMuMDEsMjMuMzYuMDEsMjMuMzZjNy4wMSwxLjM5LDEzLjkzLjA5LDE2LjM4LTYuNThaIj48L3BhdGg+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMTAuNDcsMjEuMTVsLTkuNTgtLjAyLTIuODMsNi40OWMtLjc3LDEuNjEtLjU1LDMuMDkuNzMsNC43aC04LjM4YzEuOTMtMi4xNSwzLjE1LTMuOTUsNC4yMS02LjM5bDExLjkxLTI1LjkzLDEyLjg0LDI3LjUzYy44NywxLjg3LDIuMDcsMy4wNSwzLjY2LDQuNzlsLTEwLjAxLjA0YzEuMjMtMS42MSwxLjQzLTIuNy43NS00LjE2bC0zLjI5LTcuMDRoMFpNMzA4Ljk5LDE3LjY5bC0zLjMxLTcuMzctMy4yMSw3LjM4aDYuNTFaIj48L3BhdGg+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMC4yMSwyMS4wOGwtOS41OC0uMDItMy4zNCw3LjUzYy0uNDksMS4xLjMsMi40OCwxLjA4LDMuNzVIMGMxLjExLTEuNjMsMi40Ny0yLjUxLDMuMTgtNC4wNEwxNi4yMi4wM2wxMi4zMSwyNi43Yy45MiwyLjIxLDIuMjQsMy41Nyw0LjA3LDUuNTlsLTEwLjA1LjAyYzEuMzgtMS41MywxLjQzLTIuNzguNzYtNC4yOWwtMy4xMS02Ljk3aDBaTTE4LjU5LDE3LjY0bC0zLjIyLTcuMzQtMy4zMiw3LjM3LDYuNTQtLjAzWiI+PC9wYXRoPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjI0LjQ1LDE4bC02Ljg0LS4wM3YxMC44MnM3Ljg3LS4wNSw3Ljg3LS4wNWMxLjc3LS4wMSwzLjI2LTEuMzksNS4xNS0yLjMzbC0uOTUsNS45NGgtMTkuMjljMS4zNy0xLjgzLDIuMDEtMy40NCwyLTUuNDdsLS4wNi0yMS4wMWMwLTEuMjEtMS4wNS0yLjYtMS41OC0zLjk1bDE4LjcyLS4wMi4wOSw1LjE5Yy0yLjMzLTEuMjctNC4yNS0xLjk1LTYuNjEtMS45M2wtNS4zMi4wNS0uMDMsOS41Niw2LjgyLS4wNGMuOSwwLDIuMDQtLjYxLDMuNDgtMS4xNWwuMDMsNi4wNmMtMS4yNC0uNi0yLjQ3LTEuNi0zLjQ5LTEuNjFaIj48L3BhdGg+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNjYuNzQsMzIuMzNoLTkuMThjMS4wNy0xLjU0LDEuOTUtMi43NCwxLjk1LTQuMzlWNS4yMmwtNS40OS4xNmMtMS43NC4wNS0zLjA2LDEuMTktNC45NiwxLjk4bDEuMTctNS40N2gyNC45OXMuNCw1LjYxLjQsNS42MWMtMS42My0uODYtMy4wNS0yLjE3LTQuNjktMi4ybC02LjA0LS4xMi0uMDIsMjIuNzhjLjIsMS41NS43NywyLjU3LDEuODUsNC4zOFoiPjwvcGF0aD4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM5NiwyNi40NGwtLjk1LDUuOTItMTkuOTUtLjA0YzEuNi0xLjk3LDIuMDctMy40LDIuMDYtNS40NmwtLjA2LTIwLjY1YzAtMS40OC0xLjExLTIuODQtMS44My00LjNoOS42N2MtLjg5LDEuNDYtMi4zMiwyLjUyLTIuMzIsMy45NmwtLjA5LDIyLjkzLDguMzItLjA0YzEuNzksMCwyLjktMS4zLDUuMTUtMi4zMWgwWiI+PC9wYXRoPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTE1LjQyLDI2LjQ2bC0xLjA0LDUuODloLTE5LjczYzEuMTUtMS42MiwyLjA1LTIuOTgsMi4wNS00Ljc1bC0uMDQtMjEuNzJjMC0xLjM0LTEuMDktMi42Ny0xLjgxLTMuOTdoOS41NmMtMS4zOCwxLjc5LTIuMzQsMy4wNS0yLjM0LDUuMDR2MjEuODJsOC4xOC4wOSw1LjE1LTIuNFoiPjwvcGF0aD4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTczLjE1LDI2LjQ4bC0uOTMsNS44Ny0xOS43NC0uMDJjLjk5LTEuNDUsMS45My0yLjgsMS45My00LjM4bC0uMDItMjIuNDNjMC0uOTktLjk3LTIuMTMtMS41OS0zLjU0bDkuMjktLjA4Yy0uODcsMS40OC0yLjMsMi41NC0yLjMsNC4wNGwtLjAyLDIyLjkxLDguNTEtLjEyYzEuNjEtLjAyLDIuNzQtMS4zMSw0Ljg2LTIuMjNoMFoiPjwvcGF0aD4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM1Mi40MSwzMi4zbC05LjA0LjA1Yy43OS0xLjM1LDEuOC0yLjUzLDEuOC0zLjgyVjUuOTNjMC0xLjI2LS45OS0yLjY3LTEuNTMtNGg5LjAxYy0uNTgsMS4xNi0yLjA0LDIuNDUtMi4wNCwzLjU4djIzLjE3Yy4wMSwxLjIxLjk0LDIuMjcsMS44LDMuNjNaIj48L3BhdGg+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMjAuMjgsNzEuMzFsLTEwLjI3LTkuNDYtLjE2LDYuMjIsMS4xOCwyLjQzaC01LjAxYy45My0xLjYsMS4zMi0yLjY2LDEuMzQtNC4xMmwuMS0xMS44MywxMC4yNSw5Ljg1LjA0LTUuOTJjMC0uNzgtLjczLTEuOTUtMS4yLTIuODlsNC43OS0uMDNjLS40MywxLjA2LS45LDIuMDUtLjkxLDIuODlsLS4xNiwxMi44NmgwWiI+PC9wYXRoPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjc5LjAxLDY3LjcybDMuMDktMy40OC0uMTgsNC44OWMtMy4yNiwyLjI2LTcuNjYsMi41OC0xMC45OC4wOC0zLjY3LTIuNzctNC4wNy04LjU5LS42NS0xMS43OCwzLjI1LTMuMDQsOC4zNi0yLjgyLDExLjc4LS42NWwtLjIsNC42N2MtMS42OS0xLjk4LTIuMzUtMy4yNy0zLjk1LTMuNzQtMS44LS41My0zLjg3LS4yNS01LjAxLDEuMjctMS42LDIuMTItMS42Niw1LjIzLS4yNiw3LjUxLDEuMjUsMi4wMyw0LjI2LDIuNzQsNi4zNywxLjIyaDBaIj48L3BhdGg+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMjUuMDIsNjcuNzFjMS4xNy0uOTEsMS43OS0yLjI1LDIuOTItMy42Ni4yOSwxLjUuMjgsMy4zNi0uMDYsNC45OS0zLjM0LDIuNTEtOC4wNiwyLjY0LTExLjMzLS4xMy0zLjQzLTIuOTEtMy41OC04LjcxLS4xNC0xMS42NSwzLjI0LTIuNzYsNy43OS0yLjQ4LDExLjM0LS42Ni4yNCwxLjc1LjI4LDMuMDYtLjQ0LDQuODQtMS4zOS0yLjc5LTMuMDEtNC4xNy01LjUxLTMuOTQtMi43MS4yNS00LjI1LDIuNTItNC4yNSw1LjMzLDAsMS44NS41OSwzLjc0LDEuOTksNC43NywxLjQsMS4wMywzLjc3LDEuNDUsNS40Ny4xM2gwWiI+PC9wYXRoPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTYwLjE4LDY1LjgxbC0uOCw0LjY4LTEwLjM0LjAzLjg4LTIuNTYtLjAyLTkuNTJjMC0uNzMtLjUtMS45LS44NS0yLjg1bDUuMzItLjAyYy0uNTcuOTktMS4xOCwyLjAyLTEuMTcsMi44OGwuMDcsOS41MWMyLjcyLjU5LDQuNC0uMSw2LjkyLTIuMTVaIj48L3BhdGg+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xODQuODYsNzAuNDlsLTQuOTYuMDJjLjM4LTEuMDkuODQtMi4zMS44NC0zLjM5bC0uMDMtOS4wNGMwLS42MS0uNDQtMS42Ny0uNzYtMi41bDUuMDgtLjAyYy0uNSwxLjIxLS45NSwyLjI1LS45NSwzLjI2djcuOTNjMCwxLjExLjI5LDIuMDcuNzgsMy43NWgwWiI+PC9wYXRoPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjQ3LjQ4LDcwLjQ5aC01LjEzYy40MS0xLjEzLjkxLTIuMjcuOTEtM3YtOC42OWMwLS45Ni0uNDQtMi4wNi0uODUtMy4yNGw1LjA3LjAyYy0uNDksMS4xMy0uOTcsMi4yMy0uOTcsMy4yM3Y3Ljk0YzAsMS4xOC40MywyLjI4Ljk3LDMuNzNoMFoiPjwvcGF0aD4KICA8L2c+Cjwvc3ZnPg==" alt="올디테일의원 ALL DETAIL CLINIC" style="display: block; width: clamp(132px, 13vw, 178px); height: auto;" />
+        <p style="margin: 0 0 2px; font-family: 'Newsreader', serif; font-style: italic; font-weight: 300; font-size: clamp(15px, 1.4vw, 19px); color: #6A736F;">It’s all in the details.</p>
+      </div>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px;"><a href="reserve.html" style="border-bottom: 1px solid #DCE2DF; padding-bottom: 2px;">예약 문의,</a><a href="about.html#location" style="border-bottom: 1px solid #DCE2DF; padding-bottom: 2px;">오시는 길</a></p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 30px; padding-bottom: 34px;">
+      <div>
+        <p style="margin: 0 0 12px; font-size: 10.5px; letter-spacing: 0.18em; color: #8B948F;">LOCATION</p>
+        <p style="margin: 0; font-size: 13.5px; line-height: 1.9; color: #4C5652;">서울 강남구 강남대로 428<br />만이빌딩 2층<br /><span style="color: #8B948F;">강남역 1층 단독 계단</span></p>
+      </div>
+      <div>
+        <p style="margin: 0 0 12px; font-size: 10.5px; letter-spacing: 0.18em; color: #8B948F;">HOURS</p>
+        <p style="margin: 0; font-size: 13.5px; line-height: 1.9; color: #4C5652;">평일 10:00 – 20:00<br />주말 10:00 – 17:00<br /><span style="color: #8B948F;">휴진일 별도 공지</span></p>
+      </div>
+      <div>
+        <p style="margin: 0 0 12px; font-size: 10.5px; letter-spacing: 0.18em; color: #8B948F;">CONTACT</p>
+        <p style="margin: 0 0 12px; font-size: 13.5px; line-height: 1.9; color: #4C5652;">대표 전화 준비 중<br />카카오톡 · WhatsApp · LINE</p>
+        <p style="margin: 0; display: flex; gap: 12px; font-size: 12.5px; color: #8B948F;"><a href="reserve.html" style="color: #8B948F;">Instagram,</a><a href="reserve.html" style="color: #8B948F;">Naver,</a><a href="reserve.html" style="color: #8B948F;">YouTube</a></p>
+      </div>
+      <div>
+        <p style="margin: 0 0 12px; font-size: 10.5px; letter-spacing: 0.18em; color: #8B948F;">INDEX</p>
+        <p style="margin: 0; display: flex; flex-wrap: wrap; gap: 10px; font-size: 12.5px; color: #4C5652;"><a href="about.html">소개,</a><a href="signature.html">시그니처,</a><a href="treatments.html">시술,</a><a href="column.html">칼럼,</a><a href="reserve.html">예약하기</a></p>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; padding-top: 20px; border-top: 1px solid #E4E9E6; font-size: 11px; color: #8B948F;">
+      <span>올디테일의원 · 대표원장 조주형 · 사업자등록번호 준비 중</span>
+      <span style="display: flex; gap: 14px;"><a href="about.html" style="color: #8B948F;">개인정보처리방침</a><a href="about.html" style="color: #8B948F;">이용약관</a><span>ALL DETAIL CLINIC © 2026</span></span>
+    </div>
+  </div>
+</footer>
+</x-dc>
+</body>
+</html>

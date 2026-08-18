@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>올디테일의원 오시는 길</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<style>
+  html, body { margin: 0; height: 100%; background: #F9FAF9; }
+  #map { position: absolute; inset: 0; background: #F9FAF9; }
+  /* brand tone: neutral greyscale tiles — colour is reserved for the pin */
+  .leaflet-tile-pane { filter: grayscale(1) brightness(1.06) contrast(0.94); }
+  .leaflet-container { font-family: 'SUIT Variable', system-ui, sans-serif; background: #F9FAF9; }
+  .leaflet-control-attribution { background: rgba(249,250,249,0.86) !important; font-size: 10px; color: #8B948F; }
+  .leaflet-control-attribution a { color: #6A736F; }
+  .leaflet-bar { border: 1px solid #DCE2DF !important; box-shadow: none !important; }
+  .leaflet-bar a { background: #F9FAF9; color: #121614; border-bottom-color: #E4E9E6 !important; }
+  .leaflet-bar a:hover { background: #ECF2F0; color: #2C7A6B; }
+  .adc-pin { position: relative; }
+  .adc-pin i { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border: 1px solid rgba(44,122,107,0.45); border-radius: 50%; display: block; }
+  .adc-pin i.r1 { width: 76px; height: 76px; }
+  .adc-pin i.r2 { width: 40px; height: 40px; }
+  .adc-pin i.dot { width: 11px; height: 11px; background: #2C7A6B; border: 0; }
+  .adc-pin b { position: absolute; left: 50%; top: calc(50% + 26px); transform: translateX(-50%); white-space: nowrap; font-size: 11px; letter-spacing: 0.14em; font-weight: 600; color: #1B4F45; background: rgba(249,250,249,0.9); padding: 4px 9px; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+  var CLINIC = [37.50005, 127.02715];
+  var map = L.map('map', { center: CLINIC, zoom: 17, scrollWheelZoom: false, zoomControl: true, attributionControl: true });
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+  var icon = L.divIcon({
+    className: 'adc-pin',
+    html: '<i class="r1"></i><i class="r2"></i><i class="dot"></i><b>ALL DETAIL CLINIC</b>',
+    iconSize: [80, 80],
+    iconAnchor: [40, 40]
+  });
+  L.marker(CLINIC, { icon: icon, keyboard: false }).addTo(map);
+  map.on('click', function () { map.scrollWheelZoom.enable(); });
+</script>
+</body>
+</html>
