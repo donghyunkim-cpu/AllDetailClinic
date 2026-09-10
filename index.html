@@ -7,8 +7,6 @@
 <template id="__bundler_thumbnail">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#F9FAF9"/><g transform="translate(27.43 21.43) scale(0.26)" fill="#2C7A6B"><path d="M152.6,86.32c-5.52.73-11.08.43-16.63.8l-45.43.33-5.96-4.14,2.49-54.1,1.11-15.12,1.85,23.62s2.52,30.87,2.53,30.93c.67,8.19,9.56,10.9,16.39,12.05,7.47,1.26,15.01,2.04,22.53,2.88,7.05.78,14.13,1.93,21.13,2.76h0Z"/><path d="M80.63,104.99c-.6-6.41-5.79-9.64-11.49-11.23-7.48-2.08-15.34-2.54-23-3.64-7.65-1.09-15.29-2.18-22.94-3.28-.93-.13-1.87-.27-2.8-.4l62.78-.75,5.62,4.07-3.18,68.67s-4.98-53.37-4.99-53.45h0Z"/><path d="M88.14,8.49L88.32,0c-18.37-.19-36.42,4.91-51.8,15.92C15.86,30.72,2.62,54.07.32,79.39c-.66,7.26-.27,13.89.82,21.2l2.98-.65c-3.1-22.71,5.27-48.28,21.92-64.43,7.45-7.22,15.62-13.06,24.65-17.79,10.55-5.52,25.17-8.37,36.94-9.2,0,0,.28-.02.28-.02"/><path d="M171.93,69.52c-.87.12-1.92.16-2.79.28,1.12,6.77.89,13.19.08,19.99-1.83,15.35-6.95,29.51-16.76,41.49-8.55,10.43-18.97,18.9-30.96,25.18-8.56,4.48-17.84,7.63-27.43,8.57-4.29.16-7.24.27-7.24.27v8.21c19.62.06,39.6-7.24,54.45-19.22,2.7-2.18,5.62-4.74,8.03-7.24,2.38-2.49,4.64-5,6.7-7.76,2.04-2.74,3.99-5.5,5.69-8.48,1.7-2.97,3.37-6.08,4.71-9.22,1.34-3.14,2.51-6.16,3.48-9.44.97-3.28,1.77-6.6,2.38-9.98.61-3.41,1.03-7,1.27-10.46.12-1.74.05-3.57.07-5.31.07-4.32-.28-8.69-.97-12.95-.11-.69-.23-1.37-.37-2.06-.12-.6-.26-1.15-.33-1.84h0Z"/></g><text x="50" y="84" font-family="system-ui, sans-serif" font-size="4.6" font-weight="500" letter-spacing="0.72" fill="#8B948F" text-anchor="middle">ALL DETAIL CLINIC</text></svg>
 </template>
-<meta name="ext-resource-dependency" content="Signature Detail.dc.html">
-<meta name="ext-resource-dependency" content="Site Header.dc.html">
 </head>
 <body>
 <x-dc>
@@ -127,7 +125,7 @@
 
     <figure style="margin: 0; position: relative; overflow: hidden;">
       <div id="adc-hero-img" style="position: relative; overflow: hidden; height: clamp(340px, 64vh, 720px); background: #E9F2EF;">
-        <video src="images/hero-loop.mp4" poster="images/hero.jpg" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" style="position: absolute; left: 0; top: -8%; width: 100%; height: 116%; object-fit: cover;"></video>
+        <video src="images/hero-loop.mp4" poster="images/hero.png" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" style="position: absolute; left: 0; top: -8%; width: 100%; height: 116%; object-fit: cover;"></video>
       </div>
       <figcaption style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding: 14px clamp(16px, 3vw, 40px); border-bottom: 1px solid #E4E9E6; font-size: 10.5px; letter-spacing: 0.16em; color: #8B948F;">
         <span>FIG 01. &nbsp; ALL DETAIL CLINIC</span>
@@ -147,17 +145,23 @@
         <button onClick="{{ baPickNasolabial }}" style="appearance: none; flex: none; border: 0; background: transparent; cursor: pointer; padding: 8px 0; font-size: 13px; letter-spacing: -0.01em; white-space: nowrap;" style-hover="color: #2C7A6B;">
           <span style="position: relative; display: block;">팔자<sc-if value="{{ baOnNasolabial }}" hint-placeholder-val="{{ false }}"><span style="position: absolute; left: -2px; right: -2px; bottom: -7px; height: 1px; background: #2C7A6B;"></span></sc-if></span>
         </button>
+        <button onClick="{{ baPickPeanut }}" style="appearance: none; flex: none; border: 0; background: transparent; cursor: pointer; padding: 8px 0; font-size: 13px; letter-spacing: -0.01em; white-space: nowrap;" style-hover="color: #2C7A6B;">
+          <span style="position: relative; display: block;">관자 옆볼<sc-if value="{{ baOnPeanut }}" hint-placeholder-val="{{ false }}"><span style="position: absolute; left: -2px; right: -2px; bottom: -7px; height: 1px; background: #2C7A6B;"></span></sc-if></span>
+        </button>
+        <button onClick="{{ baPickBody }}" style="appearance: none; flex: none; border: 0; background: transparent; cursor: pointer; padding: 8px 0; font-size: 13px; letter-spacing: -0.01em; white-space: nowrap;" style-hover="color: #2C7A6B;">
+          <span style="position: relative; display: block;">바디<sc-if value="{{ baOnBody }}" hint-placeholder-val="{{ false }}"><span style="position: absolute; left: -2px; right: -2px; bottom: -7px; height: 1px; background: #2C7A6B;"></span></sc-if></span>
+        </button>
         <button onClick="{{ baPickLifting }}" style="appearance: none; flex: none; border: 0; background: transparent; cursor: pointer; padding: 8px 0; font-size: 13px; letter-spacing: -0.01em; white-space: nowrap;" style-hover="color: #2C7A6B;">
           <span style="position: relative; display: block;">리프팅<sc-if value="{{ baOnLifting }}" hint-placeholder-val="{{ false }}"><span style="position: absolute; left: -2px; right: -2px; bottom: -7px; height: 1px; background: #2C7A6B;"></span></sc-if></span>
+        </button>
+        <button onClick="{{ baPickStem }}" style="appearance: none; flex: none; border: 0; background: transparent; cursor: pointer; padding: 8px 0; font-size: 13px; letter-spacing: -0.01em; white-space: nowrap;" style-hover="color: #2C7A6B;">
+          <span style="position: relative; display: block;">줄기세포<sc-if value="{{ baOnStem }}" hint-placeholder-val="{{ false }}"><span style="position: absolute; left: -2px; right: -2px; bottom: -7px; height: 1px; background: #2C7A6B;"></span></sc-if></span>
         </button>
         <button onClick="{{ baPickBooster }}" style="appearance: none; flex: none; border: 0; background: transparent; cursor: pointer; padding: 8px 0; font-size: 13px; letter-spacing: -0.01em; white-space: nowrap;" style-hover="color: #2C7A6B;">
           <span style="position: relative; display: block;">스킨부스터<sc-if value="{{ baOnBooster }}" hint-placeholder-val="{{ false }}"><span style="position: absolute; left: -2px; right: -2px; bottom: -7px; height: 1px; background: #2C7A6B;"></span></sc-if></span>
         </button>
         <button onClick="{{ baPickPigment }}" style="appearance: none; flex: none; border: 0; background: transparent; cursor: pointer; padding: 8px 0; font-size: 13px; letter-spacing: -0.01em; white-space: nowrap;" style-hover="color: #2C7A6B;">
           <span style="position: relative; display: block;">색소<sc-if value="{{ baOnPigment }}" hint-placeholder-val="{{ false }}"><span style="position: absolute; left: -2px; right: -2px; bottom: -7px; height: 1px; background: #2C7A6B;"></span></sc-if></span>
-        </button>
-        <button onClick="{{ baPickBody }}" style="appearance: none; flex: none; border: 0; background: transparent; cursor: pointer; padding: 8px 0; font-size: 13px; letter-spacing: -0.01em; white-space: nowrap;" style-hover="color: #2C7A6B;">
-          <span style="position: relative; display: block;">바디<sc-if value="{{ baOnBody }}" hint-placeholder-val="{{ false }}"><span style="position: absolute; left: -2px; right: -2px; bottom: -7px; height: 1px; background: #2C7A6B;"></span></sc-if></span>
         </button>
       </div>
       </div>
@@ -169,14 +173,14 @@
             <figure style="margin: 0; flex: none; width: min(100%, 880px);">
               <div style="display: grid; grid-template-columns: 1fr 1fr;">
                 <div>
-                  <img loading="lazy" decoding="async" src="images/ba-naso-before.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+                  <img loading="lazy" decoding="async" src="images/ba-naso-before.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
                   <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #121614;">
                     <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">BEFORE</span>
                     <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.6);">시술 전</span>
                   </div>
                 </div>
                 <div>
-                  <img loading="lazy" decoding="async" src="images/ba-naso-after.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+                  <img loading="lazy" decoding="async" src="images/ba-naso-after.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
                   <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #2C7A6B;">
                     <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">AFTER</span>
                     <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.72);">시술 후</span>
@@ -189,18 +193,18 @@
               </figcaption>
             </figure>
           </sc-if>
-          <sc-if value="{{ baShowLifting }}" hint-placeholder-val="{{ true }}">
+          <sc-if value="{{ baShowPeanut }}" hint-placeholder-val="{{ false }}">
             <figure style="margin: 0; flex: none; width: min(100%, 880px);">
               <div style="display: grid; grid-template-columns: 1fr 1fr;">
                 <div>
-                  <img loading="lazy" decoding="async" src="images/ba-lift-before.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+                  <img loading="lazy" decoding="async" src="images/ba-peanut-before.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 40%; display: block; background: #EDF1EF;" />
                   <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #121614;">
                     <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">BEFORE</span>
                     <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.6);">시술 전</span>
                   </div>
                 </div>
                 <div>
-                  <img loading="lazy" decoding="async" src="images/ba-lift-after.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+                  <img loading="lazy" decoding="async" src="images/ba-peanut-after.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 40%; display: block; background: #EDF1EF;" />
                   <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #2C7A6B;">
                     <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">AFTER</span>
                     <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.72);">시술 후</span>
@@ -208,71 +212,23 @@
                 </div>
               </div>
               <figcaption style="margin-top: 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
-                <span style="font-size: 13.5px; font-weight: 600; letter-spacing: -0.03em;">올디테일 리프팅</span>
+                <span style="font-size: 13.5px; font-weight: 600; letter-spacing: -0.03em;">올디테일 땅콩필러</span>
                 <span style="font-size: 10.5px; letter-spacing: 0.14em; color: #B2BBB7;">ALL DETAIL</span>
               </figcaption>
             </figure>
           </sc-if>
-          <sc-if value="{{ baShowBooster }}" hint-placeholder-val="{{ true }}">
+          <sc-if value="{{ baShowBody }}" hint-placeholder-val="{{ false }}">
             <figure style="margin: 0; flex: none; width: min(100%, 880px);">
               <div style="display: grid; grid-template-columns: 1fr 1fr;">
                 <div>
-                  <img loading="lazy" decoding="async" src="images/ba-boost-before.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+                  <img loading="lazy" decoding="async" src="images/ba-bodyline-before.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 30%; display: block; background: #EDF1EF;" />
                   <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #121614;">
                     <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">BEFORE</span>
                     <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.6);">시술 전</span>
                   </div>
                 </div>
                 <div>
-                  <img loading="lazy" decoding="async" src="images/ba-boost-after.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
-                  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #2C7A6B;">
-                    <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">AFTER</span>
-                    <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.72);">시술 후</span>
-                  </div>
-                </div>
-              </div>
-              <figcaption style="margin-top: 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
-                <span style="font-size: 13.5px; font-weight: 600; letter-spacing: -0.03em;">컴포트 스킨부스터</span>
-                <span style="font-size: 10.5px; letter-spacing: 0.14em; color: #B2BBB7;">ALL DETAIL</span>
-              </figcaption>
-            </figure>
-          </sc-if>
-          <sc-if value="{{ baShowPigment }}" hint-placeholder-val="{{ true }}">
-            <figure style="margin: 0; flex: none; width: min(100%, 880px);">
-              <div style="display: grid; grid-template-columns: 1fr 1fr;">
-                <div>
-                  <img loading="lazy" decoding="async" src="images/ba-pig-before.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
-                  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #121614;">
-                    <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">BEFORE</span>
-                    <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.6);">시술 전</span>
-                  </div>
-                </div>
-                <div>
-                  <img loading="lazy" decoding="async" src="images/ba-pig-after.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
-                  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #2C7A6B;">
-                    <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">AFTER</span>
-                    <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.72);">시술 후</span>
-                  </div>
-                </div>
-              </div>
-              <figcaption style="margin-top: 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
-                <span style="font-size: 13.5px; font-weight: 600; letter-spacing: -0.03em;">커스텀 색소지우개</span>
-                <span style="font-size: 10.5px; letter-spacing: 0.14em; color: #B2BBB7;">ALL DETAIL</span>
-              </figcaption>
-            </figure>
-          </sc-if>
-          <sc-if value="{{ baShowBody }}" hint-placeholder-val="{{ true }}">
-            <figure style="margin: 0; flex: none; width: min(100%, 880px);">
-              <div style="display: grid; grid-template-columns: 1fr 1fr;">
-                <div>
-                  <img loading="lazy" decoding="async" src="images/ba-bodyline-before.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 30%; display: block; background: #EDF1EF;" />
-                  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #121614;">
-                    <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">BEFORE</span>
-                    <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.6);">시술 전</span>
-                  </div>
-                </div>
-                <div>
-                  <img loading="lazy" decoding="async" src="images/ba-bodyline-after.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 30%; display: block; background: #EDF1EF;" />
+                  <img loading="lazy" decoding="async" src="images/ba-bodyline-after.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 30%; display: block; background: #EDF1EF;" />
                   <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #2C7A6B;">
                     <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">AFTER</span>
                     <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.72);">시술 후</span>
@@ -285,6 +241,102 @@
               </figcaption>
             </figure>
           </sc-if>
+          <sc-if value="{{ baShowLifting }}" hint-placeholder-val="{{ false }}">
+            <figure style="margin: 0; flex: none; width: min(100%, 880px);">
+              <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                <div>
+                  <img loading="lazy" decoding="async" src="images/ba-lift-before.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+                  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #121614;">
+                    <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">BEFORE</span>
+                    <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.6);">시술 전</span>
+                  </div>
+                </div>
+                <div>
+                  <img loading="lazy" decoding="async" src="images/ba-lift-after.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+                  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #2C7A6B;">
+                    <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">AFTER</span>
+                    <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.72);">시술 후</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption style="margin-top: 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+                <span style="font-size: 13.5px; font-weight: 600; letter-spacing: -0.03em;">올디테일 리프팅</span>
+                <span style="font-size: 10.5px; letter-spacing: 0.14em; color: #B2BBB7;">ALL DETAIL</span>
+              </figcaption>
+            </figure>
+          </sc-if>
+          <sc-if value="{{ baShowStem }}" hint-placeholder-val="{{ false }}">
+            <figure style="margin: 0; flex: none; width: min(100%, 880px);">
+              <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                <div>
+                  <img loading="lazy" decoding="async" src="images/stem-tone-before.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+                  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #121614;">
+                    <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">BEFORE</span>
+                    <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.6);">시술 전</span>
+                  </div>
+                </div>
+                <div>
+                  <img loading="lazy" decoding="async" src="images/stem-tone-after.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+                  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #2C7A6B;">
+                    <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">AFTER</span>
+                    <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.72);">시술 후</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption style="margin-top: 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+                <span style="font-size: 13.5px; font-weight: 600; letter-spacing: -0.03em;">올디테일 줄기세포 수액</span>
+                <span style="font-size: 10.5px; letter-spacing: 0.14em; color: #B2BBB7;">ALL DETAIL</span>
+              </figcaption>
+            </figure>
+          </sc-if>
+          <sc-if value="{{ baShowBooster }}" hint-placeholder-val="{{ false }}">
+            <figure style="margin: 0; flex: none; width: min(100%, 880px);">
+              <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                <div>
+                  <img loading="lazy" decoding="async" src="images/ba-boost-before.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+                  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #121614;">
+                    <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">BEFORE</span>
+                    <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.6);">시술 전</span>
+                  </div>
+                </div>
+                <div>
+                  <img loading="lazy" decoding="async" src="images/ba-boost-after.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+                  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #2C7A6B;">
+                    <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">AFTER</span>
+                    <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.72);">시술 후</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption style="margin-top: 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+                <span style="font-size: 13.5px; font-weight: 600; letter-spacing: -0.03em;">컴포트 스킨부스터</span>
+                <span style="font-size: 10.5px; letter-spacing: 0.14em; color: #B2BBB7;">ALL DETAIL</span>
+              </figcaption>
+            </figure>
+          </sc-if>
+          <sc-if value="{{ baShowPigment }}" hint-placeholder-val="{{ false }}">
+            <figure style="margin: 0; flex: none; width: min(100%, 880px);">
+              <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                <div>
+                  <img loading="lazy" decoding="async" src="images/ba-pig-before.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+                  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #121614;">
+                    <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">BEFORE</span>
+                    <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.6);">시술 전</span>
+                  </div>
+                </div>
+                <div>
+                  <img loading="lazy" decoding="async" src="images/ba-pig-after.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+                  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 11px 12px; background: #2C7A6B;">
+                    <span style="font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.14em; color: #F9FAF9;">AFTER</span>
+                    <span style="font-size: 10.5px; letter-spacing: 0.08em; color: rgba(249,250,249,0.72);">시술 후</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption style="margin-top: 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+                <span style="font-size: 13.5px; font-weight: 600; letter-spacing: -0.03em;">커스텀 색소지우개</span>
+                <span style="font-size: 10.5px; letter-spacing: 0.14em; color: #B2BBB7;">ALL DETAIL</span>
+              </figcaption>
+            </figure>
+          </sc-if>
       </div>
       <button data-rail-nav onClick="{{ baPrev }}" aria-label="이전" style="position: absolute; left: clamp(4px, 1vw, 14px); top: clamp(90px, 22%, 190px); display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #DCE2DF; background: rgba(249,250,249,0.94); font-size: 15px; color: #121614; cursor: pointer;" style-hover="background: #2C7A6B; color: #F9FAF9; border-color: #2C7A6B;">←</button>
       <button data-rail-nav onClick="{{ baNext }}" aria-label="다음" style="position: absolute; right: clamp(4px, 1vw, 14px); top: clamp(90px, 22%, 190px); display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #DCE2DF; background: rgba(249,250,249,0.94); font-size: 15px; color: #121614; cursor: pointer;" style-hover="background: #2C7A6B; color: #F9FAF9; border-color: #2C7A6B;">→</button>
@@ -292,8 +344,8 @@
 
     <div style="padding: clamp(26px, 4vh, 44px) clamp(16px, 3vw, 40px) 0;">
       <div style="max-width: 1560px; margin: 0 auto;">
-      <p style="margin: 0 0 clamp(22px, 3.5vh, 34px); max-width: 640px; font-size: 12px; line-height: 1.95; color: #5A6663;">환자분의 동의를 받아 동일한 환경과 조건에서 촬영했으며, 별도의 보정을 하지 않은 전후 사진입니다. 모든 시술은 개인차가 있으며, 피부 상태에 따라 발적 · 색소침착 · 염증 등의 부작용이 나타날 수 있습니다. 시술 전 의료진과 충분히 상담하시기 바랍니다.</p>
-      <div style="display: flex; justify-content: flex-end;"><a href="signature.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 15px 30px; border: 1px solid #121614; font-size: 11.5px; letter-spacing: 0.2em;" style-hover="background: #2C7A6B; color: #F9FAF9; border-color: #2C7A6B;">VIEW MORE <span style="font-size: 14px;">+</span></a></div>
+      <p style="margin: 0 0 clamp(22px, 3.5vh, 34px); max-width: 640px; font-size: 12px; line-height: 1.95; color: #5A6663;">환자분의 동의를 받아 동일한 환경 및 조건에서 촬영되었으며, 별도의 보정이 들어가지 않은 전후사진입니다. 모든 피부 시술은 개인 차가 있으며, 환자분의 피부 상태에 따라 발적, 색소침착, 염증, 화상 등의 부작용이 있을 수 있습니다. 필러 시술 시 알러지 반응, 근육마비, 괴사, 실명 등의 부작용이 발생될 수 있습니다.</p>
+      <div style="display: flex; justify-content: flex-end;"><a href="{{ baMoreHref }}" style="display: inline-flex; align-items: center; gap: 12px; padding: 15px 30px; border: 1px solid #121614; font-size: 11.5px; letter-spacing: 0.2em;" style-hover="background: #2C7A6B; color: #F9FAF9; border-color: #2C7A6B;">ALL BEFORE &amp; AFTER <span style="font-size: 14px;">→</span></a></div>
       </div>
     </div>
   </section>
@@ -313,7 +365,7 @@
         <div style="display: grid; gap: 0; border-top: 1px solid #E4E9E6;">
           <div style="display: grid; grid-template-columns: 56px minmax(120px, 170px) 1fr; gap: clamp(14px, 2vw, 34px); align-items: center; padding: 26px 0; border-bottom: 1px solid #E4E9E6;" data-sys-row>
             <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: #B2BBB7;">01</span>
-            <img loading="lazy" decoding="async" src="images/lift-consult.jpg" alt="의사 상담" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: #EDF1EF;" />
+            <img loading="lazy" decoding="async" src="images/lift-consult.png" alt="의사 상담" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: #EDF1EF;" />
             <div>
               <h3 style="margin: 0 0 10px; font-size: 18px; font-weight: 600; letter-spacing: -0.03em;">의사 상담</h3>
               <p style="margin: 0; font-size: 14px; line-height: 1.9; color: #6A736F; max-width: 520px;">실장 상담으로 끝나지 않습니다. 초진 기록과 3D 피부 진단 데이터를 확인한 뒤, 의사가 한 번 더 직접 상담합니다.</p>
@@ -395,7 +447,7 @@
       <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 22px; margin-bottom: clamp(30px, 6vh, 64px);" data-reveal>
         <div>
           <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">IV. Signature</p>
-          <h2 style="margin: 0; font-family: 'Newsreader', serif; font-weight: 200; font-size: clamp(34px, 5.4vw, 86px); line-height: 1.0; letter-spacing: -0.035em;">Five<span style="color: #2C7A6B;"> designed</span><br />programs</h2>
+          <h2 style="margin: 0; font-family: 'Newsreader', serif; font-weight: 200; font-size: clamp(34px, 5.4vw, 86px); line-height: 1.0; letter-spacing: -0.035em;">Seven<span style="color: #2C7A6B;"> designed</span><br />programs</h2>
         </div>
         <p style="margin: 0; max-width: 360px; font-size: 14px; line-height: 1.95; color: #6A736F;">하나의 장비, 하나의 성분으로 부르지 않습니다. 진단부터 마취, 조합, 사후 관리까지 하나의 설계로 묶은 올디테일의 시그니처입니다.</p>
       </div>
@@ -403,10 +455,10 @@
 
     <div id="adc-sig-index" style="position: relative; border-top: 1px solid #E4E9E6;">
       <div id="adc-hover" style="position: fixed; left: 0; top: 0; z-index: 40; width: 236px; height: 300px; pointer-events: none; opacity: 0; overflow: hidden; background: #EDF1EF;">
-        <img loading="lazy" decoding="async" id="adc-hover-img" src="images/sig-nasolabial.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <img loading="lazy" decoding="async" id="adc-hover-img" src="images/sig-nasolabial.png" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
       </div>
 
-      <button onClick="{{ openNaso }}" data-preview="images/sig-nasolabial.jpg" style="appearance: none; width: 100%; border: 0; border-bottom: 1px solid #E4E9E6; background: transparent; cursor: pointer; text-align: left; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: clamp(22px, 3.4vh, 40px) clamp(16px, 3vw, 40px);" style-hover="background: #F2F5F3;">
+      <button onClick="{{ openNaso }}" data-preview="images/sig-nasolabial.png" style="appearance: none; width: 100%; border: 0; border-bottom: 1px solid #E4E9E6; background: transparent; cursor: pointer; text-align: left; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: clamp(22px, 3.4vh, 40px) clamp(16px, 3vw, 40px);" style-hover="background: #F2F5F3;">
         <span style="display: flex; flex-wrap: wrap; align-items: baseline; gap: clamp(12px, 2.4vw, 36px);">
           <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: #B2BBB7; min-width: 30px;">01</span>
           <span style="font-size: clamp(24px, 3.6vw, 50px); font-weight: 500; letter-spacing: -0.045em; line-height: 1.1;">올디테일 팔자지우개</span>
@@ -415,38 +467,56 @@
         <span style="display: flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: 0.16em; color: #2C7A6B;">VIEW<span style="font-size: 15px;">→</span></span>
       </button>
 
-      <button onClick="{{ openLift }}" data-preview="images/sig-lifting.jpg" style="appearance: none; width: 100%; border: 0; border-bottom: 1px solid #E4E9E6; background: transparent; cursor: pointer; text-align: left; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: clamp(22px, 3.4vh, 40px) clamp(16px, 3vw, 40px);" style-hover="background: #F2F5F3;">
+      <button onClick="{{ openPeanut }}" data-preview="images/sig-peanut.png" style="appearance: none; width: 100%; border: 0; border-bottom: 1px solid #E4E9E6; background: transparent; cursor: pointer; text-align: left; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: clamp(22px, 3.4vh, 40px) clamp(16px, 3vw, 40px);" style-hover="background: #F2F5F3;">
         <span style="display: flex; flex-wrap: wrap; align-items: baseline; gap: clamp(12px, 2.4vw, 36px);">
           <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: #B2BBB7; min-width: 30px;">02</span>
+          <span style="font-size: clamp(24px, 3.6vw, 50px); font-weight: 500; letter-spacing: -0.045em; line-height: 1.1;">올디테일 땅콩필러</span>
+          <span style="font-family: 'Newsreader', serif; font-size: 14px; letter-spacing: 0.04em; color: #8B948F;">All Detail Peanut Filler</span>
+        </span>
+        <span style="display: flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: 0.16em; color: #2C7A6B;">VIEW<span style="font-size: 15px;">→</span></span>
+      </button>
+
+      <button onClick="{{ openBody }}" data-preview="images/sig-body.png" style="appearance: none; width: 100%; border: 0; border-bottom: 1px solid #E4E9E6; background: transparent; cursor: pointer; text-align: left; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: clamp(22px, 3.4vh, 40px) clamp(16px, 3vw, 40px);" style-hover="background: #F2F5F3;">
+        <span style="display: flex; flex-wrap: wrap; align-items: baseline; gap: clamp(12px, 2.4vw, 36px);">
+          <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: #B2BBB7; min-width: 30px;">03</span>
+          <span style="font-size: clamp(24px, 3.6vw, 50px); font-weight: 500; letter-spacing: -0.045em; line-height: 1.1;">올디테일 바디지우개</span>
+          <span style="font-family: 'Newsreader', serif; font-size: 14px; letter-spacing: 0.04em; color: #8B948F;">All Detail Body Eraser</span>
+        </span>
+        <span style="display: flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: 0.16em; color: #2C7A6B;">VIEW<span style="font-size: 15px;">→</span></span>
+      </button>
+
+      <button onClick="{{ openLift }}" data-preview="images/sig-lifting.png" style="appearance: none; width: 100%; border: 0; border-bottom: 1px solid #E4E9E6; background: transparent; cursor: pointer; text-align: left; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: clamp(22px, 3.4vh, 40px) clamp(16px, 3vw, 40px);" style-hover="background: #F2F5F3;">
+        <span style="display: flex; flex-wrap: wrap; align-items: baseline; gap: clamp(12px, 2.4vw, 36px);">
+          <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: #B2BBB7; min-width: 30px;">04</span>
           <span style="font-size: clamp(24px, 3.6vw, 50px); font-weight: 500; letter-spacing: -0.045em; line-height: 1.1;">올디테일 리프팅</span>
           <span style="font-family: 'Newsreader', serif; font-size: 14px; letter-spacing: 0.04em; color: #8B948F;">All Detail Lifting</span>
         </span>
         <span style="display: flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: 0.16em; color: #2C7A6B;">VIEW<span style="font-size: 15px;">→</span></span>
       </button>
 
-      <button onClick="{{ openBooster }}" data-preview="images/sig-booster.jpg" style="appearance: none; width: 100%; border: 0; border-bottom: 1px solid #E4E9E6; background: transparent; cursor: pointer; text-align: left; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: clamp(22px, 3.4vh, 40px) clamp(16px, 3vw, 40px);" style-hover="background: #F2F5F3;">
+      <button onClick="{{ openStem }}" data-preview="images/sig-stem.png" style="appearance: none; width: 100%; border: 0; border-bottom: 1px solid #E4E9E6; background: transparent; cursor: pointer; text-align: left; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: clamp(22px, 3.4vh, 40px) clamp(16px, 3vw, 40px);" style-hover="background: #F2F5F3;">
         <span style="display: flex; flex-wrap: wrap; align-items: baseline; gap: clamp(12px, 2.4vw, 36px);">
-          <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: #B2BBB7; min-width: 30px;">03</span>
+          <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: #B2BBB7; min-width: 30px;">05</span>
+          <span style="font-size: clamp(24px, 3.6vw, 50px); font-weight: 500; letter-spacing: -0.045em; line-height: 1.1;">올디테일 줄기세포 수액</span>
+          <span style="font-family: 'Newsreader', serif; font-size: 14px; letter-spacing: 0.04em; color: #8B948F;">All Detail Stem Cell Infusion</span>
+        </span>
+        <span style="display: flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: 0.16em; color: #2C7A6B;">VIEW<span style="font-size: 15px;">→</span></span>
+      </button>
+
+      <button onClick="{{ openBooster }}" data-preview="images/sig-booster.png" style="appearance: none; width: 100%; border: 0; border-bottom: 1px solid #E4E9E6; background: transparent; cursor: pointer; text-align: left; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: clamp(22px, 3.4vh, 40px) clamp(16px, 3vw, 40px);" style-hover="background: #F2F5F3;">
+        <span style="display: flex; flex-wrap: wrap; align-items: baseline; gap: clamp(12px, 2.4vw, 36px);">
+          <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: #B2BBB7; min-width: 30px;">06</span>
           <span style="font-size: clamp(24px, 3.6vw, 50px); font-weight: 500; letter-spacing: -0.045em; line-height: 1.1;">컴포트 스킨부스터</span>
           <span style="font-family: 'Newsreader', serif; font-size: 14px; letter-spacing: 0.04em; color: #8B948F;">Comfort Skinbooster</span>
         </span>
         <span style="display: flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: 0.16em; color: #2C7A6B;">VIEW<span style="font-size: 15px;">→</span></span>
       </button>
 
-      <button onClick="{{ openPigment }}" data-preview="images/sig-pigment.jpg" style="appearance: none; width: 100%; border: 0; border-bottom: 1px solid #E4E9E6; background: transparent; cursor: pointer; text-align: left; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: clamp(22px, 3.4vh, 40px) clamp(16px, 3vw, 40px);" style-hover="background: #F2F5F3;">
+      <button onClick="{{ openPigment }}" data-preview="images/sig-pigment.png" style="appearance: none; width: 100%; border: 0; border-bottom: 1px solid #E4E9E6; background: transparent; cursor: pointer; text-align: left; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: clamp(22px, 3.4vh, 40px) clamp(16px, 3vw, 40px);" style-hover="background: #F2F5F3;">
         <span style="display: flex; flex-wrap: wrap; align-items: baseline; gap: clamp(12px, 2.4vw, 36px);">
-          <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: #B2BBB7; min-width: 30px;">04</span>
+          <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: #B2BBB7; min-width: 30px;">07</span>
           <span style="font-size: clamp(24px, 3.6vw, 50px); font-weight: 500; letter-spacing: -0.045em; line-height: 1.1;">커스텀 색소지우개</span>
           <span style="font-family: 'Newsreader', serif; font-size: 14px; letter-spacing: 0.04em; color: #8B948F;">Custom Pigment Eraser</span>
-        </span>
-        <span style="display: flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: 0.16em; color: #2C7A6B;">VIEW<span style="font-size: 15px;">→</span></span>
-      </button>
-
-      <button onClick="{{ openBody }}" data-preview="images/sig-body.jpg" style="appearance: none; width: 100%; border: 0; border-bottom: 1px solid #E4E9E6; background: transparent; cursor: pointer; text-align: left; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: clamp(22px, 3.4vh, 40px) clamp(16px, 3vw, 40px);" style-hover="background: #F2F5F3;">
-        <span style="display: flex; flex-wrap: wrap; align-items: baseline; gap: clamp(12px, 2.4vw, 36px);">
-          <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: #B2BBB7; min-width: 30px;">05</span>
-          <span style="font-size: clamp(24px, 3.6vw, 50px); font-weight: 500; letter-spacing: -0.045em; line-height: 1.1;">올디테일 바디지우개</span>
-          <span style="font-family: 'Newsreader', serif; font-size: 14px; letter-spacing: 0.04em; color: #8B948F;">All Detail Body Eraser</span>
         </span>
         <span style="display: flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: 0.16em; color: #2C7A6B;">VIEW<span style="font-size: 15px;">→</span></span>
       </button>
@@ -469,43 +539,43 @@
     </div>
     <div id="adc-rail" class="adc-rail" style="display: flex; gap: clamp(10px, 1.4vw, 20px); overflow-x: auto; scroll-behavior: smooth; padding: 0 clamp(16px, 3vw, 40px) 20px;">
       <figure style="margin: 0; flex: none; width: clamp(260px, 36vw, 520px);">
-        <img loading="lazy" decoding="async" src="images/int-entrance.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+        <img loading="lazy" decoding="async" src="images/int-entrance.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
         <figcaption style="margin-top: 10px; font-size: 10.5px; letter-spacing: 0.16em; color: #8B948F;">FIG 01. &nbsp; 입구 · 공용부</figcaption>
       </figure>
       <figure style="margin: 0; flex: none; width: clamp(260px, 36vw, 520px);">
-        <img loading="lazy" decoding="async" src="images/int-entrance-glass.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+        <img loading="lazy" decoding="async" src="images/int-entrance-glass.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
         <figcaption style="margin-top: 10px; font-size: 10.5px; letter-spacing: 0.16em; color: #8B948F;">FIG 02. &nbsp; 사인 · 브랜드 글라스</figcaption>
       </figure>
       <figure style="margin: 0; flex: none; width: clamp(260px, 36vw, 520px);">
-        <img loading="lazy" decoding="async" src="images/int-reception.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+        <img loading="lazy" decoding="async" src="images/int-reception.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
         <figcaption style="margin-top: 10px; font-size: 10.5px; letter-spacing: 0.16em; color: #8B948F;">FIG 03. &nbsp; 리셉션</figcaption>
       </figure>
       <figure style="margin: 0; flex: none; width: clamp(260px, 36vw, 520px);">
-        <img loading="lazy" decoding="async" src="images/int-logowall.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+        <img loading="lazy" decoding="async" src="images/int-logowall.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
         <figcaption style="margin-top: 10px; font-size: 10.5px; letter-spacing: 0.16em; color: #8B948F;">FIG 04. &nbsp; 브랜드 월</figcaption>
       </figure>
       <figure style="margin: 0; flex: none; width: clamp(260px, 36vw, 520px);">
-        <img loading="lazy" decoding="async" src="images/int-lounge-01.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+        <img loading="lazy" decoding="async" src="images/int-lounge-01.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
         <figcaption style="margin-top: 10px; font-size: 10.5px; letter-spacing: 0.16em; color: #8B948F;">FIG 05. &nbsp; 대기 라운지</figcaption>
       </figure>
       <figure style="margin: 0; flex: none; width: clamp(260px, 36vw, 520px);">
-        <img loading="lazy" decoding="async" src="images/int-lounge-02.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+        <img loading="lazy" decoding="async" src="images/int-lounge-02.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
         <figcaption style="margin-top: 10px; font-size: 10.5px; letter-spacing: 0.16em; color: #8B948F;">FIG 06. &nbsp; 대기 라운지 · 미디어</figcaption>
       </figure>
       <figure style="margin: 0; flex: none; width: clamp(260px, 36vw, 520px);">
-        <img loading="lazy" decoding="async" src="images/int-lounge-03.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+        <img loading="lazy" decoding="async" src="images/int-lounge-03.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
         <figcaption style="margin-top: 10px; font-size: 10.5px; letter-spacing: 0.16em; color: #8B948F;">FIG 07. &nbsp; 라운지 · 파티션</figcaption>
       </figure>
       <figure style="margin: 0; flex: none; width: clamp(260px, 36vw, 520px);">
-        <img loading="lazy" decoding="async" src="images/int-consult.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+        <img loading="lazy" decoding="async" src="images/int-consult.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
         <figcaption style="margin-top: 10px; font-size: 10.5px; letter-spacing: 0.16em; color: #8B948F;">FIG 08. &nbsp; 상담실</figcaption>
       </figure>
       <figure style="margin: 0; flex: none; width: clamp(260px, 36vw, 520px);">
-        <img loading="lazy" decoding="async" src="images/int-powder.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+        <img loading="lazy" decoding="async" src="images/int-powder.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
         <figcaption style="margin-top: 10px; font-size: 10.5px; letter-spacing: 0.16em; color: #8B948F;">FIG 09. &nbsp; 파우더룸</figcaption>
       </figure>
       <figure style="margin: 0; flex: none; width: clamp(260px, 36vw, 520px);">
-        <img loading="lazy" decoding="async" src="images/int-shelf.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
+        <img loading="lazy" decoding="async" src="images/int-shelf.png" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: 50% 42%; display: block; background: #EDF1EF;" />
         <figcaption style="margin-top: 10px; font-size: 10.5px; letter-spacing: 0.16em; color: #8B948F;">FIG 10. &nbsp; 제품 진열</figcaption>
       </figure>
     </div>
@@ -654,11 +724,131 @@
     </div>
   </section>
 
+  <section id="concerns" style="padding: clamp(64px, 11vh, 140px) clamp(16px, 3vw, 40px) clamp(48px, 8vh, 100px); border-bottom: 1px solid #E4E9E6; background: #F1F5F3;">
+    <div style="max-width: 1560px; margin: 0 auto;">
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 22px; margin-bottom: clamp(28px, 5vh, 52px);" data-reveal>
+        <div>
+          <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">VIII. Concerns</p>
+          <h2 style="margin: 0; font-size: clamp(24px, 2.8vw, 40px); font-weight: 600; letter-spacing: -0.045em; line-height: 1.35;">피부 고민,<br />어디서부터 시작할지 모르겠을 때</h2>
+        </div>
+        <p style="margin: 0; max-width: 360px; font-size: 14px; line-height: 1.95; color: #6A736F;">시술 이름이 아니라 고민에서 시작하세요. 고민별로 원인과 맞는 시술, 관련 칼럼을 정리해 두었습니다.</p>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 1px; background: #E4E9E6; border: 1px solid #E4E9E6;">
+        <div style="flex: 1 1 280px; min-width: 0; background: #F9FAF9; padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(24px, 3vw, 34px); display: flex; flex-direction: column; gap: 14px;">
+          <a href="concerns.html#wrinkle" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+            <span style="display: flex; align-items: baseline; gap: 12px;"><span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 14px; color: #B2BBB7;">01</span><span style="font-size: clamp(18px, 1.7vw, 22px); font-weight: 600; letter-spacing: -0.04em;">주름</span></span>
+            <span style="font-size: 11px; letter-spacing: 0.16em; color: #2C7A6B;">→</span>
+          </a>
+          <p style="margin: 0; font-family: 'Newsreader', serif; font-size: 12.5px; letter-spacing: 0.04em; color: #8B948F;">Wrinkles</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px 10px; margin-top: 4px;">
+            <a href="concerns.html#wrinkle/팔자주름" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">팔자주름</a>
+            <a href="concerns.html#wrinkle/마리오네트 주름" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">마리오네트 주름</a>
+            <a href="concerns.html#wrinkle/입가주름" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">입가주름</a>
+            <a href="concerns.html#wrinkle/눈가주름" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">눈가주름</a>
+            <a href="concerns.html#wrinkle/목주름" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">목주름</a>
+            <a href="concerns.html#wrinkle/이마주름" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">이마주름</a>
+            <a href="concerns.html#wrinkle/미간주름" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">미간주름</a>
+          </div>
+        </div>
+        <div style="flex: 1 1 280px; min-width: 0; background: #F9FAF9; padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(24px, 3vw, 34px); display: flex; flex-direction: column; gap: 14px;">
+          <a href="concerns.html#hollow" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+            <span style="display: flex; align-items: baseline; gap: 12px;"><span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 14px; color: #B2BBB7;">02</span><span style="font-size: clamp(18px, 1.7vw, 22px); font-weight: 600; letter-spacing: -0.04em;">꺼짐</span></span>
+            <span style="font-size: 11px; letter-spacing: 0.16em; color: #2C7A6B;">→</span>
+          </a>
+          <p style="margin: 0; font-family: 'Newsreader', serif; font-size: 12.5px; letter-spacing: 0.04em; color: #8B948F;">Volume Loss</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px 10px; margin-top: 4px;">
+            <a href="concerns.html#hollow/관자놀이 꺼짐" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">관자놀이 꺼짐</a>
+            <a href="concerns.html#hollow/옆볼꺼짐" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">옆볼꺼짐</a>
+            <a href="concerns.html#hollow/눈밑꺼짐" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">눈밑꺼짐</a>
+            <a href="concerns.html#hollow/이마꺼짐" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">이마꺼짐</a>
+          </div>
+        </div>
+        <div style="flex: 1 1 280px; min-width: 0; background: #F9FAF9; padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(24px, 3vw, 34px); display: flex; flex-direction: column; gap: 14px;">
+          <a href="concerns.html#sag" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+            <span style="display: flex; align-items: baseline; gap: 12px;"><span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 14px; color: #B2BBB7;">03</span><span style="font-size: clamp(18px, 1.7vw, 22px); font-weight: 600; letter-spacing: -0.04em;">처짐</span></span>
+            <span style="font-size: 11px; letter-spacing: 0.16em; color: #2C7A6B;">→</span>
+          </a>
+          <p style="margin: 0; font-family: 'Newsreader', serif; font-size: 12.5px; letter-spacing: 0.04em; color: #8B948F;">Sagging</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px 10px; margin-top: 4px;">
+            <a href="concerns.html#sag/이중턱" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">이중턱</a>
+            <a href="concerns.html#sag/심부볼 처짐" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">심부볼 처짐</a>
+            <a href="concerns.html#sag/볼처짐" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">볼처짐</a>
+          </div>
+        </div>
+        <div style="flex: 1 1 280px; min-width: 0; background: #F9FAF9; padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(24px, 3vw, 34px); display: flex; flex-direction: column; gap: 14px;">
+          <a href="concerns.html#body" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+            <span style="display: flex; align-items: baseline; gap: 12px;"><span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 14px; color: #B2BBB7;">04</span><span style="font-size: clamp(18px, 1.7vw, 22px); font-weight: 600; letter-spacing: -0.04em;">바디라인</span></span>
+            <span style="font-size: 11px; letter-spacing: 0.16em; color: #2C7A6B;">→</span>
+          </a>
+          <p style="margin: 0; font-family: 'Newsreader', serif; font-size: 12.5px; letter-spacing: 0.04em; color: #8B948F;">Body Line</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px 10px; margin-top: 4px;">
+            <a href="concerns.html#body/팔뚝살" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">팔뚝살</a>
+            <a href="concerns.html#body/뱃살" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">뱃살</a>
+            <a href="concerns.html#body/옆구리살" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">옆구리살</a>
+            <a href="concerns.html#body/러브핸들" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">러브핸들</a>
+            <a href="concerns.html#body/허벅지살" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">허벅지살</a>
+            <a href="concerns.html#body/엉덩이 아랫살" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">엉덩이 아랫살</a>
+            <a href="concerns.html#body/부유방" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">부유방</a>
+            <a href="concerns.html#body/등살" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">등살</a>
+            <a href="concerns.html#body/승모근" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">승모근</a>
+            <a href="concerns.html#body/종아리" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">종아리</a>
+          </div>
+        </div>
+        <div style="flex: 1 1 280px; min-width: 0; background: #F9FAF9; padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(24px, 3vw, 34px); display: flex; flex-direction: column; gap: 14px;">
+          <a href="concerns.html#glow" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+            <span style="display: flex; align-items: baseline; gap: 12px;"><span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 14px; color: #B2BBB7;">05</span><span style="font-size: clamp(18px, 1.7vw, 22px); font-weight: 600; letter-spacing: -0.04em;">광채</span></span>
+            <span style="font-size: 11px; letter-spacing: 0.16em; color: #2C7A6B;">→</span>
+          </a>
+          <p style="margin: 0; font-family: 'Newsreader', serif; font-size: 12.5px; letter-spacing: 0.04em; color: #8B948F;">Radiance</p>
+          <a href="concerns.html#glow" style="margin-top: 4px; font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; align-self: flex-start;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">광채 상세 보기</a>
+        </div>
+        <div style="flex: 1 1 280px; min-width: 0; background: #F9FAF9; padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(24px, 3vw, 34px); display: flex; flex-direction: column; gap: 14px;">
+          <a href="concerns.html#pigment" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+            <span style="display: flex; align-items: baseline; gap: 12px;"><span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 14px; color: #B2BBB7;">06</span><span style="font-size: clamp(18px, 1.7vw, 22px); font-weight: 600; letter-spacing: -0.04em;">색소</span></span>
+            <span style="font-size: 11px; letter-spacing: 0.16em; color: #2C7A6B;">→</span>
+          </a>
+          <p style="margin: 0; font-family: 'Newsreader', serif; font-size: 12.5px; letter-spacing: 0.04em; color: #8B948F;">Pigmentation</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px 10px; margin-top: 4px;">
+            <a href="concerns.html#pigment/기미" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">기미</a>
+            <a href="concerns.html#pigment/잡티" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">잡티</a>
+            <a href="concerns.html#pigment/주근깨" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">주근깨</a>
+            <a href="concerns.html#pigment/흑자" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">흑자</a>
+            <a href="concerns.html#pigment/검버섯" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">검버섯</a>
+            <a href="concerns.html#pigment/오타모반" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">오타모반</a>
+            <a href="concerns.html#pigment/애브넘" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">애브넘</a>
+            <a href="concerns.html#pigment/쥐젖" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">쥐젖</a>
+            <a href="concerns.html#pigment/비립종" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">비립종</a>
+            <a href="concerns.html#pigment/표피낭종" style="font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; line-height: 1.6;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">표피낭종</a>
+          </div>
+        </div>
+        <div style="flex: 1 1 280px; min-width: 0; background: #F9FAF9; padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(24px, 3vw, 34px); display: flex; flex-direction: column; gap: 14px;">
+          <a href="concerns.html#pore" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+            <span style="display: flex; align-items: baseline; gap: 12px;"><span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 14px; color: #B2BBB7;">07</span><span style="font-size: clamp(18px, 1.7vw, 22px); font-weight: 600; letter-spacing: -0.04em;">모공 흉터</span></span>
+            <span style="font-size: 11px; letter-spacing: 0.16em; color: #2C7A6B;">→</span>
+          </a>
+          <p style="margin: 0; font-family: 'Newsreader', serif; font-size: 12.5px; letter-spacing: 0.04em; color: #8B948F;">Pores · Scars</p>
+          <a href="concerns.html#pore" style="margin-top: 4px; font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; align-self: flex-start;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">모공 흉터 상세 보기</a>
+        </div>
+        <div style="flex: 1 1 280px; min-width: 0; background: #F9FAF9; padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(24px, 3vw, 34px); display: flex; flex-direction: column; gap: 14px;">
+          <a href="concerns.html#aging" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+            <span style="display: flex; align-items: baseline; gap: 12px;"><span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 14px; color: #B2BBB7;">08</span><span style="font-size: clamp(18px, 1.7vw, 22px); font-weight: 600; letter-spacing: -0.04em;">안티에이징</span></span>
+            <span style="font-size: 11px; letter-spacing: 0.16em; color: #2C7A6B;">→</span>
+          </a>
+          <p style="margin: 0; font-family: 'Newsreader', serif; font-size: 12.5px; letter-spacing: 0.04em; color: #8B948F;">Anti-aging</p>
+          <a href="concerns.html#aging" style="margin-top: 4px; font-size: 12.5px; color: #4C5652; border-bottom: 1px solid #DCE2DF; padding-bottom: 1px; align-self: flex-start;" style-hover="color: #2C7A6B; border-color: #2C7A6B;">안티에이징 상세 보기</a>
+        </div>
+      </div>
+
+      <div style="margin-top: clamp(24px, 4vh, 40px); display: flex; justify-content: flex-end;"><a href="concerns.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 15px 30px; border: 1px solid #121614; font-size: 11.5px; letter-spacing: 0.2em;" style-hover="background: #2C7A6B; color: #F9FAF9; border-color: #2C7A6B;">ALL CONCERNS <span style="font-size: 14px;">→</span></a></div>
+    </div>
+  </section>
+
   <section id="location" style="padding: clamp(64px, 11vh, 140px) clamp(16px, 3vw, 40px) clamp(48px, 8vh, 100px); border-bottom: 1px solid #E4E9E6;">
     <div style="max-width: 1560px; margin: 0 auto;">
       <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 22px; margin-bottom: clamp(26px, 4vh, 48px);">
         <div>
-          <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">VIII. Location</p>
+          <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">IX. Location</p>
           <h2 style="margin: 0; font-size: clamp(24px, 2.6vw, 40px); font-weight: 600; letter-spacing: -0.045em; line-height: 1.3;">강남역에서 가장 가까운 디테일</h2>
         </div>
         <p style="margin: 0; max-width: 360px; font-size: 14px; line-height: 1.95; color: #6A736F;">강남대로에서 바로 보이는 위치, 1층에서 올라오는 단독 계단. 찾아오는 동선까지 설계했습니다.</p>
@@ -697,7 +887,7 @@
   <section id="reserve" style="padding: clamp(64px, 11vh, 140px) clamp(16px, 3vw, 40px) clamp(56px, 9vh, 110px);">
     <div style="max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(32px, 5vw, 88px); align-items: start;">
       <div data-reveal>
-        <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">IX. Reservation</p>
+        <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">X. Reservation</p>
         <h2 style="margin: 0 0 22px; font-family: 'Newsreader', serif; font-weight: 200; font-size: clamp(32px, 4.4vw, 68px); line-height: 1.04; letter-spacing: -0.035em;">Let’s begin<br /><span style="color: #2C7A6B;">with a plan</span></h2>
         <p style="margin: 0 0 40px; font-size: 15px; line-height: 1.95; color: #4C5652; max-width: 420px;">상담은 설계의 첫 단계입니다. 남겨주신 내용을 바탕으로 담당자가 연락드리며, 편하신 메신저로 바로 문의하셔도 됩니다.</p>
 
@@ -774,7 +964,7 @@
     <div style="max-width: 1560px; margin: 0 auto;">
       <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; padding-bottom: clamp(28px, 4.5vh, 52px); border-bottom: 1px solid #E4E9E6; margin-bottom: clamp(28px, 4.5vh, 52px);">
         <div style="display: flex; align-items: flex-end; gap: clamp(16px, 2.4vw, 32px);">
-          <img loading="lazy" decoding="async" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgaWQ9Il/roIjsnbTslrRfMiIgZGF0YS1uYW1lPSLroIjsnbTslrQgMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMzk2IDcxLjMxIj4KICA8ZGVmcz48L2RlZnM+CiAgPGcgaWQ9Il/roIjsnbTslrRfMS0yIiBkYXRhLW5hbWU9IuugiOydtOyWtCAxIj4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE3My4zNiwzMi4zMWwtMTQuNzguMDNjMS4zOC0xLjc3LDEuODUtMy4zMywxLjg0LTUuNDdsLS4wNy0yMS43MWMwLS44OS0xLjExLTIuMjEtMS41Ni0zLjIzbDE2LjExLjA5YzYuOTMuMDQsMTIuNDUsNS4zNiwxMy41MywxMS45NywxLjU1LDkuNTMtNS4yLDE4LjI5LTE1LjA3LDE4LjMxaDBaTTE4Mi4yOCwyMS45NmMxLjMzLTMuNjEsMS4wNy03LjQ5LS41Mi0xMC44Mi0xLjg1LTMuODUtNS43OC01Ljk2LTkuOTktNS45N2gtNS44OXMuMDEsMjMuMzYuMDEsMjMuMzZjNy4wMSwxLjM5LDEzLjkzLjA5LDE2LjM4LTYuNThaIj48L3BhdGg+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMTAuNDcsMjEuMTVsLTkuNTgtLjAyLTIuODMsNi40OWMtLjc3LDEuNjEtLjU1LDMuMDkuNzMsNC43aC04LjM4YzEuOTMtMi4xNSwzLjE1LTMuOTUsNC4yMS02LjM5bDExLjkxLTI1LjkzLDEyLjg0LDI3LjUzYy44NywxLjg3LDIuMDcsMy4wNSwzLjY2LDQuNzlsLTEwLjAxLjA0YzEuMjMtMS42MSwxLjQzLTIuNy43NS00LjE2bC0zLjI5LTcuMDRoMFpNMzA4Ljk5LDE3LjY5bC0zLjMxLTcuMzctMy4yMSw3LjM4aDYuNTFaIj48L3BhdGg+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMC4yMSwyMS4wOGwtOS41OC0uMDItMy4zNCw3LjUzYy0uNDksMS4xLjMsMi40OCwxLjA4LDMuNzVIMGMxLjExLTEuNjMsMi40Ny0yLjUxLDMuMTgtNC4wNEwxNi4yMi4wM2wxMi4zMSwyNi43Yy45MiwyLjIxLDIuMjQsMy41Nyw0LjA3LDUuNTlsLTEwLjA1LjAyYzEuMzgtMS41MywxLjQzLTIuNzguNzYtNC4yOWwtMy4xMS02Ljk3aDBaTTE4LjU5LDE3LjY0bC0zLjIyLTcuMzQtMy4zMiw3LjM3LDYuNTQtLjAzWiI+PC9wYXRoPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjI0LjQ1LDE4bC02Ljg0LS4wM3YxMC44MnM3Ljg3LS4wNSw3Ljg3LS4wNWMxLjc3LS4wMSwzLjI2LTEuMzksNS4xNS0yLjMzbC0uOTUsNS45NGgtMTkuMjljMS4zNy0xLjgzLDIuMDEtMy40NCwyLTUuNDdsLS4wNi0yMS4wMWMwLTEuMjEtMS4wNS0yLjYtMS41OC0zLjk1bDE4LjcyLS4wMi4wOSw1LjE5Yy0yLjMzLTEuMjctNC4yNS0xLjk1LTYuNjEtMS45M2wtNS4zMi4wNS0uMDMsOS41Niw2LjgyLS4wNGMuOSwwLDIuMDQtLjYxLDMuNDgtMS4xNWwuMDMsNi4wNmMtMS4yNC0uNi0yLjQ3LTEuNi0zLjQ5LTEuNjFaIj48L3BhdGg+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNjYuNzQsMzIuMzNoLTkuMThjMS4wNy0xLjU0LDEuOTUtMi43NCwxLjk1LTQuMzlWNS4yMmwtNS40OS4xNmMtMS43NC4wNS0zLjA2LDEuMTktNC45NiwxLjk4bDEuMTctNS40N2gyNC45OXMuNCw1LjYxLjQsNS42MWMtMS42My0uODYtMy4wNS0yLjE3LTQuNjktMi4ybC02LjA0LS4xMi0uMDIsMjIuNzhjLjIsMS41NS43NywyLjU3LDEuODUsNC4zOFoiPjwvcGF0aD4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM5NiwyNi40NGwtLjk1LDUuOTItMTkuOTUtLjA0YzEuNi0xLjk3LDIuMDctMy40LDIuMDYtNS40NmwtLjA2LTIwLjY1YzAtMS40OC0xLjExLTIuODQtMS44My00LjNoOS42N2MtLjg5LDEuNDYtMi4zMiwyLjUyLTIuMzIsMy45NmwtLjA5LDIyLjkzLDguMzItLjA0YzEuNzksMCwyLjktMS4zLDUuMTUtMi4zMWgwWiI+PC9wYXRoPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTE1LjQyLDI2LjQ2bC0xLjA0LDUuODloLTE5LjczYzEuMTUtMS42MiwyLjA1LTIuOTgsMi4wNS00Ljc1bC0uMDQtMjEuNzJjMC0xLjM0LTEuMDktMi42Ny0xLjgxLTMuOTdoOS41NmMtMS4zOCwxLjc5LTIuMzQsMy4wNS0yLjM0LDUuMDR2MjEuODJsOC4xOC4wOSw1LjE1LTIuNFoiPjwvcGF0aD4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTczLjE1LDI2LjQ4bC0uOTMsNS44Ny0xOS43NC0uMDJjLjk5LTEuNDUsMS45My0yLjgsMS45My00LjM4bC0uMDItMjIuNDNjMC0uOTktLjk3LTIuMTMtMS41OS0zLjU0bDkuMjktLjA4Yy0uODcsMS40OC0yLjMsMi41NC0yLjMsNC4wNGwtLjAyLDIyLjkxLDguNTEtLjEyYzEuNjEtLjAyLDIuNzQtMS4zMSw0Ljg2LTIuMjNoMFoiPjwvcGF0aD4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM1Mi40MSwzMi4zbC05LjA0LjA1Yy43OS0xLjM1LDEuOC0yLjUzLDEuOC0zLjgyVjUuOTNjMC0xLjI2LS45OS0yLjY3LTEuNTMtNGg5LjAxYy0uNTgsMS4xNi0yLjA0LDIuNDUtMi4wNCwzLjU4djIzLjE3Yy4wMSwxLjIxLjk0LDIuMjcsMS44LDMuNjNaIj48L3BhdGg+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMjAuMjgsNzEuMzFsLTEwLjI3LTkuNDYtLjE2LDYuMjIsMS4xOCwyLjQzaC01LjAxYy45My0xLjYsMS4zMi0yLjY2LDEuMzQtNC4xMmwuMS0xMS44MywxMC4yNSw5Ljg1LjA0LTUuOTJjMC0uNzgtLjczLTEuOTUtMS4yLTIuODlsNC43OS0uMDNjLS40MywxLjA2LS45LDIuMDUtLjkxLDIuODlsLS4xNiwxMi44NmgwWiI+PC9wYXRoPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjc5LjAxLDY3LjcybDMuMDktMy40OC0uMTgsNC44OWMtMy4yNiwyLjI2LTcuNjYsMi41OC0xMC45OC4wOC0zLjY3LTIuNzctNC4wNy04LjU5LS42NS0xMS43OCwzLjI1LTMuMDQsOC4zNi0yLjgyLDExLjc4LS42NWwtLjIsNC42N2MtMS42OS0xLjk4LTIuMzUtMy4yNy0zLjk1LTMuNzQtMS44LS41My0zLjg3LS4yNS01LjAxLDEuMjctMS42LDIuMTItMS42Niw1LjIzLS4yNiw3LjUxLDEuMjUsMi4wMyw0LjI2LDIuNzQsNi4zNywxLjIyaDBaIj48L3BhdGg+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMjUuMDIsNjcuNzFjMS4xNy0uOTEsMS43OS0yLjI1LDIuOTItMy42Ni4yOSwxLjUuMjgsMy4zNi0uMDYsNC45OS0zLjM0LDIuNTEtOC4wNiwyLjY0LTExLjMzLS4xMy0zLjQzLTIuOTEtMy41OC04LjcxLS4xNC0xMS42NSwzLjI0LTIuNzYsNy43OS0yLjQ4LDExLjM0LS42Ni4yNCwxLjc1LjI4LDMuMDYtLjQ0LDQuODQtMS4zOS0yLjc5LTMuMDEtNC4xNy01LjUxLTMuOTQtMi43MS4yNS00LjI1LDIuNTItNC4yNSw1LjMzLDAsMS44NS41OSwzLjc0LDEuOTksNC43NywxLjQsMS4wMywzLjc3LDEuNDUsNS40Ny4xM2gwWiI+PC9wYXRoPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTYwLjE4LDY1LjgxbC0uOCw0LjY4LTEwLjM0LjAzLjg4LTIuNTYtLjAyLTkuNTJjMC0uNzMtLjUtMS45LS44NS0yLjg1bDUuMzItLjAyYy0uNTcuOTktMS4xOCwyLjAyLTEuMTcsMi44OGwuMDcsOS41MWMyLjcyLjU5LDQuNC0uMSw2LjkyLTIuMTVaIj48L3BhdGg+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xODQuODYsNzAuNDlsLTQuOTYuMDJjLjM4LTEuMDkuODQtMi4zMS44NC0zLjM5bC0uMDMtOS4wNGMwLS42MS0uNDQtMS42Ny0uNzYtMi41bDUuMDgtLjAyYy0uNSwxLjIxLS45NSwyLjI1LS45NSwzLjI2djcuOTNjMCwxLjExLjI5LDIuMDcuNzgsMy43NWgwWiI+PC9wYXRoPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjQ3LjQ4LDcwLjQ5aC01LjEzYy40MS0xLjEzLjkxLTIuMjcuOTEtM3YtOC42OWMwLS45Ni0uNDQtMi4wNi0uODUtMy4yNGw1LjA3LjAyYy0uNDksMS4xMy0uOTcsMi4yMy0uOTcsMy4yM3Y3Ljk0YzAsMS4xOC40MywyLjI4Ljk3LDMuNzNoMFoiPjwvcGF0aD4KICA8L2c+Cjwvc3ZnPg==" alt="올디테일의원 ALL DETAIL CLINIC" style="display: block; width: clamp(132px, 13vw, 178px); height: auto;" />
+          <img loading="lazy" decoding="async" src="images/logo.svg" alt="올디테일의원 ALL DETAIL CLINIC" style="display: block; width: clamp(132px, 13vw, 178px); height: auto;" />
           <p style="margin: 0 0 2px; font-family: 'Newsreader', serif; font-style: italic; font-weight: 300; font-size: clamp(15px, 1.4vw, 19px); color: #6A736F;">Design &amp; Comfort</p>
         </div>
         <p style="margin: 0; display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px;"><a href="reserve.html" style="border-bottom: 1px solid #DCE2DF; padding-bottom: 2px;">예약 문의,</a><a href="about.html#location" style="border-bottom: 1px solid #DCE2DF; padding-bottom: 2px;">오시는 길</a></p>
@@ -957,7 +1147,7 @@ class Component extends DCLogic {
   }
 
   _baStep(dir) {
-    const order = ['nasolabial', 'lifting', 'booster', 'pigment', 'body'];
+    const order = ['nasolabial','peanut','body','lifting','stem','booster','pigment'];
     const i = order.indexOf(this.state.baCat);
     const n = (i < 0 ? 0 : i + dir + order.length) % order.length;
     this._baGo(order[n]);
@@ -975,7 +1165,7 @@ class Component extends DCLogic {
   open(id) { return () => this.setState({ active: id }); }
 
   _stepProgram(dir) {
-    const order = ['nasolabial','lifting','booster','pigment','body'];
+    const order = ['nasolabial','peanut','body','lifting','stem','booster','pigment'];
     const i = order.indexOf(this.state.active);
     const n = (i < 0 ? 0 : i + dir + order.length) % order.length;
     this.setState({ active: order[n] });
@@ -993,21 +1183,28 @@ class Component extends DCLogic {
       dockClosed: !this.state.dockOpen,
       toggleDock: () => this.setState((s) => ({ dockOpen: !s.dockOpen })),
       closeDock: () => this.setState({ dockOpen: false }),
+      baMoreHref: 'before-after.html#' + this.state.baCat,
       baPickNasolabial: () => this._baGo('nasolabial'),
       baOnNasolabial: this.state.baCat === 'nasolabial',
-      baPickLifting: () => this._baGo('lifting'),
-      baOnLifting: this.state.baCat === 'lifting',
-      baPickBooster: () => this._baGo('booster'),
-      baOnBooster: this.state.baCat === 'booster',
-      baPickPigment: () => this._baGo('pigment'),
-      baOnPigment: this.state.baCat === 'pigment',
+      baShowNasolabial: this.state.baCat === 'nasolabial',
+      baPickPeanut: () => this._baGo('peanut'),
+      baOnPeanut: this.state.baCat === 'peanut',
+      baShowPeanut: this.state.baCat === 'peanut',
       baPickBody: () => this._baGo('body'),
       baOnBody: this.state.baCat === 'body',
-      baShowNasolabial: this.state.baCat === 'nasolabial',
-      baShowLifting: this.state.baCat === 'lifting',
-      baShowBooster: this.state.baCat === 'booster',
-      baShowPigment: this.state.baCat === 'pigment',
       baShowBody: this.state.baCat === 'body',
+      baPickLifting: () => this._baGo('lifting'),
+      baOnLifting: this.state.baCat === 'lifting',
+      baShowLifting: this.state.baCat === 'lifting',
+      baPickStem: () => this._baGo('stem'),
+      baOnStem: this.state.baCat === 'stem',
+      baShowStem: this.state.baCat === 'stem',
+      baPickBooster: () => this._baGo('booster'),
+      baOnBooster: this.state.baCat === 'booster',
+      baShowBooster: this.state.baCat === 'booster',
+      baPickPigment: () => this._baGo('pigment'),
+      baOnPigment: this.state.baCat === 'pigment',
+      baShowPigment: this.state.baCat === 'pigment',
       baOpacity: this.state.baFade ? 0 : 1,
       baPrev: () => this._baStep(-1),
       baNext: () => this._baStep(1),
@@ -1022,6 +1219,8 @@ class Component extends DCLogic {
       openBooster: this.open('booster'),
       openPigment: this.open('pigment'),
       openBody: this.open('body'),
+      openPeanut: this.open('peanut'),
+      openStem: this.open('stem'),
       close: () => this.setState({ active: null }),
       submitted: this.state.submitted,
       notSubmitted: !this.state.submitted,

@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+._*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Node / Vercel (unused, but harmless to guard)
+node_modules/
+.vercel
