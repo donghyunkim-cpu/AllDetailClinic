@@ -23,6 +23,7 @@
 <meta property="og:image:width" content="938">
 <meta property="og:image:height" content="525">
 <link rel="icon" type="image/svg+xml" href="images/symbol.svg">
+<script src="./reveal.js" defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,200..400&display=swap" />
@@ -61,21 +62,23 @@
 
   <dc-import name="Site Header" active="about" hint-size="100%,92px"></dc-import>
 
-  <div data-lnb style="position: sticky; top: var(--adc-header-h, 92px); z-index: 60; display: flex; justify-content: center; gap: clamp(14px, 2.4vw, 34px); overflow-x: auto; padding: 0 clamp(16px, 3vw, 40px); background: rgba(249,250,249,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #E4E9E6;">
+  <div data-lnb style="position: sticky; top: var(--adc-header-h, 92px); z-index: 60; display: flex; justify-content: center; gap: clamp(12px, 2vw, 30px); overflow-x: auto; padding: 0 clamp(16px, 3vw, 40px); background: rgba(249,250,249,0.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #E4E9E6;">
     <a href="#story" style="flex: none; padding: 16px 0; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;">브랜드 스토리</a>
     <a href="#philosophy" style="flex: none; padding: 16px 0; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;">철학</a>
+    <a href="#design" style="flex: none; padding: 16px 0; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;">디자인</a>
     <a href="#comfort" style="flex: none; padding: 16px 0; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;">컴포트</a>
+    <a href="#inventor" style="flex: none; padding: 16px 0; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;">개발진</a>
     <a href="#doctor" style="flex: none; padding: 16px 0; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;">의료진</a>
-    <a href="#hours" style="flex: none; padding: 16px 0; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;">오픈 시간</a>
-    <a href="#location" style="flex: none; padding: 16px 0; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;">오시는 길</a>
+    <a href="#hours" style="flex: none; padding: 16px 0; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;">진료시간</a>
+    <a href="#location" style="flex: none; padding: 16px 0; font-size: 12.5px; letter-spacing: 0.02em; white-space: nowrap;">위치</a>
   </div>
 
   <section style="padding: 92px 0 0;">
     <div style="padding: clamp(40px, 8vh, 88px) clamp(16px, 3vw, 40px) clamp(26px, 4vh, 48px); border-bottom: 1px solid #E4E9E6;">
       <p style="margin: 0 0 clamp(28px, 6vh, 64px); font-size: 10.5px; letter-spacing: 0.2em; color: #8B948F;">ABOUT ALL DETAIL CLINIC</p>
-      <h1 style="margin: 0; font-family: 'Newsreader', serif; font-weight: 200; font-size: clamp(40px, 9vw, 148px); line-height: 0.95; letter-spacing: -0.035em;">It’s all in<br /><span style="color: #2C7A6B;">the details.</span></h1>
+      <h1 style="margin: 0; font-family: 'Newsreader', serif; font-weight: 200; font-size: clamp(40px, 9vw, 148px); line-height: 0.95; letter-spacing: -0.035em;">Design<br /><span style="color: #2C7A6B;">&amp; Comfort</span></h1>
       <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; margin-top: clamp(24px, 4vh, 44px);">
-        <p style="margin: 0; font-size: 14.5px; line-height: 1.9; color: #4C5652; max-width: 520px;">올디테일의원은 디자인과 통증 감소를 디테일하게 설계하는 피부과입니다. 진단부터 시술, 회복까지 흐름 전체를 하나의 설계로 봅니다.</p>
+        <p style="margin: 0; font-size: 14.5px; line-height: 1.9; color: #4C5652; max-width: 520px;">올디테일의원은 디자인과 통증을 줄이는 마취를 디테일하게 하는 피부과입니다.</p>
         <p style="margin: 0; font-size: 11px; letter-spacing: 0.16em; color: #8B948F;">GANGNAM, SEOUL · OPENING JAN 2027</p>
       </div>
     </div>
@@ -89,15 +92,28 @@
     <div style="max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(28px, 5vw, 80px); align-items: start;">
       <div style="position: sticky; top: 124px;">
         <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">I. Brand Story</p>
-        <h2 style="margin: 0 0 24px; font-size: clamp(26px, 2.8vw, 42px); font-weight: 600; line-height: 1.36; letter-spacing: -0.045em;">디테일은 취향이 아니라<br />기준입니다</h2>
+        <h2 style="margin: 0 0 24px; font-size: clamp(26px, 2.8vw, 42px); font-weight: 600; line-height: 1.36; letter-spacing: -0.045em;">디자인과 마취,<br />두 가지에서 시작했습니다</h2>
         <p style="margin: 0; font-family: 'Newsreader', serif; font-style: italic; font-weight: 300; font-size: 17px; line-height: 1.6; color: #2C7A6B;">Design &amp; Comfort</p>
       </div>
       <div>
-        <p style="margin: 0 0 30px; font-size: 15.5px; line-height: 2.05; color: #37413D; max-width: 640px;">피부과를 다녀본 사람들은 대체로 두 가지를 기억합니다. 결과가 기대와 달랐던 경험, 그리고 시술대 위에서 참아야 했던 시간. 올디테일의원은 그 두 가지를 줄이는 것에서 시작했습니다.</p>
-        <p style="margin: 0 0 30px; font-size: 15.5px; line-height: 2.05; color: #37413D; max-width: 640px;">결과가 달라지는 지점은 대개 장비나 성분이 아니라 설계에 있습니다. 어디를, 어떤 깊이로, 어떤 순서로 다룰지가 정해지지 않은 상태에서 시작하는 시술은 같은 장비로도 전혀 다른 결과를 만듭니다.<sup style="font-family: 'Newsreader', serif; font-size: 11px; color: #2C7A6B;">1</sup> 그래서 우리는 시술 전 3D 데이터로 피부를 읽고, 원장이 직접 얼굴 위에 선을 그린 뒤에야 장비를 듭니다.</p>
-        <p style="margin: 0 0 36px; font-size: 15.5px; line-height: 2.05; color: #37413D; max-width: 640px;">통증도 같은 방식으로 다룹니다. 마취를 바르는 것과 마취가 자리 잡는 것은 다른 일입니다. 우리는 약효가 충분히 오를 때까지 기다린 뒤 시작합니다. 그 기다림이 진료 시간을 늘리더라도, 그것이 우리가 지키려는 기준입니다.</p>
-        <p style="margin: 0 0 clamp(40px, 6vh, 64px); padding-left: 16px; border-left: 1px solid #DCE2DF; font-size: 12.5px; line-height: 1.9; color: #8B948F; max-width: 480px;"><sup style="font-family: 'Newsreader', serif; color: #2C7A6B;">1</sup> &nbsp;올디테일의 시그니처 프로그램은 모두 이 원칙 위에 설계되어 있습니다. 진단 · 상담 · 디자인 · 마취 · 조합 · 사후 관리가 하나의 흐름입니다.</p>
+        <p style="margin: 0 0 clamp(36px, 5vh, 52px); font-size: clamp(16.5px, 1.6vw, 20px); line-height: 1.95; letter-spacing: -0.03em; color: #37413D; max-width: 660px;">피부과에서 아쉬운 경험을 한 사람들은 대체로 두 가지를 기억합니다. 결과가 기대와 달랐던 경험, 그리고 시술대 위에서 참아야 했던 시간. 올디테일의원은 그 두 가지를 줄이는 것에서 시작했습니다.</p>
 
+        <div style="border-top: 1px solid #121614; margin-bottom: clamp(40px, 6vh, 64px); max-width: 660px;">
+          <div style="display: grid; grid-template-columns: 34px 1fr; gap: clamp(12px, 1.6vw, 22px); padding: clamp(24px, 3.4vh, 34px) 0; border-bottom: 1px solid #E4E9E6;">
+            <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 16px; color: #B2BBB7;">01</span>
+            <div>
+              <h3 style="margin: 0 0 14px; font-size: clamp(18px, 1.8vw, 23px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.45;">디테일한 디자인이 시술의 결과를 바꿉니다</h3>
+              <p style="margin: 0; font-size: 15px; line-height: 2.0; color: #4C5652;">사람의 얼굴과 몸은 저마다 다른 곡선과 비율을 가지고 있습니다. 획일적인 시술은 결코 자연스러운 아름다움을 만들 수 없습니다. 올디테일의원은 시술 전, 당신의 해부학적 특징과 표정의 변화까지 고려하여 가장 세밀하게 디자인합니다. 섬세한 디자인은 시술의 효과를 극대화하고 나다운 자연스러움을 완성시키는 첫 걸음입니다.</p>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 34px 1fr; gap: clamp(12px, 1.6vw, 22px); padding: clamp(24px, 3.4vh, 34px) 0; border-bottom: 1px solid #E4E9E6;">
+            <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 16px; color: #B2BBB7;">02</span>
+            <div>
+              <h3 style="margin: 0 0 14px; font-size: clamp(18px, 1.8vw, 23px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.45;">통증에 대한 배려가 치료의 시작입니다</h3>
+              <p style="margin: 0; font-size: 15px; line-height: 2.0; color: #4C5652;">아름다워지기 위해 통증을 억지로 참아내야 하는 시대는 지났습니다. 우리는 당신이 마주할 두려움과 긴장감까지 깊이 공감합니다. 올디테일의원만의 특별하고 섬세한 마취 테크닉을 통해, 시술 중 느낄 수 있는 통증을 최소화합니다. 안도감 속에서 편안하게 케어받는 순간, 피부는 진정한 회복을 시작합니다.</p>
+            </div>
+          </div>
+        </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 1.4vw, 18px);">
           <figure style="margin: 0;">
             <img loading="lazy" decoding="async" src="images/int-entrance.jpg" alt="" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: #EDF1EF;" />
@@ -162,6 +178,67 @@
     </div>
   </section>
 
+  <section id="design" style="padding: clamp(64px, 11vh, 140px) clamp(16px, 3vw, 40px) clamp(48px, 8vh, 100px); border-bottom: 1px solid #E4E9E6;">
+    <div style="max-width: 1560px; margin: 0 auto;">
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 22px; margin-bottom: clamp(30px, 5vh, 58px);">
+        <div>
+          <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">III. Design</p>
+          <h2 style="margin: 0; font-size: clamp(26px, 3vw, 44px); font-weight: 600; letter-spacing: -0.05em; line-height: 1.3;">What is<br />All Detail Design?</h2>
+        </div>
+        <p style="margin: 0; max-width: 380px; font-size: 14px; line-height: 1.95; color: #6A736F;">디자인은 취향의 문제가 아닙니다. 비율 · 대칭 · 리스크라는 세 가지 기준 위에서 설계합니다.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: #E4E9E6; border: 1px solid #E4E9E6;">
+        <div style="background: #F9FAF9; display: flex; flex-direction: column;">
+          <figure style="margin: 0; position: relative; background: #EDF1EF;">
+            <img loading="lazy" decoding="async" src="images/design-ratio-face.jpg" alt="정면 얼굴 가로 1:1:1:1:1 · 세로 1:1:1 비율 기준" style="width: 100%; aspect-ratio: 61/68; object-fit: cover; display: block;" />
+            <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none;">
+              <div style="position: absolute; left: 20%; top: 0; bottom: 0; width: 1px; background: rgba(44,122,107,0.55);"></div>
+              <div style="position: absolute; left: 40%; top: 0; bottom: 0; width: 1px; background: rgba(44,122,107,0.55);"></div>
+              <div style="position: absolute; left: 60%; top: 0; bottom: 0; width: 1px; background: rgba(44,122,107,0.55);"></div>
+              <div style="position: absolute; left: 80%; top: 0; bottom: 0; width: 1px; background: rgba(44,122,107,0.55);"></div>
+              <div style="position: absolute; top: 33.3%; left: 0; right: 0; height: 1px; background: rgba(249,250,249,0.75);"></div>
+              <div style="position: absolute; top: 66.6%; left: 0; right: 0; height: 1px; background: rgba(249,250,249,0.75);"></div>
+              <span style="position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); padding: 5px 10px; background: rgba(12,18,16,0.66); color: #F9FAF9; font-family: 'Newsreader', serif; font-size: 11px; letter-spacing: 0.1em; white-space: nowrap;">가로 1:1:1:1:1 &nbsp;·&nbsp; 세로 1:1:1</span>
+            </div>
+          </figure>
+          <div style="padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(26px, 3vw, 36px);">
+            <p style="margin: 0 0 14px; font-family: 'Newsreader', serif; font-style: italic; font-size: 24px; color: #B2BBB7;">01</p>
+            <h3 style="margin: 0 0 14px; font-size: clamp(17px, 1.7vw, 21px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.45;">이상적인 비율을 기준으로 삼되<br />본인의 매력포인트는 살립니다</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.95; color: #4C5652;">‘Averageness Hypothesis’에 따라 사람들이 가장 아름답고 호감 간다고 느끼는 비율이 있습니다. 평균에서 살짝 벗어난 것은 본인의 매력이 되지만, 크게 벗어난 것은 약점이 되기도 합니다. 올디테일 디자인은 이 매력포인트를 잘 캐치합니다. 매력포인트를 살리되 개선할 부분들을 우선순위에 따라 정리하여 가장 중요도 높은 시술부터 제안합니다.</p>
+          </div>
+        </div>
+
+        <div style="background: #F9FAF9; display: flex; flex-direction: column;">
+          <figure style="margin: 0; position: relative; background: #EDF1EF;">
+            <img loading="lazy" decoding="async" src="images/design-asym-face.jpg" alt="얼굴 정중선 기준 비대칭 평가" style="width: 100%; aspect-ratio: 60/62; object-fit: cover; display: block;" />
+            <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none;">
+              <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(44,122,107,0.7);"></div>
+              <span style="position: absolute; left: 10px; bottom: 10px; padding: 5px 9px; background: rgba(12,18,16,0.62); color: #F9FAF9; font-family: 'Newsreader', serif; font-size: 11px; letter-spacing: 0.1em;">L : R &nbsp;3 : 1</span>
+            </div>
+          </figure>
+          <div style="padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(26px, 3vw, 36px);">
+            <p style="margin: 0 0 14px; font-family: 'Newsreader', serif; font-style: italic; font-size: 24px; color: #B2BBB7;">02</p>
+            <h3 style="margin: 0 0 14px; font-size: clamp(17px, 1.7vw, 21px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.45;">비대칭을 교정합니다</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.95; color: #4C5652;">인간의 뇌는 비대칭인 것을 볼 때보다 대칭인 것을 볼 때 에너지를 훨씬 덜 쓰기 때문에 대칭적인 얼굴을 선호합니다. 모든 얼굴이 완벽하게 대칭일 수는 없지만, 가장 비대칭적인 요소를 고려하여 샷수를 배분합니다. 왼쪽과 오른쪽을 3:1로 배분하거나 아예 한쪽에만 시술하는 경우도 있습니다.</p>
+          </div>
+        </div>
+
+        <div style="background: #F9FAF9; display: flex; flex-direction: column;">
+          <figure style="margin: 0; position: relative; background: #EDF1EF;">
+            <img loading="lazy" decoding="async" src="images/design-risk-2.jpg" alt="원장이 환자의 옆볼을 가리키며 설명하는 모습" style="width: 100%; aspect-ratio: 61/68; object-fit: cover; object-position: 42% 44%; display: block;" />
+            <span aria-hidden="true" style="position: absolute; left: 10px; bottom: 10px; padding: 5px 9px; background: rgba(12,18,16,0.62); color: #F9FAF9; font-family: 'Newsreader', serif; font-size: 11px; letter-spacing: 0.1em;">AVOID &nbsp;·&nbsp; 옆볼</span>
+          </figure>
+          <div style="padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(26px, 3vw, 36px);">
+            <p style="margin: 0 0 14px; font-family: 'Newsreader', serif; font-style: italic; font-size: 24px; color: #B2BBB7;">03</p>
+            <h3 style="margin: 0 0 14px; font-size: clamp(17px, 1.7vw, 21px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.45;">환자에게 리스크가 있는 부위는<br />반드시 설명하고 피합니다</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.95; color: #4C5652;">동양인은 옆볼이 꺼지는 것을 선호하지 않습니다. 동양인에게 울쎄라를 할 때는 반드시 옆볼을 피해서 진행합니다. 50대 이상이 턱보톡스를 받을 때는 피부의 탄력을 잘 평가하고 받아야 합니다. 탄력이 많이 떨어지는데 턱보톡스를 맞고 싶다고 하시면, 저희가 먼저 시술하지 않는 것을 권유드립니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="comfort" style="position: relative; overflow: hidden; padding: clamp(64px, 11vh, 140px) clamp(16px, 3vw, 40px) clamp(56px, 9vh, 120px); background: #C6E2DA; color: #0E1F1B; border-bottom: 1px solid #A8CFC5;">
     <div aria-hidden="true" style="position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;">
       <div style="position: absolute; inset: -12% -26%; background: repeating-linear-gradient(90deg, rgba(14,31,27,0.07) 0 1px, rgba(14,31,27,0) 1px 132px); animation: adcDriftMint 32s linear infinite;"></div>
@@ -174,42 +251,46 @@
     <div style="position: relative; z-index: 1; max-width: 1560px; margin: 0 auto;">
       <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: clamp(32px, 6vh, 68px);">
         <div>
-          <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #3E6B61;">III. Comfort</p>
-          <h2 style="margin: 0 0 22px; font-family: 'Newsreader', serif; font-weight: 200; font-size: clamp(34px, 5.4vw, 88px); line-height: 1.0; letter-spacing: -0.035em; color: #0E1F1B;">Comfort<span style="color: #12463C;"> is in</span><br />the details</h2>
+          <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #3E6B61;">IV. Comfort</p>
+          <h2 style="margin: 0; font-size: clamp(26px, 3vw, 44px); font-weight: 600; letter-spacing: -0.05em; line-height: 1.3; color: #0E1F1B;">What is<br />All Detail Comfort?</h2>
         </div>
         <p style="margin: 0; font-family: 'Newsreader', serif; font-style: italic; font-weight: 300; font-size: clamp(19px, 2vw, 28px); line-height: 1.55; color: #2C5C52; max-width: 340px; text-align: right;">“Treatment should not be<br />a time you endure.”</p>
       </div>
 
-      <div style="display: flex; flex-wrap: wrap; gap: 1px; background: #A8CFC5; border: 1px solid #A8CFC5;">
-        <div style="flex: 1 1 210px; min-width: 0; background: #C6E2DA; padding: clamp(24px, 3vw, 36px) clamp(18px, 2vw, 26px) clamp(30px, 4vw, 44px);">
-          <p style="margin: 0 0 18px; font-family: 'Newsreader', serif; font-style: italic; font-size: 26px; color: #6F9B92;">01</p>
-          <h3 style="margin: 0 0 10px; font-size: 17.5px; font-weight: 600; letter-spacing: -0.03em;">연고 마취</h3>
-          <p style="margin: 0; font-size: 13.5px; line-height: 1.85; color: #2E5A51;">고농도 연고를 밀폐 도포해 피부 표면의 감각을 먼저 낮춥니다.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: #A8CFC5; border: 1px solid #A8CFC5;">
+        <div style="background: #C6E2DA; display: flex; flex-direction: column;">
+          <figure style="margin: 0; background: #B5D8CE;">
+            <img loading="lazy" decoding="async" src="images/comfort-needle.jpg" alt="특수 제작 저통증 마이크로 바늘" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;" />
+          </figure>
+          <div style="padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(26px, 3vw, 36px);">
+            <p style="margin: 0 0 14px; font-family: 'Newsreader', serif; font-style: italic; font-size: 24px; color: #6F9B92;">01</p>
+            <h3 style="margin: 0 0 14px; font-size: clamp(17px, 1.7vw, 21px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.45;">저통증 ‘마이크로 바늘’을<br />개발하였습니다</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.95; color: #2E5A51;">바늘이 가늘수록 통각 신경 세포 자극을 덜 주게 됩니다. 또한 조직 손상을 최소화할 수 있습니다. 올디테일의원은 보톡스를 놓을 때 쓰는 인슐린 바늘보다도 얇은 바늘을 특수 제작하였습니다.</p>
+          </div>
         </div>
-        <div style="flex: 1 1 210px; min-width: 0; background: #C6E2DA; padding: clamp(24px, 3vw, 36px) clamp(18px, 2vw, 26px) clamp(30px, 4vw, 44px);">
-          <p style="margin: 0 0 18px; font-family: 'Newsreader', serif; font-style: italic; font-size: 26px; color: #6F9B92;">02</p>
-          <h3 style="margin: 0 0 10px; font-size: 17.5px; font-weight: 600; letter-spacing: -0.03em;">40분의 대기</h3>
-          <p style="margin: 0; font-size: 13.5px; line-height: 1.85; color: #2E5A51;">연고 마취가 최대의 효과를 내는 40분을 반드시 기다립니다.</p>
+
+        <div style="background: #C6E2DA; display: flex; flex-direction: column;">
+          <figure style="margin: 0; position: relative; aspect-ratio: 4/3; overflow: hidden; background: #B5D8CE;">
+            <img loading="lazy" decoding="async" src="images/cert-application-card.jpg" alt="출원사실증명원 — 출원번호 특허-2026-0157289, 출원일 2026년 8월 21일, 발명의 명칭 개선된 지방분해 효과 및 저통증 특성을 갖는 지방 분해용 주사제 조성물" style="width: 100%; height: 100%; object-fit: contain; display: block; background: #FFFFFF; border: 1px solid #A8CFC5; box-shadow: 0 10px 28px rgba(14,31,27,0.12);" />
+            <span style="position: absolute; right: 10px; top: 10px; padding: 4px 8px; background: rgba(14,31,27,0.55); color: #F9FAF9; font-size: 8.5px; letter-spacing: 0.1em; white-space: nowrap;">개인정보 마스킹</span>
+          </figure>
+          <div style="padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(26px, 3vw, 36px);">
+            <p style="margin: 0 0 14px; font-family: 'Newsreader', serif; font-style: italic; font-size: 24px; color: #6F9B92;">02</p>
+            <h3 style="margin: 0 0 14px; font-size: clamp(17px, 1.7vw, 21px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.45;">통증이 감소되고 효과가 증가된<br />지방분해주사액을 개발하였습니다</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.95; color: #2E5A51;">올디테일의원은 개선된 지방분해 효과 및 저통증 특성을 갖는 지방 분해용 주사제 조성물 및 이를 함유하는 주사 제제를 직접 개발하였습니다. 약물이 진피와 지방층으로 주입될 때 느끼는 통증을 획기적으로 줄였습니다.</p>
+          </div>
         </div>
-        <div style="flex: 1 1 210px; min-width: 0; background: #C6E2DA; padding: clamp(24px, 3vw, 36px) clamp(18px, 2vw, 26px) clamp(30px, 4vw, 44px);">
-          <p style="margin: 0 0 18px; font-family: 'Newsreader', serif; font-style: italic; font-size: 26px; color: #6F9B92;">03</p>
-          <h3 style="margin: 0 0 10px; font-size: 17.5px; font-weight: 600; letter-spacing: -0.03em;">신경 마취</h3>
-          <p style="margin: 0; font-size: 13.5px; line-height: 1.85; color: #2E5A51;">표면만으로 부족한 시술에는 타겟 부위의 심부 통증 경로를 함께 차단합니다.</p>
-        </div>
-        <div style="flex: 1 1 210px; min-width: 0; background: #C6E2DA; padding: clamp(24px, 3vw, 36px) clamp(18px, 2vw, 26px) clamp(30px, 4vw, 44px);">
-          <p style="margin: 0 0 18px; font-family: 'Newsreader', serif; font-style: italic; font-size: 26px; color: #6F9B92;">04</p>
-          <h3 style="margin: 0 0 10px; font-size: 17.5px; font-weight: 600; letter-spacing: -0.03em;">냉각 마취</h3>
-          <p style="margin: 0; font-size: 13.5px; line-height: 1.85; color: #2E5A51;">스킨부스터를 맞는 고객은 표면 냉각을 통해 고통을 10% 이하로 줄입니다.</p>
-        </div>
-        <div style="flex: 1 1 210px; min-width: 0; background: #C6E2DA; padding: clamp(24px, 3vw, 36px) clamp(18px, 2vw, 26px) clamp(30px, 4vw, 44px);">
-          <p style="margin: 0 0 18px; font-family: 'Newsreader', serif; font-style: italic; font-size: 26px; color: #6F9B92;">05</p>
-          <h3 style="margin: 0 0 10px; font-size: 17.5px; font-weight: 600; letter-spacing: -0.03em;">수면 마취</h3>
-          <p style="margin: 0; font-size: 13.5px; line-height: 1.85; color: #2E5A51;">금식과 수면 마취 주기 1달을 잘 지킨 고객은 요청 시 수면 마취도 가능합니다.</p>
-        </div>
-        <div style="flex: 1 1 210px; min-width: 0; background: #C6E2DA; padding: clamp(24px, 3vw, 36px) clamp(18px, 2vw, 26px) clamp(30px, 4vw, 44px);">
-          <p style="margin: 0 0 18px; font-family: 'Newsreader', serif; font-style: italic; font-size: 26px; color: #6F9B92;">06</p>
-          <h3 style="margin: 0 0 10px; font-size: 17.5px; font-weight: 600; letter-spacing: -0.03em;">저통증 시술</h3>
-          <p style="margin: 0; font-size: 13.5px; line-height: 1.85; color: #2E5A51;">시술 효과가 떨어지지 않으면서 통증을 줄이는 다양한 시술 방법을 개발했습니다.</p>
+
+        <div style="background: #C6E2DA; display: flex; flex-direction: column;">
+          <figure style="margin: 0; background: #B5D8CE;">
+            <img loading="lazy" decoding="async" src="images/nerve-map.jpg" alt="얼굴 부위별 감각신경 지배 영역" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;" />
+          </figure>
+          <div style="padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(26px, 3vw, 36px);">
+            <p style="margin: 0 0 14px; font-family: 'Newsreader', serif; font-style: italic; font-size: 24px; color: #6F9B92;">03</p>
+            <h3 style="margin: 0 0 14px; font-size: clamp(17px, 1.7vw, 21px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.45;">모든 부위가 커버되도록<br />신경마취를 디테일하게 합니다</h3>
+            <p style="margin: 0 0 16px; font-size: 14px; line-height: 1.95; color: #2E5A51;">대부분의 의원들은 infraorbital, mental, supratrochlear, supraorbital nerve 정도의 부위만 신경마취를 진행합니다. 그러면 얼굴의 가운데만 안 아프고 가측은 여전히 아픕니다.</p>
+            <p style="margin: 0; padding: 14px 16px; background: #B5D8CE; font-size: 13.5px; line-height: 1.9; color: #0E1F1B;">올디테일의원은 buccal, auriculotemporal, zygomaticotemporal, zygomaticofacial nerve까지 모두 마취하여 얼굴 전체 통증을 최소화합니다.</p>
+          </div>
         </div>
       </div>
 
@@ -220,45 +301,98 @@
     </div>
   </section>
 
-  <section id="doctor" style="padding: clamp(64px, 11vh, 140px) clamp(16px, 3vw, 40px) clamp(48px, 8vh, 100px); border-bottom: 1px solid #E4E9E6;">
+<section id="inventor" style="padding: clamp(64px, 11vh, 140px) clamp(16px, 3vw, 40px) clamp(48px, 8vh, 100px); border-bottom: 1px solid #E4E9E6;">
     <div style="max-width: 1560px; margin: 0 auto;">
       <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 22px; margin-bottom: clamp(28px, 5vh, 56px);">
         <div>
-          <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">IV. Doctor</p>
-          <h2 style="margin: 0; font-family: 'Newsreader', serif; font-weight: 200; font-size: clamp(32px, 4.6vw, 72px); line-height: 1.02; letter-spacing: -0.035em;">The hand<span style="color: #2C7A6B;"> that draws</span></h2>
+          <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">V. All Detail Design &amp; Anesthesia Inventor</p>
+          <h2 style="margin: 0; font-family: 'Newsreader', serif; font-weight: 200; font-size: clamp(32px, 4.6vw, 72px); line-height: 1.02; letter-spacing: -0.035em;">Invented<span style="color: #2C7A6B;"> here only</span></h2>
         </div>
         <p style="margin: 0; max-width: 360px; font-size: 14px; line-height: 1.95; color: #6A736F;">설계를 그리는 사람이 곧 시술하는 사람입니다. 상담과 디자인, 시술과 사후 관리를 같은 손이 책임집니다.</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(24px, 4vw, 72px); align-items: start; border-top: 1px solid #121614; padding-top: clamp(24px, 4vh, 44px);">
-        <figure style="margin: 0;">
-          <img loading="lazy" decoding="async" src="images/doctor-opt.jpg" alt="대표원장 조주형" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; background: #EDF1EF;" />
-          <figcaption style="margin-top: 10px; font-size: 10.5px; letter-spacing: 0.16em; color: #8B948F;">FIG 05. &nbsp; 대표원장 조주형</figcaption>
-        </figure>
-
-        <div>
-          <p style="margin: 0 0 10px; font-family: 'Newsreader', serif; font-size: 15px; letter-spacing: 0.06em; color: #8B948F;">Cho Joo Hyung, M.D.</p>
-          <h3 style="margin: 0 0 28px; font-size: clamp(26px, 2.8vw, 40px); font-weight: 600; letter-spacing: -0.045em;">조주형 <span style="font-size: 0.62em; font-weight: 500; color: #6A736F;">대표원장</span></h3>
-          <p style="margin: 0 0 36px; padding-left: 16px; border-left: 1px solid #DCE2DF; font-family: 'Newsreader', serif; font-style: italic; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.7; color: #2C7A6B;">“Treatment should not be a time you endure.<br />It should be a time you take care of yourself.”</p>
-          <p style="margin: 0 0 44px; font-size: 15px; line-height: 2.0; color: #37413D; max-width: 560px;">피부 시술은 통증을 참아내는 시간이 아니라, 나를 가꾸는 편안한 시간이어야 한다고 생각합니다. 그래서 3D 데이터로 직접 분석하고, 얼굴 위에 직접 그리고, 마취가 자리 잡을 때까지 기다립니다.</p>
-
-          <div data-cred style="display: grid; grid-template-columns: 88px 1fr; gap: 0 clamp(14px, 2vw, 28px); border-top: 1px solid #E4E9E6;">
-            <p style="margin: 0; padding: 20px 0 6px; font-size: 10.5px; letter-spacing: 0.18em; color: #8B948F;">EDUCATION</p>
-            <div style="padding: 20px 0 6px; border-bottom: 1px solid #E4E9E6;">
-              <p style="margin: 0 0 8px; font-size: 14.5px; line-height: 1.7;">서울대학교 의과대학 졸업</p>
-              <p style="margin: 0 0 14px; font-size: 14.5px; line-height: 1.7;">세종과학고등학교 졸업</p>
-            </div>
-            <p style="margin: 0; padding: 20px 0 6px; font-size: 10.5px; letter-spacing: 0.18em; color: #8B948F;">CAREER</p>
-            <div style="padding: 20px 0 6px; border-bottom: 1px solid #E4E9E6;">
-              <p style="margin: 0 0 8px; font-size: 14.5px; line-height: 1.7;">올디테일의원 대표원장</p>
-              <p style="margin: 0 0 14px; font-size: 14.5px; line-height: 1.7;">전) 강남아이디의원 원장</p>
-            </div>
-            <p style="margin: 0; padding: 20px 0 6px; font-size: 10.5px; letter-spacing: 0.18em; color: #8B948F;">ACTIVITY</p>
-            <div style="padding: 20px 0 6px; border-bottom: 1px solid #E4E9E6;">
-              <p style="margin: 0 0 14px; font-size: 14.5px; line-height: 1.7;">미스코리아 심사위원</p>
-            </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(24px, 4vw, 72px); align-items: stretch; border-top: 1px solid #121614; padding-top: clamp(24px, 4vh, 44px);">
+        <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 36px;">
+          <div>
+            <p style="margin: 0 0 18px; font-size: 10.5px; letter-spacing: 0.2em; color: #2C7A6B;">ALL DETAIL DESIGN &amp; ANESTHESIA</p>
+            <h3 style="margin: 0 0 26px; font-size: clamp(22px, 2.4vw, 36px); font-weight: 600; letter-spacing: -0.05em; line-height: 1.3;">올디테일의원만의<br />프리미엄 기술력</h3>
+            <p style="margin: 0 0 30px; font-size: clamp(30px, 3.4vw, 48px); font-weight: 700; letter-spacing: -0.05em; line-height: 1.18; background: linear-gradient(90deg, #2C7A6B, #6FBFAE 55%, #2C7A6B); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: #2C7A6B;">올디테일 디자인&amp;마취</p>
+            
+            <p style="margin: 0; font-size: clamp(15.5px, 1.5vw, 19px); line-height: 2.05; color: #37413D; max-width: 480px;">서울대 의대 출신 조주형 대표원장의 끊임없는 연구로 만들어진,<br />오직 올디테일의원에서만 만날 수 있는 시스템입니다.</p>
+          </div>
+          <div style="border-top: 1px solid #E4E9E6;">
+            <a href="#design" style="display: grid; grid-template-columns: 44px 1fr auto; gap: 16px; align-items: baseline; padding: 20px 2px; border-bottom: 1px solid #E4E9E6;" style-hover="background: #F2F5F3; color: #121614;">
+              <span style="font-family: 'Newsreader', serif; font-size: 14px; color: #8B948F;">01</span>
+              <span>
+                <span style="display: block; font-size: 16.5px; font-weight: 600; letter-spacing: -0.03em;">올디테일 디자인 시스템</span>
+                <span style="display: block; margin-top: 6px; font-size: 13px; line-height: 1.8; color: #6A736F;">시술 전, 얼굴과 바디 위에 펜으로 직접 설계합니다.</span>
+              </span>
+              <span style="font-size: 12px; letter-spacing: 0.14em; color: #2C7A6B;">→</span>
+            </a>
+            <a href="#design" style="display: grid; grid-template-columns: 44px 1fr auto; gap: 16px; align-items: baseline; padding: 20px 2px; border-bottom: 1px solid #E4E9E6;" style-hover="background: #F2F5F3; color: #121614;">
+              <span style="font-family: 'Newsreader', serif; font-size: 14px; color: #8B948F;">02</span>
+              <span>
+                <span style="display: block; font-size: 16.5px; font-weight: 600; letter-spacing: -0.03em;">올디테일 마취 시스템</span>
+                <span style="display: block; margin-top: 6px; font-size: 13px; line-height: 1.8; color: #6A736F;">단계를 쌓아 통증을 최소화하는 마취 프로토콜입니다.</span>
+              </span>
+              <span style="font-size: 12px; letter-spacing: 0.14em; color: #2C7A6B;">→</span>
+            </a>
           </div>
         </div>
+
+        <figure style="margin: 0; position: relative; min-height: 420px;">
+          <img loading="lazy" decoding="async" src="images/doctor-opt.jpg" alt="대표원장 조주형" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; display: block; background: #EDF1EF;" />
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: clamp(18px, 2.4vw, 30px); background: linear-gradient(to top, rgba(18,22,20,0.55), rgba(18,22,20,0)); color: #F9FAF9;">
+            <p style="margin: 0 0 4px; font-family: 'Newsreader', serif; font-size: 13px; letter-spacing: 0.08em; opacity: 0.85;">Cho Joo Hyung, M.D.</p>
+            <p style="margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -0.03em;">조주형 대표원장 <span style="font-weight: 400; font-size: 13px; opacity: 0.85;">— 디자인 &amp; 마취 시스템 개발</span></p>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="doctor" style="padding: clamp(64px, 11vh, 140px) clamp(16px, 3vw, 40px) clamp(48px, 8vh, 100px); border-bottom: 1px solid #E4E9E6;">
+    <div style="max-width: 1560px; margin: 0 auto;">
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 22px; margin-bottom: clamp(30px, 5vh, 58px);">
+        <div>
+          <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">VI. Doctors</p>
+          <h2 style="margin: 0; font-size: clamp(26px, 3vw, 44px); font-weight: 600; letter-spacing: -0.05em; line-height: 1.3;">의료진</h2>
+        </div>
+        <p style="margin: 0; max-width: 360px; font-size: 14px; line-height: 1.95; color: #6A736F;">상담과 디자인, 시술과 사후 관리를 같은 손이 책임집니다. 담당 원장이 회차 내내 바뀌지 않습니다.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(18px, 2.4vw, 34px); border-top: 1px solid #121614; padding-top: clamp(24px, 4vh, 44px);">
+        <article style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(16px, 2vw, 26px); align-items: start;">
+          <figure style="margin: 0; display: flex; align-items: center; justify-content: center; aspect-ratio: 4/5; background: #EDF1EF; border: 1px solid #E4E9E6;">
+            <span style="font-size: 10.5px; letter-spacing: 0.18em; color: #B2BBB7;">PHOTO</span>
+          </figure>
+          <div>
+            <p style="margin: 0 0 10px; font-size: 10.5px; letter-spacing: 0.18em; color: #2C7A6B;">DOCTOR</p>
+            <h3 style="margin: 0 0 6px; font-size: clamp(20px, 2vw, 26px); font-weight: 600; letter-spacing: -0.04em;">신지연</h3>
+            <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-size: 13.5px; letter-spacing: 0.04em; color: #8B948F;">Shin Ji Yeon, M.D.</p>
+            <div style="border-top: 1px solid #E4E9E6;">
+              <p style="margin: 0; padding: 11px 0; border-bottom: 1px solid #EDF0EE; font-size: 13.5px; line-height: 1.7; color: #37413D;">서울대학교 의과대학 졸업</p>
+              <p style="margin: 0; padding: 11px 0; border-bottom: 1px solid #EDF0EE; font-size: 13.5px; line-height: 1.7; color: #37413D;">전) 아름다운의원 원장</p>
+              <p style="margin: 0; padding: 11px 0; font-size: 13.5px; line-height: 1.7; color: #37413D;">대한미용성형레이저의학회</p>
+            </div>
+          </div>
+        </article>
+
+        <article style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(16px, 2vw, 26px); align-items: start;">
+          <figure style="margin: 0; display: flex; align-items: center; justify-content: center; aspect-ratio: 4/5; background: #EDF1EF; border: 1px solid #E4E9E6;">
+            <span style="font-size: 10.5px; letter-spacing: 0.18em; color: #B2BBB7;">PHOTO</span>
+          </figure>
+          <div>
+            <p style="margin: 0 0 10px; font-size: 10.5px; letter-spacing: 0.18em; color: #2C7A6B;">DOCTOR</p>
+            <h3 style="margin: 0 0 6px; font-size: clamp(20px, 2vw, 26px); font-weight: 600; letter-spacing: -0.04em;">김지훈</h3>
+            <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-size: 13.5px; letter-spacing: 0.04em; color: #8B948F;">Kim Ji Hoon, M.D.</p>
+            <div style="border-top: 1px solid #E4E9E6;">
+              <p style="margin: 0; padding: 11px 0; border-bottom: 1px solid #EDF0EE; font-size: 13.5px; line-height: 1.7; color: #37413D;">연세대학교 의과대학 졸업</p>
+              <p style="margin: 0; padding: 11px 0; border-bottom: 1px solid #EDF0EE; font-size: 13.5px; line-height: 1.7; color: #37413D;">전) 궁의원 원장</p>
+              <p style="margin: 0; padding: 11px 0; font-size: 13.5px; line-height: 1.7; color: #37413D;">대한미용성형레이저의학회</p>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -267,7 +401,7 @@
     <div style="max-width: 1560px; margin: 0 auto;">
       <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 22px; margin-bottom: clamp(28px, 5vh, 52px);">
         <div>
-          <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">V. Hours</p>
+          <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">VII. Hours</p>
           <h2 style="margin: 0; font-size: clamp(24px, 2.6vw, 40px); font-weight: 600; letter-spacing: -0.045em; line-height: 1.3;">진료 시간</h2>
         </div>
         <p style="margin: 0; max-width: 360px; font-size: 14px; line-height: 1.95; color: #6A736F;">시술 종류에 따라 마취 대기 시간이 포함되므로, 예약 시 여유 있는 시간대를 안내드립니다.</p>
@@ -276,11 +410,11 @@
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(24px, 4vw, 72px); align-items: start;">
         <div data-hours style="display: grid; grid-template-columns: 120px 1fr; border-top: 1px solid #121614;">
           <div style="padding: 22px 0; border-bottom: 1px solid #E4E9E6; font-size: 13px; color: #8B948F;">평일</div>
-          <div style="padding: 22px 0; border-bottom: 1px solid #E4E9E6; font-size: clamp(17px, 1.7vw, 22px); font-weight: 500; letter-spacing: -0.02em;">10:00 – 20:00</div>
+          <div style="padding: 22px 0; border-bottom: 1px solid #E4E9E6;"><span style="display: block; font-size: clamp(17px, 1.7vw, 22px); font-weight: 500; letter-spacing: -0.02em;">10:00 – 20:00</span><span style="display: block; margin-top: 5px; font-size: 13px; color: #6A736F;">접수마감 18:30</span></div>
           <div style="padding: 22px 0; border-bottom: 1px solid #E4E9E6; font-size: 13px; color: #8B948F;">주말</div>
-          <div style="padding: 22px 0; border-bottom: 1px solid #E4E9E6; font-size: clamp(17px, 1.7vw, 22px); font-weight: 500; letter-spacing: -0.02em;">10:00 – 17:00</div>
+          <div style="padding: 22px 0; border-bottom: 1px solid #E4E9E6;"><span style="display: block; font-size: clamp(17px, 1.7vw, 22px); font-weight: 500; letter-spacing: -0.02em;">10:00 – 17:00</span><span style="display: block; margin-top: 5px; font-size: 13px; color: #6A736F;">접수마감 15:00</span></div>
           <div style="padding: 22px 0; border-bottom: 1px solid #E4E9E6; font-size: 13px; color: #8B948F;">휴진일</div>
-          <div style="padding: 22px 0; border-bottom: 1px solid #E4E9E6; font-size: 15px; color: #8B948F;">별도 공지</div>
+          <div style="padding: 22px 0; border-bottom: 1px solid #E4E9E6; font-size: 15px; line-height: 1.8; color: #37413D;">설날 · 추석 당일<br /><span style="font-size: 13.5px; color: #6A736F;">평일 공휴일은 단축 진료 10:00 – 17:00 (접수마감 15:00)</span></div>
           <div style="padding: 22px 0; font-size: 13px; color: #8B948F;">예약</div>
           <div style="padding: 22px 0; font-size: 15px; line-height: 1.8;">전 진료 예약제<br /><span style="color: #8B948F;">2026년 10월부터 사전 예약 오픈</span></div>
         </div>
@@ -300,10 +434,31 @@
     <div style="max-width: 1560px; margin: 0 auto;">
       <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 22px; margin-bottom: clamp(26px, 4vh, 48px);">
         <div>
-          <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">VI. Location</p>
-          <h2 style="margin: 0; font-size: clamp(24px, 2.6vw, 40px); font-weight: 600; letter-spacing: -0.045em; line-height: 1.3;">강남역에서 가장 가까운 디테일</h2>
+          <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">VIII. Location</p>
+          <h2 style="margin: 0; font-size: clamp(24px, 2.6vw, 40px); font-weight: 600; letter-spacing: -0.045em; line-height: 1.3;">대한민국의 모든 피부과들 중<br />가장 좋은 위치</h2>
         </div>
-        <p style="margin: 0; max-width: 360px; font-size: 14px; line-height: 1.95; color: #6A736F;">강남대로에서 바로 보이는 위치, 1층에서 올라오는 단독 계단. 찾아오는 동선까지 설계했습니다.</p>
+        <p style="margin: 0; max-width: 380px; font-size: 14px; line-height: 1.95; color: #6A736F;">강남역과 신논현역 사이 강남대로 2층. 대로변에서 바로 올라오는 단독 계단과 엘리베이터가 있습니다.</p>
+      </div>
+
+      <p style="margin: 0 0 clamp(24px, 4vh, 40px); max-width: 880px; font-size: clamp(14.5px, 1.4vw, 17px); line-height: 2.0; color: #37413D;">강남은 대한민국의 뷰티 · 경제 · 문화의 중심지이자 최고의 부촌입니다. 올디테일의원은 강남 안에서도 가장 발달된 상권인 강남역과 신논현역 사이 강남대로 2층에 있습니다. 강남역과 신논현역에서 3분 이내로 걸어올 수 있으며, 대로변에서 바로 올라올 수 있는 단독 계단과 엘리베이터가 있습니다. 인천공항에서도 김포공항역에서 한 번만 갈아타면 되어 오시기 쉽습니다. 주변에 호텔 · 쇼핑몰 · 맛집이 많습니다.</p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 1px; background: #E4E9E6; border: 1px solid #E4E9E6; margin-bottom: clamp(24px, 4vh, 40px);">
+        <div style="flex: 1 1 200px; min-width: 0; background: #F9FAF9; padding: clamp(18px, 2.2vw, 26px);">
+          <p style="margin: 0 0 9px; font-size: 10px; letter-spacing: 0.18em; color: #2C7A6B;">강남역</p>
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.75; color: #37413D;">도보 3분 이내</p>
+        </div>
+        <div style="flex: 1 1 200px; min-width: 0; background: #F9FAF9; padding: clamp(18px, 2.2vw, 26px);">
+          <p style="margin: 0 0 9px; font-size: 10px; letter-spacing: 0.18em; color: #2C7A6B;">신논현역</p>
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.75; color: #37413D;">도보 3분 이내</p>
+        </div>
+        <div style="flex: 1 1 200px; min-width: 0; background: #F9FAF9; padding: clamp(18px, 2.2vw, 26px);">
+          <p style="margin: 0 0 9px; font-size: 10px; letter-spacing: 0.18em; color: #2C7A6B;">입구</p>
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.75; color: #37413D;">대로변 단독 계단 · 엘리베이터</p>
+        </div>
+        <div style="flex: 1 1 260px; min-width: 0; background: #F9FAF9; padding: clamp(18px, 2.2vw, 26px);">
+          <p style="margin: 0 0 9px; font-size: 10px; letter-spacing: 0.18em; color: #2C7A6B;">인천공항에서</p>
+          <p style="margin: 0; font-size: 13.5px; line-height: 1.75; color: #37413D;">공항철도 → 김포공항역 → 9호선 급행 → 신논현역 <span style="color: #6A736F;">(1회 환승)</span></p>
+        </div>
       </div>
 
       <div style="display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 44px); align-items: stretch;">
