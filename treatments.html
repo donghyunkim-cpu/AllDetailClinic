@@ -49,6 +49,7 @@
     [data-toc] > div { display: grid !important; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)) !important; }
   }
   @media (max-width: 899px) {
+    [data-sticky-col] { position: static !important; top: auto !important; }
     [data-article] { grid-template-columns: 1fr !important; }
     [data-article-aside] { position: static !important; }
     [data-detail] { grid-template-columns: 1fr !important; }
@@ -149,7 +150,7 @@
 
   <section id="care" style="padding: clamp(64px, 11vh, 140px) clamp(16px, 3vw, 40px) clamp(48px, 8vh, 100px); border-bottom: 1px solid #E4E9E6;">
     <div style="max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(28px, 5vw, 80px); align-items: start;">
-      <div style="position: sticky; top: 124px;">
+      <div data-sticky-col style="position: sticky; top: 124px;">
         <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">III. Aftercare</p>
         <h2 style="margin: 0 0 22px; font-size: clamp(26px, 2.8vw, 42px); font-weight: 600; line-height: 1.36; letter-spacing: -0.045em;">시술 후 관리가<br />결과의 절반입니다</h2>
         <p style="margin: 0; font-size: 14px; line-height: 1.95; color: #6A736F; max-width: 380px;">아래는 공통 안내입니다. 시술별 상세 주의사항은 시술 당일 서면과 함께 안내드립니다.</p>
@@ -216,7 +217,7 @@
       <div style="padding: clamp(28px, 4vh, 52px) clamp(16px, 3vw, 40px) clamp(48px, 8vh, 96px);">
         <div data-detail style="max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 232px) minmax(0, 1fr) minmax(0, 300px); gap: clamp(24px, 3.4vw, 56px); align-items: start;">
 
-          <nav data-toc style="position: sticky; top: 104px;">
+          <nav data-toc data-sticky-col style="position: sticky; top: 104px;">
             <p style="margin: 0 0 14px; font-size: 10px; letter-spacing: 0.2em; color: #8B948F;">CONTENTS</p>
             <div style="display: flex; flex-direction: column; border-top: 1px solid #121614;">
               <sc-for list="{{ d.toc }}" as="t" hint-placeholder-count="10">
@@ -364,7 +365,7 @@
             </sc-if>
           </div>
 
-          <aside data-spec style="position: sticky; top: 104px;">
+          <aside data-spec data-sticky-col style="position: sticky; top: 104px;">
             <div style="border: 1px solid #121614; padding: clamp(18px, 2vw, 24px);">
               <p style="margin: 0 0 16px; font-size: 10px; letter-spacing: 0.2em; color: #2C7A6B;">TREATMENT SPEC</p>
               <sc-for list="{{ d.spec }}" as="r" hint-placeholder-count="8">

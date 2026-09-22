@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(28px, 5vw, 80px); align-items: start; max-width: 1560px; margin: 0 auto; font-family: 'SUIT Variable', system-ui, sans-serif; word-break: keep-all; text-wrap: pretty;">
+  <div data-reveal data-philo-sticky>
+    <p style="margin: 0 0 22px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">{{ label }}</p>
+    <h2 style="margin: 0 0 26px; font-size: clamp(26px, 2.8vw, 42px); font-weight: 600; line-height: 1.34; letter-spacing: -0.045em;">디자인 없이 시작되는 시술에<br />실망하지 않으셨나요?</h2>
+    <p style="margin: 0; font-weight: 500; font-size: 17px; line-height: 1.6; color: #2C7A6B;">너무 아파서 피부과에 가기가<br />두려우신가요?</p>
+  </div>
+  <div data-reveal>
+    <p style="margin: 0 0 30px; font-size: 15.5px; line-height: 2.05; color: #37413D; max-width: 620px;">같은 팔자주름 시술을 받아도 결과가 다른 이유는 하나입니다. 꺼짐형 · 볼살형 · 처짐형, 팔자주름의 유형에 따라 맞춤형으로 디자인하지 않았기 때문입니다.<sup style="font-family: 'Newsreader', serif; font-size: 11px; color: #2C7A6B;">1</sup></p>
+    <p style="margin: 0 0 40px; font-size: 15.5px; line-height: 2.05; color: #37413D; max-width: 620px;">같은 리쥬란을 받아도 통증이 다른 이유는 하나입니다. 연고 마취만 할 뿐, 신경 마취 · 냉각 마취 같은 디테일한 마취를 더하지 않았기 때문입니다.</p>
+    <p style="margin: 0 0 56px; padding-left: 16px; border-left: 1px solid #DCE2DF; font-size: 12.5px; line-height: 1.9; color: #8B948F; max-width: 460px;"><sup style="font-family: 'Newsreader', serif; color: #2C7A6B;">1</sup> &nbsp;강남역에서 가장 가시성 좋은 위치, 1층에서 바로 올라오는 단독 계단. 공간의 동선까지 설계의 일부로 봅니다.</p>
+
+    <div style="display: grid; gap: 0; border-top: 1px solid #E4E9E6;">
+      <div style="display: grid; grid-template-columns: 56px minmax(120px, 170px) 1fr; gap: clamp(14px, 2vw, 34px); align-items: center; padding: 26px 0; border-bottom: 1px solid #E4E9E6;" data-sys-row>
+        <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: #B2BBB7;">01</span>
+        <img loading="lazy" decoding="async" src="images/lift-consult.jpg" alt="의사 상담" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: #EDF1EF;" />
+        <div>
+          <h3 style="margin: 0 0 10px; font-size: 18px; font-weight: 600; letter-spacing: -0.03em;">의사 상담</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.9; color: #6A736F; max-width: 520px;">실장 상담으로 끝나지 않습니다. 초진 기록과 3D 피부 진단 데이터를 확인한 뒤, 의사가 한 번 더 직접 상담합니다.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 56px minmax(120px, 170px) 1fr; gap: clamp(14px, 2vw, 34px); align-items: center; padding: 26px 0; border-bottom: 1px solid #E4E9E6;" data-sys-row>
+        <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: #B2BBB7;">02</span>
+        <img loading="lazy" decoding="async" src="images/design-pen-opt.jpg" alt="올디테일 디자인 시스템" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: #EDF1EF;" />
+        <div>
+          <h3 style="margin: 0 0 10px; font-size: 18px; font-weight: 600; letter-spacing: -0.03em;">올디테일 디자인 시스템</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.9; color: #6A736F; max-width: 520px;">시술 전, 무조건 펜으로 디자인합니다. 얼굴 · 바디별로 시술 효과를 극대화하는 올디테일만의 디자인을 활용합니다.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 56px minmax(120px, 170px) 1fr; gap: clamp(14px, 2vw, 34px); align-items: center; padding: 26px 0; border-bottom: 1px solid #E4E9E6;" data-sys-row>
+        <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: #B2BBB7;">03</span>
+        <img loading="lazy" decoding="async" src="images/nerve-map.jpg" alt="올디테일 마취 시스템" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: #EDF1EF;" />
+        <div>
+          <h3 style="margin: 0 0 10px; font-size: 18px; font-weight: 600; letter-spacing: -0.03em;">올디테일 마취 시스템</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.9; color: #6A736F; max-width: 520px;">디테일한 마취 방법으로 통증을 최소화합니다. 피부과 방문이 통증으로 안 좋은 기억으로 남지 않도록 합니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;label&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;II. Philosophy&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { label: this.props.label ?? 'II. Philosophy' };
+  }
+}
+</script>
+</body>
+</html>

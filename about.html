@@ -43,7 +43,14 @@
   a:hover { color: #2C7A6B; }
   input, select, textarea, button { font-family: inherit; color: inherit; }
   ::selection { background: #D6E7E2; color: #121614; }
+  @media (min-width: 900px) {
+    [data-philo-sticky] { position: sticky; top: 124px; }
+  }
   @media (max-width: 899px) {
+    [data-sys-row] { grid-template-columns: 40px 1fr !important; row-gap: 14px !important; }
+    [data-sys-row] > img { grid-column: 2 !important; max-width: 180px !important; }
+    [data-sys-row] > div { grid-column: 1 / -1 !important; }
+    [data-sticky-col] { position: static !important; top: auto !important; }
     [data-hours] { grid-template-columns: 1fr !important; }
     [data-hours] > :nth-child(2n+1) { padding-bottom: 2px !important; border-bottom: 0 !important; }
     [data-lnb] { justify-content: flex-start !important; }
@@ -90,7 +97,7 @@
 
   <section id="story" style="padding: clamp(64px, 11vh, 140px) clamp(16px, 3vw, 40px) clamp(48px, 8vh, 100px); border-bottom: 1px solid #E4E9E6;">
     <div style="max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(28px, 5vw, 80px); align-items: start;">
-      <div style="position: sticky; top: 124px;">
+      <div data-sticky-col style="position: sticky; top: 124px;">
         <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">I. Brand Story</p>
         <h2 style="margin: 0 0 24px; font-size: clamp(26px, 2.8vw, 42px); font-weight: 600; line-height: 1.36; letter-spacing: -0.045em;">디자인과 마취,<br />두 가지에서 시작했습니다</h2>
         <p style="margin: 0; font-family: 'Newsreader', serif; font-style: italic; font-weight: 300; font-size: 17px; line-height: 1.6; color: #2C7A6B;">Design &amp; Comfort</p>
@@ -129,47 +136,8 @@
   </section>
 
   <section id="philosophy" style="padding: clamp(64px, 11vh, 140px) clamp(16px, 3vw, 40px) clamp(48px, 8vh, 100px); border-bottom: 1px solid #E4E9E6;">
-    <div style="max-width: 1560px; margin: 0 auto;">
-      <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 22px; margin-bottom: clamp(30px, 5vh, 60px);">
-        <div>
-          <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">II. Philosophy</p>
-          <h2 style="margin: 0; font-family: 'Newsreader', serif; font-weight: 200; font-size: clamp(32px, 4.6vw, 72px); line-height: 1.02; letter-spacing: -0.035em;">Three<span style="color: #2C7A6B;"> standards</span></h2>
-        </div>
-        <p style="margin: 0; max-width: 360px; font-size: 14px; line-height: 1.95; color: #6A736F;">올디테일의 모든 진료는 아래 세 가지 기준을 통과한 뒤에 시작됩니다. 예외는 두지 않습니다.</p>
-      </div>
-
-      <div style="border-top: 1px solid #121614;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(20px, 4vw, 60px); padding: clamp(26px, 4vh, 44px) 0; border-bottom: 1px solid #E4E9E6;">
-          <div style="display: flex; gap: clamp(14px, 2vw, 28px);">
-            <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 22px; color: #B2BBB7;">01</span>
-            <div>
-              <p style="margin: 0 0 8px; font-size: 10.5px; letter-spacing: 0.18em; color: #2C7A6B;">DIAGNOSIS</p>
-              <h3 style="margin: 0 0 14px; font-size: clamp(20px, 2vw, 27px); font-weight: 600; letter-spacing: -0.04em;">3D 진단 위에서<br />의사가 다시 봅니다</h3>
-            </div>
-          </div>
-          <p style="margin: 0; font-size: 14.5px; line-height: 2.0; color: #4C5652;">상담 실장의 설명으로 끝나는 진료가 아닙니다. 3D 피부 진단 데이터를 원장이 직접 판독하고, 필요한 시술과 필요하지 않은 시술을 구분한 뒤 최종 설계를 확정합니다. 진단 결과가 시술 계획과 다르면 계획을 바꿉니다.</p>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(20px, 4vw, 60px); padding: clamp(26px, 4vh, 44px) 0; border-bottom: 1px solid #E4E9E6;">
-          <div style="display: flex; gap: clamp(14px, 2vw, 28px);">
-            <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 22px; color: #B2BBB7;">02</span>
-            <div>
-              <p style="margin: 0 0 8px; font-size: 10.5px; letter-spacing: 0.18em; color: #2C7A6B;">DESIGN</p>
-              <h3 style="margin: 0 0 14px; font-size: clamp(20px, 2vw, 27px); font-weight: 600; letter-spacing: -0.04em;">시술 전,<br />얼굴 위에 직접 그립니다</h3>
-            </div>
-          </div>
-          <p style="margin: 0; font-size: 14.5px; line-height: 2.0; color: #4C5652;">앉은 자세에서 표정 근육의 움직임과 처짐의 방향을 보고, 펜으로 시술 라인을 그립니다. 누운 상태에서는 얼굴의 무게가 달라지기 때문입니다. 볼 패임이 우려되는 구역은 피하고, 당겨야 할 지점만 정확히 남깁니다.</p>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(20px, 4vw, 60px); padding: clamp(26px, 4vh, 44px) 0; border-bottom: 1px solid #E4E9E6;">
-          <div style="display: flex; gap: clamp(14px, 2vw, 28px);">
-            <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 22px; color: #B2BBB7;">03</span>
-            <div>
-              <p style="margin: 0 0 8px; font-size: 10.5px; letter-spacing: 0.18em; color: #2C7A6B;">COMFORT</p>
-              <h3 style="margin: 0 0 14px; font-size: clamp(20px, 2vw, 27px); font-weight: 600; letter-spacing: -0.04em;">올디테일<br />마취 시스템</h3>
-            </div>
-          </div>
-          <p style="margin: 0; font-size: 14.5px; line-height: 2.0; color: #4C5652;">연고 마취로 표면을, 신경 마취로 심부를 차단하고 필요에 따라 냉각 마취를 더합니다. 그리고 약효가 완전히 오를 때까지 기다립니다. 시술 시간을 줄이기 위해 이 단계를 생략하지 않습니다.</p>
-        </div>
-      </div>
+          <div style="max-width: 1560px; margin: 0 auto;">
+  <dc-import name="Philosophy Block" label="II. Philosophy" hint-size="100%,900px"></dc-import>
 
       <figure style="margin: clamp(32px, 5vh, 56px) 0 0;">
         <img loading="lazy" decoding="async" src="images/int-consult.jpg" alt="" style="display: block; width: 100%; height: clamp(240px, 44vh, 520px); object-fit: cover; background: #EDF1EF;" />
@@ -211,7 +179,7 @@
 
         <div style="background: #F9FAF9; display: flex; flex-direction: column;">
           <figure style="margin: 0; position: relative; background: #EDF1EF;">
-            <img loading="lazy" decoding="async" src="images/design-asym-face.jpg" alt="얼굴 정중선 기준 비대칭 평가" style="width: 100%; aspect-ratio: 60/62; object-fit: cover; display: block;" />
+            <img loading="lazy" decoding="async" src="images/design-asym-face.jpg" alt="얼굴 정중선 기준 비대칭 평가" style="width: 100%; aspect-ratio: 61/68; object-fit: cover; display: block;" />
             <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none;">
               <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(44,122,107,0.7);"></div>
               <span style="position: absolute; left: 10px; bottom: 10px; padding: 5px 9px; background: rgba(12,18,16,0.62); color: #F9FAF9; font-family: 'Newsreader', serif; font-size: 11px; letter-spacing: 0.1em;">L : R &nbsp;3 : 1</span>
@@ -435,12 +403,12 @@
       <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 22px; margin-bottom: clamp(26px, 4vh, 48px);">
         <div>
           <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">VIII. Location</p>
-          <h2 style="margin: 0; font-size: clamp(24px, 2.6vw, 40px); font-weight: 600; letter-spacing: -0.045em; line-height: 1.3;">대한민국의 모든 피부과들 중<br />가장 좋은 위치</h2>
+          <h2 style="margin: 0; font-size: clamp(24px, 2.6vw, 40px); font-weight: 600; letter-spacing: -0.045em; line-height: 1.3;">대한민국<br />최고의 위치</h2>
         </div>
         <p style="margin: 0; max-width: 380px; font-size: 14px; line-height: 1.95; color: #6A736F;">강남역과 신논현역 사이 강남대로 2층. 대로변에서 바로 올라오는 단독 계단과 엘리베이터가 있습니다.</p>
       </div>
 
-      <p style="margin: 0 0 clamp(24px, 4vh, 40px); max-width: 880px; font-size: clamp(14.5px, 1.4vw, 17px); line-height: 2.0; color: #37413D;">강남은 대한민국의 뷰티 · 경제 · 문화의 중심지이자 최고의 부촌입니다. 올디테일의원은 강남 안에서도 가장 발달된 상권인 강남역과 신논현역 사이 강남대로 2층에 있습니다. 강남역과 신논현역에서 3분 이내로 걸어올 수 있으며, 대로변에서 바로 올라올 수 있는 단독 계단과 엘리베이터가 있습니다. 인천공항에서도 김포공항역에서 한 번만 갈아타면 되어 오시기 쉽습니다. 주변에 호텔 · 쇼핑몰 · 맛집이 많습니다.</p>
+      <p style="margin: 0 0 clamp(24px, 4vh, 40px); max-width: 880px; font-size: clamp(14.5px, 1.4vw, 17px); line-height: 2.0; color: #37413D;">강남은 대한민국의 사회, 경제, 문화의 중심지이자 가장 유명한 부촌입니다. 자연스럽게 한국의 가장 실력있는 피부과들은 강남에 모여있습니다. 올디테일의원은 강남 안에서도 가장 발달된 상권인 강남역과 신논현역 사이 강남대로 2층에 있습니다.</p>
 
       <div style="display: flex; flex-wrap: wrap; gap: 1px; background: #E4E9E6; border: 1px solid #E4E9E6; margin-bottom: clamp(24px, 4vh, 40px);">
         <div style="flex: 1 1 200px; min-width: 0; background: #F9FAF9; padding: clamp(18px, 2.2vw, 26px);">

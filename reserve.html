@@ -44,6 +44,7 @@
   input, select, textarea, button { font-family: inherit; color: inherit; }
   ::selection { background: #D6E7E2; color: #121614; }
   @media (max-width: 899px) {
+    [data-sticky-col] { position: static !important; top: auto !important; }
     [data-note] { grid-template-columns: 1fr !important; gap: 4px !important; }
     [data-hrs] { grid-template-columns: 1fr !important; gap: 2px !important; }
     p > a { display: inline-block !important; padding: 10px 0 !important; }
@@ -68,7 +69,7 @@
 
   <section id="form" style="padding: clamp(52px, 9vh, 116px) clamp(16px, 3vw, 40px) clamp(48px, 8vh, 100px); border-bottom: 1px solid #E4E9E6;">
     <div style="max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(32px, 5vw, 88px); align-items: start;">
-      <div style="position: sticky; top: 92px;">
+      <div data-sticky-col style="position: sticky; top: 92px;">
         <p style="margin: 0 0 20px; font-family: 'Newsreader', serif; font-style: italic; font-size: 15px; color: #8B948F;">I. Request</p>
         <h2 style="margin: 0 0 22px; font-size: clamp(24px, 2.6vw, 38px); font-weight: 600; letter-spacing: -0.045em; line-height: 1.32;">예약 요청</h2>
         <p style="margin: 0 0 32px; font-size: 14.5px; line-height: 1.95; color: #4C5652; max-width: 420px;">희망 일정은 확정이 아니라 요청입니다. 시술 종류에 따라 마취 대기 시간이 달라지므로, 확인 후 가능한 시간대를 함께 안내드립니다.</p>
