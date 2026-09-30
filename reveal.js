@@ -51,6 +51,17 @@
         if (!el || el.nodeType !== 1) continue;
         if (el.getBoundingClientRect().height < 40) continue;
         if (skippable(el)) continue;
+        if (el.querySelector('[data-text-reveal]')) {
+          var rows = el.querySelector('[data-text-reveal]').parentElement === el ? [el] : el.children;
+          for (var q = 0; q < rows.length; q++) {
+            var rc = rows[q].querySelector('[data-text-reveal]') ? rows[q].children : [rows[q]];
+            for (var z = 0; z < rc.length; z++) {
+              if (rc[z].hasAttribute('data-text-reveal') || rc[z].getBoundingClientRect().height < 40) continue;
+              out.push({ el: rc[z], order: z, done: false });
+            }
+          }
+          continue;
+        }
         out.push({ el: el, order: u, done: false });
       }
     }
@@ -155,11 +166,50 @@
     setTimeout(function () { items.forEach(revealNow); }, 12000);
   }
 
+  function textReveal() {
+    var heads = document.querySelectorAll('[data-text-reveal]');
+    if (!heads.length) return;
+    var TE = 'cubic-bezier(0.2, 0.7, 0.2, 1)';
+    function lines(h) { return h.querySelectorAll('[data-tr-line]'); }
+    function play(h) {
+      if (h.__trDone) return;
+      h.__trDone = true;
+      var ls = lines(h);
+      for (var i = 0; i < ls.length; i++) {
+        (function (l, d) {
+          setTimeout(function () { l.style.transform = 'translate3d(0, 0, 0)'; l.style.opacity = '1'; }, d);
+          setTimeout(function () { l.style.transition = ''; l.style.transform = ''; l.style.opacity = ''; l.style.willChange = ''; }, d + 1000);
+        })(ls[i], 120 + i * 130);
+      }
+    }
+    for (var i = 0; i < heads.length; i++) {
+      var ls = lines(heads[i]);
+      for (var j = 0; j < ls.length; j++) {
+        ls[j].style.willChange = 'transform, opacity';
+        ls[j].style.transform = 'translate3d(0, 105%, 0)';
+        ls[j].style.opacity = '0';
+        ls[j].style.transition = 'transform 900ms ' + TE + ', opacity 900ms ' + TE;
+      }
+    }
+    var check = function () {
+      var vh = window.innerHeight;
+      for (var i = 0; i < heads.length; i++) {
+        var r = heads[i].getBoundingClientRect();
+        if (r.top < vh * 0.85 && r.bottom > 0) play(heads[i]);
+        else if (r.bottom <= 0) play(heads[i]);
+      }
+    };
+    window.addEventListener('scroll', function () { requestAnimationFrame(check); }, { passive: true });
+    window.addEventListener('resize', check, { passive: true });
+    requestAnimationFrame(check);
+    setTimeout(function () { for (var i = 0; i < heads.length; i++) play(heads[i]); }, 12000);
+  }
+
   function boot() {
     var tries = 0;
     (function wait() {
       tries++;
-      if (document.querySelectorAll('section').length || tries > 40) setTimeout(run, 120);
+      if (document.querySelectorAll('section').length || tries > 40) setTimeout(function () { run(); textReveal(); }, 120);
       else setTimeout(wait, 120);
     })();
   }
