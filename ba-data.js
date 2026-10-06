@@ -40,7 +40,7 @@ export const CASES = [
   // 색소지우개
   C('pigment', '커스텀 색소지우개 — 기미 · 잡티 복합', 'ba-pig-before.jpg', 'ba-pig-after.jpg', ['2026.10.14', '2027.01.27'], '피코 토닝 8회 + 기미 복합 레이저 2회', { pos: '50% 42%' }),
   C('pigment', '커스텀 색소지우개 — 잡티 · 흑자', 'case-spot-before.jpg', 'case-spot-after.jpg', ['2026.07.30', '2026.09.03'], '표피 색소 타겟 레이저 2회'),
-  C('pigment', '커스텀 색소지우개 — 기미', 'case-melasma-before.jpg', 'case-melasma-after.jpg', ['2026.09.11', '2027.01.22'], '저출력 토닝 10회, 회차마다 세팅 재조정')
+  C('pigment', '커스텀 색소지우개 — 기미', 'case-melasma-before.jpg', 'case-melasma-after.jpg', ['2026.09.11', '2027.01.22'], '저출력 토닝 10회, 회차마다 세팅 재조정'),
   C('nasolabial', '팔자지우개 — 꺼짐형 중심 CASE', 'ba-naso2-before.jpg', 'ba-naso2-after.jpg', ['2026.10.20', '2026.10.27'], '코 옆 꺼짐을 Ristow space에 고정 주입해 채움'),
   C('nasolabial', '팔자지우개 — 볼살형 중심 CASE', 'ba-naso3-before.jpg', 'ba-naso3-after.jpg', ['2026.11.03', '2026.11.10'], '팔자 위 볼살 부피를 줄이고 리프팅'),
   C('body', '바디지우개 — 복부 · 옆구리', 'ba-body2-before.jpg', 'ba-body2-after.jpg', ['2026.10.13', '2026.11.17'], '바디지우개 5회 + 바디온다 + 식단관리'),
