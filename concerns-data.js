@@ -1,3 +1,4 @@
+import { POSTS } from './columns-data.js';
 // 피부고민 데이터 — 카테고리 · 세부 고민 · 상세 본문 (SEO/GEO용 구조화 콘텐츠)
 // sig: 시그니처 키 / cols: 칼럼 인덱스 / tx: [시술명, 역할, 회복] — 시술명은 시술 페이지 항목명과 일치시킴
 export const SIGS = {
@@ -9,14 +10,8 @@ export const SIGS = {
   booster: { no: '06', ko: '컴포트 스킨부스터', en: 'Comfort Skinbooster' },
   pigment: { no: '07', ko: '커스텀 색소지우개', en: 'Pigment Eraser' }
 };
-export const COLS = [
-  '샷수는 왜 기준이 될 수 없을까',
-  '마취는 기술이 아니라 기다림입니다',
-  '기미가 진해지는 레이저도 있습니다',
-  '성분보다 층이 중요합니다',
-  '팔자 주름에 필러만 넣으면 안 되는 경우',
-  '체중이 줄었는데 라인이 더 무너지는 이유'
-];
+// 칼럼 제목 · 글 페이지 주소는 columns-data.js 에서 가져옵니다 (cols 의 숫자 = POSTS 인덱스)
+export const COLS = POSTS.map((p) => ({ t: p.title, href: 'column-' + p.slug + '.html' }));
 
 const F = (t, s, causes, signs, tx, sig, cols, faq) => ({ t, s, causes, signs, tx, sig, cols, faq });
 

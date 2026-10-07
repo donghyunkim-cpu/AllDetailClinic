@@ -30,6 +30,20 @@
 Vercel: Framework Preset을 **Other**, Build Command와 Output Directory는 비워둡니다.
 그 외 정적 호스팅도 이 폴더를 루트로 올리면 됩니다.
 
+## 메디컬 칼럼
+
+칼럼 원본은 `columns-data.js` 한 곳입니다. 칼럼 목록, 글 페이지, 피부고민 · 시술 페이지의 칼럼 링크가 모두 여기서 읽습니다.
+
+1. `columns-data.js` 배열 **맨 뒤**에 글을 추가하거나 기존 글을 고칩니다. 순서를 바꾸면 피부고민 · 시술 페이지의 칼럼 연결이 어긋납니다.
+2. `slug`는 글 주소(`/column-<slug>`)가 됩니다. 영문 소문자 · 숫자 · 하이픈만 쓰고, 한 번 정하면 바꾸지 않습니다.
+3. 아래 명령으로 글 페이지를 다시 만들고, 바뀐 파일을 모두 커밋합니다. Node.js가 필요합니다.
+
+```bash
+node tools/build-columns.mjs
+```
+
+생성기가 고치는 파일: `column-*.html`(글 페이지), `sitemap.xml`의 칼럼 항목, `index.html`의 홈 칼럼 미리보기(최신 3편), `column.html`의 크롤러용 링크 목록. `column-*.html`은 직접 고치지 않습니다. 다시 생성하면 덮어써집니다.
+
 ## 다국어
 
 `Site Header.dc.html` 상단 `LANGS` 배열에서 관리합니다.

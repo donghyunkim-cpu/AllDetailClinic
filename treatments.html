@@ -448,9 +448,7 @@ const SIG_META = {
   stem: ['05', '올디테일 줄기세포 수액'], booster: ['06', '컴포트 스킨부스터'], pigment: ['07', '커스텀 색소지우개']
 };
 const CAT_KO = { wrinkle: '주름', hollow: '꺼짐', sag: '처짐', body: '바디라인', glow: '광채', pigment: '색소', pore: '모공 흉터', aging: '안티에이징' };
-const COL_TITLES = ['샷수는 왜 기준이 될 수 없을까', '마취는 기술이 아니라 기다림입니다', '기미가 진해지는 레이저도 있습니다', '성분보다 층이 중요합니다', '팔자 주름에 필러만 넣으면 안 되는 경우', '체중이 줄었는데 라인이 더 무너지는 이유'];
 const CONCERN_PAGE = 'concerns.html#';
-const COL_PAGE = 'column.html#p';
 const SIG_PAGE = 'signature.html#';
 const BA_PAGE = 'before-after.html';
 // 부위명으로 된 항목(제모 · 바디 등)은 분류명을 붙여 시술 소개로 읽히게 한다
@@ -494,7 +492,7 @@ class Component extends DCLogic {
   state = { openGroup: null, openFaq: null, items: null, reading: null };
 
   componentDidMount() {
-    Promise.all([import('./treatments-data.js'), import('./treatments-detail.js')]).then(([m, x]) => { this._items = m.ITEMS; this._spec = x.SPEC; this._detail = x.DETAIL; this.setState({ items: true }); this._route(); });
+    Promise.all([import('./treatments-data.js'), import('./treatments-detail.js'), import('./columns-data.js')]).then(([m, x, c]) => { this._cols = c.POSTS; this._items = m.ITEMS; this._spec = x.SPEC; this._detail = x.DETAIL; this.setState({ items: true }); this._route(); });
     this._route = () => {
       const m = decodeURIComponent(window.location.hash || '').match(/^#t\/(.+)$/);
       if (!m) { this.setState({ reading: null }); return; }
@@ -570,7 +568,7 @@ class Component extends DCLogic {
         hasConcerns: it.c.length > 0,
         concerns: it.c.map(([ck, name]) => ({ t: name || CAT_KO[ck], href: CONCERN_PAGE + ck + (name ? '/' + encodeURIComponent(name) : '/detail') })),
         hasCols: it.col.length > 0,
-        cols: it.col.map((i2) => ({ t: COL_TITLES[i2], href: COL_PAGE + i2 }))
+        cols: it.col.map((i2) => ({ t: this._cols[i2].title, href: 'column-' + this._cols[i2].slug + '.html' }))
       };
     }
     return {

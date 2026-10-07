@@ -213,21 +213,52 @@
       <sc-if value="{{ designOpen }}" hint-placeholder-val="{{ false }}">
         <div style="padding: clamp(24px, 4vh, 40px) 0 clamp(28px, 4.5vh, 48px); border-bottom: 1px solid #E4E9E6;">
           <p style="margin: 0 0 clamp(18px, 3vh, 28px); font-family: 'Newsreader', serif; font-size: clamp(20px, 2vw, 28px); letter-spacing: -0.02em; color: #2C7A6B;">What is All Detail Design?</p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: clamp(18px, 2.4vw, 36px);">
-            <div style="min-width: 0;">
-              <img loading="lazy" decoding="async" src="images/design-ratio-face.jpg" alt="이상적인 비율을 기준으로, 매력포인트는 살립니다" style="width: 100%; aspect-ratio: 61/68; object-fit: cover; display: block; background: #EDF1EF;" />
-              <h4 style="margin: 16px 0 8px; font-size: 15.5px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.5;">이상적인 비율을 기준으로, 매력포인트는 살립니다</h4>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.85; color: #6A736F;">가장 호감을 주는 얼굴 비율을 기준으로 삼되, 본인만의 매력이 되는 부분은 지킵니다.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: #E4E9E6; border: 1px solid #E4E9E6;">
+            <div style="background: #F9FAF9; display: flex; flex-direction: column;">
+              <figure style="margin: 0; position: relative; background: #EDF1EF;">
+                <img loading="lazy" decoding="async" src="images/design-ratio-face.jpg" alt="정면 얼굴 가로 1:1:1:1:1 · 세로 1:1:1 비율 기준" style="width: 100%; aspect-ratio: 61/68; object-fit: cover; display: block;" />
+                <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none;">
+                  <div style="position: absolute; left: 20%; top: 0; bottom: 0; width: 1px; background: rgba(44,122,107,0.55);"></div>
+                  <div style="position: absolute; left: 40%; top: 0; bottom: 0; width: 1px; background: rgba(44,122,107,0.55);"></div>
+                  <div style="position: absolute; left: 60%; top: 0; bottom: 0; width: 1px; background: rgba(44,122,107,0.55);"></div>
+                  <div style="position: absolute; left: 80%; top: 0; bottom: 0; width: 1px; background: rgba(44,122,107,0.55);"></div>
+                  <div style="position: absolute; top: 33.3%; left: 0; right: 0; height: 1px; background: rgba(249,250,249,0.75);"></div>
+                  <div style="position: absolute; top: 66.6%; left: 0; right: 0; height: 1px; background: rgba(249,250,249,0.75);"></div>
+                  <span style="position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); padding: 5px 10px; background: rgba(12,18,16,0.66); color: #F9FAF9; font-family: 'Newsreader', serif; font-size: 11px; letter-spacing: 0.1em; white-space: nowrap;">가로 1:1:1:1:1 &nbsp;·&nbsp; 세로 1:1:1</span>
+                </div>
+              </figure>
+              <div style="padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(26px, 3vw, 36px);">
+                <p style="margin: 0 0 14px; font-family: 'Newsreader', serif; font-style: italic; font-size: 24px; color: #B2BBB7;">01</p>
+                <h3 style="margin: 0 0 14px; font-size: clamp(17px, 1.7vw, 21px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.45;">이상적인 비율을 기준으로 삼되<br />본인의 매력포인트는 살립니다</h3>
+                <p style="margin: 0; font-size: 14px; line-height: 1.95; color: #4C5652;">‘Averageness Hypothesis’에 따라 사람들이 가장 아름답고 호감 간다고 느끼는 비율이 있습니다. 평균에서 살짝 벗어난 것은 본인의 매력이 되지만, 크게 벗어난 것은 약점이 되기도 합니다. 올디테일 디자인은 이 매력포인트를 잘 캐치합니다. 매력포인트를 살리되 개선할 부분들을 우선순위에 따라 정리하여 가장 중요도 높은 시술부터 제안합니다.</p>
+              </div>
             </div>
-            <div style="min-width: 0;">
-              <img loading="lazy" decoding="async" src="images/design-asym-face.jpg" alt="비대칭을 교정합니다" style="width: 100%; aspect-ratio: 61/68; object-fit: cover; display: block; background: #EDF1EF;" />
-              <h4 style="margin: 16px 0 8px; font-size: 15.5px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.5;">비대칭을 교정합니다</h4>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.85; color: #6A736F;">가장 비대칭적인 요소를 찾아 좌우 샷수를 다르게 배분합니다.</p>
+
+            <div style="background: #F9FAF9; display: flex; flex-direction: column;">
+              <figure style="margin: 0; position: relative; background: #EDF1EF;">
+                <img loading="lazy" decoding="async" src="images/design-asym-face.jpg" alt="얼굴 정중선 기준 비대칭 평가" style="width: 100%; aspect-ratio: 61/68; object-fit: cover; display: block;" />
+                <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none;">
+                  <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(44,122,107,0.7);"></div>
+                  <span style="position: absolute; left: 10px; bottom: 10px; padding: 5px 9px; background: rgba(12,18,16,0.62); color: #F9FAF9; font-family: 'Newsreader', serif; font-size: 11px; letter-spacing: 0.1em;">L : R &nbsp;3 : 1</span>
+                </div>
+              </figure>
+              <div style="padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(26px, 3vw, 36px);">
+                <p style="margin: 0 0 14px; font-family: 'Newsreader', serif; font-style: italic; font-size: 24px; color: #B2BBB7;">02</p>
+                <h3 style="margin: 0 0 14px; font-size: clamp(17px, 1.7vw, 21px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.45;">비대칭을 교정합니다</h3>
+                <p style="margin: 0; font-size: 14px; line-height: 1.95; color: #4C5652;">인간의 뇌는 비대칭인 것을 볼 때보다 대칭인 것을 볼 때 에너지를 훨씬 덜 쓰기 때문에 대칭적인 얼굴을 선호합니다. 모든 얼굴이 완벽하게 대칭일 수는 없지만, 가장 비대칭적인 요소를 고려하여 샷수를 배분합니다. 왼쪽과 오른쪽을 3:1로 배분하거나 아예 한쪽에만 시술하는 경우도 있습니다.</p>
+              </div>
             </div>
-            <div style="min-width: 0;">
-              <img loading="lazy" decoding="async" src="images/design-risk-2.jpg" alt="리스크가 있는 부위는 설명하고 피합니다" style="width: 100%; aspect-ratio: 61/68; object-fit: cover; display: block; background: #EDF1EF;" />
-              <h4 style="margin: 16px 0 8px; font-size: 15.5px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.5;">리스크가 있는 부위는 설명하고 피합니다</h4>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.85; color: #6A736F;">옆볼 꺼짐, 탄력 저하처럼 환자에게 불리한 부위는 미리 설명하고 피해서 시술합니다.</p>
+
+            <div style="background: #F9FAF9; display: flex; flex-direction: column;">
+              <figure style="margin: 0; position: relative; background: #EDF1EF;">
+                <img loading="lazy" decoding="async" src="images/design-risk-2.jpg" alt="원장이 환자의 옆볼을 가리키며 설명하는 모습" style="width: 100%; aspect-ratio: 61/68; object-fit: cover; object-position: 42% 44%; display: block;" />
+                <span aria-hidden="true" style="position: absolute; left: 10px; bottom: 10px; padding: 5px 9px; background: rgba(12,18,16,0.62); color: #F9FAF9; font-family: 'Newsreader', serif; font-size: 11px; letter-spacing: 0.1em;">AVOID &nbsp;·&nbsp; 옆볼</span>
+              </figure>
+              <div style="padding: clamp(22px, 2.6vw, 32px) clamp(18px, 2vw, 26px) clamp(26px, 3vw, 36px);">
+                <p style="margin: 0 0 14px; font-family: 'Newsreader', serif; font-style: italic; font-size: 24px; color: #B2BBB7;">03</p>
+                <h3 style="margin: 0 0 14px; font-size: clamp(17px, 1.7vw, 21px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.45;">환자에게 리스크가 있는 부위는<br />반드시 설명하고 피합니다</h3>
+                <p style="margin: 0; font-size: 14px; line-height: 1.95; color: #4C5652;">동양인은 옆볼이 꺼지는 것을 선호하지 않습니다. 동양인에게 울쎄라를 할 때는 반드시 옆볼을 피해서 진행합니다. 50대 이상이 턱보톡스를 받을 때는 피부의 탄력을 잘 평가하고 받아야 합니다. 탄력이 많이 떨어지는데 턱보톡스를 맞고 싶다고 하시면, 저희가 먼저 시술하지 않는 것을 권유드립니다.</p>
+              </div>
             </div>
           </div>
           <a href="about.html#design" style="display: inline-flex; margin-top: clamp(20px, 3vh, 32px); font-size: 12px; letter-spacing: 0.16em; border-bottom: 1px solid #DCE2DF; padding-bottom: 3px;">자세히 보기 →</a>
@@ -581,30 +612,32 @@
       </div>
 
       <div style="border-top: 1px solid #121614;">
-        <a href="column.html" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: baseline; padding: clamp(20px, 3vh, 32px) 4px; border-bottom: 1px solid #E4E9E6;" style-hover="background: #F2F5F3; color: #121614;">
+<!-- columns:latest:start -->
+        <a href="column-nasolabial-fold.html" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: baseline; padding: clamp(20px, 3vh, 32px) 4px; border-bottom: 1px solid #E4E9E6; color: #121614;" style-hover="background: #F2F5F3; color: #121614;">
           <span>
-            <span style="display: block; margin-bottom: 10px; font-size: 10.5px; letter-spacing: 0.18em; color: #2C7A6B;">LIFTING</span>
-            <span style="display: block; font-size: clamp(19px, 2.1vw, 28px); font-weight: 600; letter-spacing: -0.04em;">샷수는 왜 기준이 될 수 없을까</span>
-            <span style="display: block; margin-top: 10px; font-size: 13.5px; line-height: 1.85; color: #6A736F; max-width: 620px;">같은 600샷도 지방 두께와 피부층에 따라 완전히 다른 결과를 만듭니다. 숫자 대신 봐야 할 것들.</span>
+            <span style="display: block; margin-bottom: 10px; font-size: 10.5px; letter-spacing: 0.18em; color: #2C7A6B;">DESIGN</span>
+            <span style="display: block; font-size: clamp(19px, 2.1vw, 28px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.4;">생기면 10년 더 늙어보여서 무조건 늦춰야 할 주름 한 가지</span>
+            <span style="display: block; margin-top: 10px; font-size: 13.5px; line-height: 1.85; color: #6A736F; max-width: 680px;">얼굴의 여러 주름 중 인상을 가장 크게 바꾸는 것은 팔자주름이다. 시술이 필요한 팔자인지 확인하는 법부터 유형별 진단, 나이대별 처방까지 정리했다.</span>
           </span>
-          <span style="font-family: 'Newsreader', serif; font-size: 13px; color: #8B948F; white-space: nowrap;">2026.07.14</span>
+          <span style="font-family: 'Newsreader', serif; font-size: 13px; color: #8B948F; white-space: nowrap;">2026.10.07</span>
         </a>
-        <a href="column.html" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: baseline; padding: clamp(20px, 3vh, 32px) 4px; border-bottom: 1px solid #E4E9E6;" style-hover="background: #F2F5F3; color: #121614;">
+        <a href="column-dermatology-waste-of-money.html" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: baseline; padding: clamp(20px, 3vh, 32px) 4px; border-bottom: 1px solid #E4E9E6; color: #121614;" style-hover="background: #F2F5F3; color: #121614;">
           <span>
-            <span style="display: block; margin-bottom: 10px; font-size: 10.5px; letter-spacing: 0.18em; color: #2C7A6B;">COMFORT</span>
-            <span style="display: block; font-size: clamp(19px, 2.1vw, 28px); font-weight: 600; letter-spacing: -0.04em;">마취는 기술이 아니라 기다림입니다</span>
-            <span style="display: block; margin-top: 10px; font-size: 13.5px; line-height: 1.85; color: #6A736F; max-width: 620px;">연고를 바르는 것과 약효가 오르는 것은 다릅니다. 통증을 줄이는 30분의 의미.</span>
+            <span style="display: block; margin-bottom: 10px; font-size: 10.5px; letter-spacing: 0.18em; color: #2C7A6B;">INSIGHT</span>
+            <span style="display: block; font-size: clamp(19px, 2.1vw, 28px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.4;">피부과는 돈낭비다.</span>
+            <span style="display: block; margin-top: 10px; font-size: 13.5px; line-height: 1.85; color: #6A736F; max-width: 680px;">피부과가 효과 없다고 느끼는 데에는 이유가 있다. 목적, 유전에 대한 오해, 가성비의 기준, 시술 효과에 대한 이해, 디자인. 다섯 가지로 나눠 짚어봤다.</span>
           </span>
-          <span style="font-family: 'Newsreader', serif; font-size: 13px; color: #8B948F; white-space: nowrap;">2026.07.02</span>
+          <span style="font-family: 'Newsreader', serif; font-size: 13px; color: #8B948F; white-space: nowrap;">2026.10.07</span>
         </a>
-        <a href="column.html" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: baseline; padding: clamp(20px, 3vh, 32px) 4px; border-bottom: 1px solid #E4E9E6;" style-hover="background: #F2F5F3; color: #121614;">
+        <a href="column-appearance-and-life.html" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: baseline; padding: clamp(20px, 3vh, 32px) 4px; border-bottom: 1px solid #E4E9E6; color: #121614;" style-hover="background: #F2F5F3; color: #121614;">
           <span>
-            <span style="display: block; margin-bottom: 10px; font-size: 10.5px; letter-spacing: 0.18em; color: #2C7A6B;">PIGMENT</span>
-            <span style="display: block; font-size: clamp(19px, 2.1vw, 28px); font-weight: 600; letter-spacing: -0.04em;">기미가 진해지는 레이저도 있습니다</span>
-            <span style="display: block; margin-top: 10px; font-size: 13.5px; line-height: 1.85; color: #6A736F; max-width: 620px;">표피형과 진피형은 접근이 다릅니다. 회차마다 세팅을 다시 맞춰야 하는 이유.</span>
+            <span style="display: block; margin-bottom: 10px; font-size: 10.5px; letter-spacing: 0.18em; color: #2C7A6B;">INSIGHT</span>
+            <span style="display: block; font-size: clamp(19px, 2.1vw, 28px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.4;">외모는 인생을 바꿀 정도로 중요할까?</span>
+            <span style="display: block; margin-top: 10px; font-size: 13.5px; line-height: 1.85; color: #6A736F; max-width: 680px;">‘외모보다 능력’, ‘외모보다 내면’이라는 말은 정말 맞을까. 소득과 결혼, 신용도, 삶의 만족도에서 외모가 만드는 차이를 짚어봤다.</span>
           </span>
-          <span style="font-family: 'Newsreader', serif; font-size: 13px; color: #8B948F; white-space: nowrap;">2026.06.21</span>
+          <span style="font-family: 'Newsreader', serif; font-size: 13px; color: #8B948F; white-space: nowrap;">2026.10.07</span>
         </a>
+<!-- columns:latest:end -->
       </div>
     </div>
   </section>
@@ -720,6 +753,7 @@
         <div style="flex: 1 1 260px; min-width: 0; background: #F9FAF9; padding: clamp(18px, 2.2vw, 26px);">
           <p style="margin: 0 0 9px; font-size: 10px; letter-spacing: 0.18em; color: #2C7A6B;">인천공항에서</p>
           <p style="margin: 0; font-size: 13.5px; line-height: 1.75; color: #37413D;">공항철도 → 김포공항역 → 9호선 급행 → 신논현역 <span style="color: #6A736F;">(1회 환승)</span></p>
+          <p style="margin: 4px 0 0; font-size: 13.5px; line-height: 1.75; color: #37413D;">공항버스 6009번 → 지하철 2호선 강남역, 신논현역 <span style="color: #6A736F;">(직행)</span></p>
         </div>
       </div>
 

@@ -217,7 +217,6 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440}}">
 const SIG_PAGE = 'signature.html#';
 const TX_PAGE = 'treatments.html#t/';
-const COL_PAGE = 'column.html#p';
 const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
 
 class Component extends DCLogic {
@@ -268,7 +267,7 @@ class Component extends DCLogic {
         causes: f.causes, signs: f.signs,
         tx: f.tx.map(([name, role, rec]) => ({ name, role, rec, href: TX_PAGE + encodeURIComponent(name) })),
         hasCols,
-        cols: f.cols.map((i) => ({ t: d.COLS[i], href: COL_PAGE + i })),
+        cols: f.cols.map((i) => d.COLS[i]),
         faqNo: hasCols ? '05' : '04',
         faq: f.faq.map(([q, a]) => ({ q, a })),
         siblings: cat.items.filter((x) => x.t !== f.t).slice(0, 8).map((x) => ({ t: x.t, href: '#' + cat.key + '/' + x.t, open: this._go(cat.key + '/' + x.t), tone: '#121614' }))
