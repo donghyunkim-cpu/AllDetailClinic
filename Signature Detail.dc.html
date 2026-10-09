@@ -30,21 +30,40 @@
   [data-rv-on] > [data-rv][data-rv-in] { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) {
     [data-rv-on] > [data-rv] { opacity: 1 !important; transform: none !important; transition: none !important; }
+    [data-modal-panel], [data-modal-panel] * { transition: none !important; }
   }
   @media (max-width: 899px) {
     [data-modal-panel] { grid-template-columns: 1fr !important; grid-template-rows: 32vh minmax(0, 1fr) !important; max-height: 100% !important; }
-    [data-cmp] { grid-template-columns: 1fr !important; }
+    [data-cmp] { grid-template-columns: minmax(0, 1fr) !important; counter-reset: cmp; padding-top: 2px; }
     [data-cmp] > :nth-child(-n+3) { display: none !important; }
-    [data-cmp] > :nth-child(3n+1) { padding: 20px 0 6px !important; border-bottom: 0 !important; font-size: 10.5px !important; letter-spacing: 0.18em !important; color: #2C7A6B !important; }
-    [data-cmp] > :nth-child(3n+2), [data-cmp] > :nth-child(3n+3) { padding: 4px 0 !important; }
-    [data-cmp] > :nth-child(3n+2)::before { content: '일반 '; color: #B2BBB7; }
-    [data-cmp] > :nth-child(3n+3)::before { content: '올디테일 '; color: #2C7A6B; }
-    [data-cmp] > :nth-child(3n+3) { padding-bottom: 18px !important; }
+    [data-cmp] > :nth-child(3n+4) { counter-increment: cmp; display: flex !important; align-items: baseline; gap: 10px; margin-top: 12px; padding: 15px 16px 12px !important; border: 1px solid #E4E9E6 !important; border-bottom: 0 !important; background: #FFFFFF; font-size: 15px !important; font-weight: 600; line-height: 1.4; letter-spacing: -0.025em !important; color: #121614 !important; }
+    [data-cmp] > :nth-child(3n+4)::before { content: counter(cmp, decimal-leading-zero); flex: none; min-width: 18px; font-family: 'Newsreader', serif; font-style: italic; font-weight: 400; font-size: 13px; letter-spacing: 0; color: #2C7A6B; }
+    [data-cmp] > :nth-child(3n+5), [data-cmp] > :nth-child(3n+6) { display: grid !important; grid-template-columns: 58px minmax(0, 1fr); column-gap: 12px; align-items: start; border: 1px solid #E4E9E6 !important; border-top: 0 !important; }
+    [data-cmp] > :nth-child(3n+5) { padding: 0 16px 14px !important; border-bottom: 0 !important; background: #FFFFFF; font-size: 12.5px; line-height: 1.7 !important; color: #6A736F !important; }
+    [data-cmp] > :nth-child(3n+6) { padding: 13px 16px 15px !important; border-top: 1px solid #E4E9E6 !important; background: #EFF6F3 !important; font-size: 14px; font-weight: 500; line-height: 1.6 !important; letter-spacing: -0.02em; color: #121614; }
+    [data-cmp] > :nth-child(3n+5)::before, [data-cmp] > :nth-child(3n+6)::before { margin-top: 1px; padding: 3px 0; font-size: 10.5px; font-weight: 500; line-height: 1.25; letter-spacing: 0.04em; text-align: center; }
+    [data-cmp] > :nth-child(3n+5)::before { content: '일반'; border: 1px solid #DCE2DF; color: #8B948F; }
+    [data-cmp] > :nth-child(3n+6)::before { content: '올디테일'; border: 1px solid #2C7A6B; background: #2C7A6B; color: #FFFFFF; }
+    [data-cmp] > :nth-child(3n+6) [data-cmp-sep] { display: none; }
+    [data-cmp] > :nth-child(3n+6) [data-cmp-item] { position: relative; display: block; padding-left: 18px; }
+    [data-cmp] > :nth-child(3n+6) [data-cmp-item] + [data-cmp-sep] + [data-cmp-item] { margin-top: 5px; }
+    [data-cmp] > :nth-child(3n+6) [data-cmp-item]::before { content: ''; position: absolute; left: 2px; top: 0.5em; width: 8px; height: 4px; border-left: 1.5px solid #2C7A6B; border-bottom: 1.5px solid #2C7A6B; transform: rotate(-45deg); }
     [data-rec] { grid-template-columns: 1fr !important; gap: 2px !important; }
     [data-hero-index] { display: none !important; }
     [data-hero-cta] { display: none !important; }
     [data-hero-top] { position: static !important; }
     [data-rec] > p:first-child { font-size: 12px !important; }
+    /* 헤더 축소: 본문을 스크롤하면 사진 헤더가 한글 이름 + 닫기 버튼만 있는 얇은 띠로 줄어듭니다 (스크립트가 data-hero-mini 를 붙임) */
+    [data-modal-panel] { transition: grid-template-rows .32s cubic-bezier(.2,.8,.2,1); }
+    [data-modal-panel] > button { transition: top .32s cubic-bezier(.2,.8,.2,1); }
+    [data-modal-panel] > div:not(.adc-scroll) > img, [data-modal-panel] > div:not(.adc-scroll) > img + div, [data-modal-panel] [data-hero-top] { transition: opacity .24s ease; }
+    [data-modal-panel][data-hero-mini] { grid-template-rows: 60px minmax(0, 1fr) !important; }
+    [data-modal-panel][data-hero-mini] > button { top: 10px !important; }
+    [data-modal-panel][data-hero-mini] > div:not(.adc-scroll) { background: #121614 !important; }
+    [data-modal-panel][data-hero-mini] > div:not(.adc-scroll) > img, [data-modal-panel][data-hero-mini] > div:not(.adc-scroll) > img + div, [data-modal-panel][data-hero-mini] [data-hero-top] { opacity: 0; visibility: hidden; }
+    [data-modal-panel][data-hero-mini] > div:not(.adc-scroll) > div:last-child { top: 0; display: flex; align-items: center; padding: 0 64px 0 20px !important; background: transparent !important; }
+    [data-modal-panel][data-hero-mini] > div:not(.adc-scroll) > div:last-child > p:first-child, [data-modal-panel][data-hero-mini] > div:not(.adc-scroll) > div:last-child > h2 { display: none; }
+    [data-modal-panel][data-hero-mini] > div:not(.adc-scroll) > div:last-child > p { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
   }
 </style>
 </helmet>
@@ -237,17 +256,17 @@
             <div style="padding: 11px 14px 11px 0; border-bottom: 1px solid #E4E9E6; font-size: 10px; letter-spacing: 0.14em; color: #8B948F;">일반적인 접근</div>
             <div style="padding: 11px 14px 11px 13px; border-bottom: 1px solid #E4E9E6; font-size: 10px; letter-spacing: 0.14em; color: #2C7A6B; background: #EFF6F3;">올디테일</div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">효과</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">레이저나 콜라겐 부스터로 표면만 다뤄 변화를 느끼기 어려움</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">B&amp;A로 확인 가능한 팔자 개선을 목표로 설계</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>레이저나 콜라겐 부스터로 표면만 다뤄 변화를 느끼기 어려움</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>B&amp;A로 확인 가능한 팔자 개선을 목표로 설계</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">부작용</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">필러 이동으로 부자연스러움 · 실리프팅 후 볼 딤플 발생</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">꺼진 부위는 Ristow space 타겟으로 필러 고정 · 얕은 팔자주름 선은 콜라겐부스터로 완화 · 처진 부위는 리버스 디자인으로 딤플 없음</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>필러 이동으로 부자연스러움 · 실리프팅 후 볼 딤플 발생</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body><span data-cmp-item>꺼진 부위는 Ristow space 타겟으로 필러 고정</span><span data-cmp-sep> · </span><span data-cmp-item>얕은 팔자주름 선은 콜라겐부스터로 완화</span><span data-cmp-sep> · </span><span data-cmp-item>처진 부위는 리버스 디자인으로 딤플 없음</span></span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">디자인</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">유형 구분 없이 동일한 시술 제안</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">꺼짐 · 볼살 · 처짐 비중에 따라 필러 · 콜라겐부스터 · 울쎄라 · 온다 · 실리프팅 조합</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>유형 구분 없이 동일한 시술 제안</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>꺼짐 · 볼살 · 처짐 비중에 따라 필러 · 콜라겐부스터 · 울쎄라 · 온다 · 실리프팅 조합</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">통증</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">연고 마취 후 대기 없이 시작</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">다단계 마취 · 미세 캐뉼라로 조직 손상 최소화</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>연고 마취 후 대기 없이 시작</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body><span data-cmp-item>다단계 마취</span><span data-cmp-sep> · </span><span data-cmp-item>미세 캐뉼라로 조직 손상 최소화</span></span></div>
           </div>
 
           <p data-sec="E" data-sec-label="진료 여정" style="margin: 0 0 4px; font-size: 10.5px; letter-spacing: 0.2em; color: #8B948F;">FIG E. &nbsp; PROTOCOL &nbsp;·&nbsp; 진료 여정</p>
@@ -583,20 +602,20 @@
             <div style="padding: 11px 14px 11px 0; border-bottom: 1px solid #E4E9E6; font-size: 10px; letter-spacing: 0.14em; color: #8B948F;">일반적인 접근</div>
             <div style="padding: 11px 14px 11px 13px; border-bottom: 1px solid #E4E9E6; font-size: 10px; letter-spacing: 0.14em; color: #2C7A6B; background: #EFF6F3;">올디테일</div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">디자인</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">부위별로 정해진 용량을 균일하게 주입</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">관자 · 옆볼을 하나의 옆선으로 이어 앉은 자세에서 펜 디자인 후 주입</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>부위별로 정해진 용량을 균일하게 주입</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>관자 · 옆볼을 하나의 옆선으로 이어 앉은 자세에서 펜 디자인 후 주입</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">층</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">피하층 위주로 얕게 주입해 굴곡 · 이동 위험</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">골막 위 깊은 층에 지지 구조를 세우고 표면은 소량만 배분</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>피하층 위주로 얕게 주입해 굴곡 · 이동 위험</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>골막 위 깊은 층에 지지 구조를 세우고 표면은 소량만 배분</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">안전</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">니들 위주, 혈관 주행 고려 부족</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">캐뉼라 기본 · 혈관 주행 지도 기반 진입 지점 설계 · 응급 대비 프로토콜</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>니들 위주, 혈관 주행 고려 부족</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body><span data-cmp-item>캐뉼라 기본</span><span data-cmp-sep> · </span><span data-cmp-item>혈관 주행 지도 기반 진입 지점 설계</span><span data-cmp-sep> · </span><span data-cmp-item>응급 대비 프로토콜</span></span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">통증</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">연고 마취 후 짧은 대기</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">연고 마취 충분 대기 + 진입 지점 국소 마취 · 미세 캐뉼라</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>연고 마취 후 짧은 대기</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body><span data-cmp-item>연고 마취 충분 대기 + 진입 지점 국소 마취</span><span data-cmp-sep> · </span><span data-cmp-item>미세 캐뉼라</span></span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">유지</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">흘러내림으로 6개월 내 재시술 잦음</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">깊은 층 고정으로 형태 유지, 2주 후 재평가로 미세 조정</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>흘러내림으로 6개월 내 재시술 잦음</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>깊은 층 고정으로 형태 유지, 2주 후 재평가로 미세 조정</span></div>
           </div>
 
           <p data-sec="F" data-sec-label="진료 여정" style="margin: 0 0 4px; font-size: 10.5px; letter-spacing: 0.2em; color: #8B948F;">FIG F. &nbsp; PROTOCOL &nbsp;·&nbsp; 진료 여정</p>
@@ -916,20 +935,20 @@
             <div style="padding: 11px 14px 11px 0; border-bottom: 1px solid #E4E9E6; font-size: 10px; letter-spacing: 0.14em; color: #8B948F;">일반적인 접근</div>
             <div style="padding: 11px 14px 11px 13px; border-bottom: 1px solid #E4E9E6; font-size: 10px; letter-spacing: 0.14em; color: #2C7A6B; background: #EFF6F3;">올디테일</div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">조제</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">정해진 세트 수액을 동일하게 투여</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">혈액 검사 · 상담 결과에 따라 매회 맞춤 조제</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>정해진 세트 수액을 동일하게 투여</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>혈액 검사 · 상담 결과에 따라 매회 맞춤 조제</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">상담</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">기대 효과 설명 없이 바로 시술</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">무엇을 기대할 수 있는지 · 없는지를 원장이 먼저 정리</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>기대 효과 설명 없이 바로 시술</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>무엇을 기대할 수 있는지 · 없는지를 원장이 먼저 정리</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">경로</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">정맥 주사 한 가지</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">정맥 · 두피 · 피부 · 흉터, 목표 부위에 따라 전달 경로 설계</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>정맥 주사 한 가지</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>정맥 · 두피 · 피부 · 흉터, 목표 부위에 따라 전달 경로 설계</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">통증</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">피부 주사 시 마취 없이 진행</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">연고 · 냉각 · 인젝 마취를 단계로 적용 후 진행</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>피부 주사 시 마취 없이 진행</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>연고 · 냉각 · 인젝 마취를 단계로 적용 후 진행</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">혈관</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">반복 시도로 멍 · 통증</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">숙련 의료진이 직접 확보, 필요 시 혈관 탐색 장비 사용</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>반복 시도로 멍 · 통증</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>숙련 의료진이 직접 확보, 필요 시 혈관 탐색 장비 사용</span></div>
           </div>
 
           <p data-sec="F" data-sec-label="진료 여정" style="margin: 0 0 4px; font-size: 10.5px; letter-spacing: 0.2em; color: #8B948F;">FIG F. &nbsp; PROTOCOL &nbsp;·&nbsp; 진료 여정</p>
@@ -1275,20 +1294,20 @@
             <div style="padding: 11px 14px 11px 0; border-bottom: 1px solid #E4E9E6; font-size: 10px; letter-spacing: 0.14em; color: #8B948F;">일반적인 접근</div>
             <div style="padding: 11px 14px 11px 13px; border-bottom: 1px solid #E4E9E6; font-size: 10px; letter-spacing: 0.14em; color: #2C7A6B; background: #EFF6F3;">올디테일</div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">상담</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">상담 실장 선에서 시술과 샷수 확정</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">실장 상담 후 원장이 3D 데이터를 직접 판독하고 최종 조합 확정</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>상담 실장 선에서 시술과 샷수 확정</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>실장 상담 후 원장이 3D 데이터를 직접 판독하고 최종 조합 확정</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">디자인</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">누운 상태에서 샷수 채우기</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">앉은 자세에서 표정을 확인하며 펜으로 구역별 격자 설계</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>누운 상태에서 샷수 채우기</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>앉은 자세에서 표정을 확인하며 펜으로 구역별 격자 설계</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">마취</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">연고 도포 후 10분 내 시작</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">연고 · 신경 · 냉각 마취를 쌓고 30분 이상 대기</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>연고 도포 후 10분 내 시작</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>연고 · 신경 · 냉각 마취를 쌓고 30분 이상 대기</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">볼 패임</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">얼굴 전체에 동일한 깊이 · 강도로 조사</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">지방층이 얇은 구역은 강도를 낮추거나 제외</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>얼굴 전체에 동일한 깊이 · 강도로 조사</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>지방층이 얇은 구역은 강도를 낮추거나 제외</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">사후</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">시술 종료 후 안내 없이 귀가</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">진정 관리 후 콜라겐 재생 경과를 볼 일정을 함께 설정</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>시술 종료 후 안내 없이 귀가</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>진정 관리 후 콜라겐 재생 경과를 볼 일정을 함께 설정</span></div>
           </div>
 
           <p data-sec="F" data-sec-label="진료 여정" style="margin: 0 0 4px; font-size: 10.5px; letter-spacing: 0.2em; color: #8B948F;">FIG F. &nbsp; PROTOCOL &nbsp;·&nbsp; 진료 여정</p>
@@ -1634,20 +1653,20 @@
             <div style="padding: 11px 14px 11px 0; border-bottom: 1px solid #E4E9E6; font-size: 10px; letter-spacing: 0.14em; color: #8B948F;">일반적인 접근</div>
             <div style="padding: 11px 14px 11px 13px; border-bottom: 1px solid #E4E9E6; font-size: 10px; letter-spacing: 0.14em; color: #2C7A6B; background: #EFF6F3;">올디테일</div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">도포</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">눈가 등 예민한 부위를 빼고 도포</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">시술 부위 전체를 빈틈 없이 덮어 도포</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>눈가 등 예민한 부위를 빼고 도포</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>시술 부위 전체를 빈틈 없이 덮어 도포</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">대기</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">도포 후 10분 내 시작</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">최소 45분 대기 후 시작</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>도포 후 10분 내 시작</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>최소 45분 대기 후 시작</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">마취</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">표면 마취만으로 진행</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">연고 · 신경 · 냉각을 단계로 쌓아 진행</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>표면 마취만으로 진행</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>연고 · 신경 · 냉각을 단계로 쌓아 진행</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">주입</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">손의 힘에 따라 압력과 깊이가 달라짐</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">엑스인젝터로 압력과 깊이를 균일하게 유지</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>손의 힘에 따라 압력과 깊이가 달라짐</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>엑스인젝터로 압력과 깊이를 균일하게 유지</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">후관리</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">별도 관리 없이 귀가</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">진정 관리 후 홈케어 키트 제공</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>별도 관리 없이 귀가</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>진정 관리 후 홈케어 키트 제공</span></div>
           </div>
 
           <p data-sec="E" data-sec-label="진료 여정" style="margin: 0 0 4px; font-size: 10.5px; letter-spacing: 0.2em; color: #8B948F;">FIG E. &nbsp; PROTOCOL &nbsp;·&nbsp; 진료 여정</p>
@@ -2020,20 +2039,20 @@
             <div style="padding: 11px 14px 11px 0; border-bottom: 1px solid #E4E9E6; font-size: 10px; letter-spacing: 0.14em; color: #8B948F;">일반적인 접근</div>
             <div style="padding: 11px 14px 11px 13px; border-bottom: 1px solid #E4E9E6; font-size: 10px; letter-spacing: 0.14em; color: #2C7A6B; background: #EFF6F3;">올디테일</div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">진단</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">육안 확인 후 시술 권유</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">정밀 진단 데이터를 원장이 직접 판독</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>육안 확인 후 시술 권유</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>정밀 진단 데이터를 원장이 직접 판독</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">담당</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">회차마다 담당자가 달라짐</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">색소 전담 주치의가 처음부터 끝까지 담당</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>회차마다 담당자가 달라짐</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>색소 전담 주치의가 처음부터 끝까지 담당</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">세팅</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">매회 동일한 장비와 에너지로 반복</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">직전 회차 반응을 반영해 매회 재조정</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>매회 동일한 장비와 에너지로 반복</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>직전 회차 반응을 반영해 매회 재조정</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">재발</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">색소만 걷어내고 종료</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">재생 관리를 병행해 재발 부담을 낮춤</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>색소만 걷어내고 종료</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>재생 관리를 병행해 재발 부담을 낮춤</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">마취</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">연고 도포 후 바로 시작</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">최소 45분 대기 후 시작</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>연고 도포 후 바로 시작</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>최소 45분 대기 후 시작</span></div>
           </div>
 
           <p data-sec="F" data-sec-label="진료 여정" style="margin: 0 0 4px; font-size: 10.5px; letter-spacing: 0.2em; color: #8B948F;">FIG F. &nbsp; PROTOCOL &nbsp;·&nbsp; 진료 여정</p>
@@ -2363,20 +2382,20 @@
             <div style="padding: 11px 14px 11px 0; border-bottom: 1px solid #E4E9E6; font-size: 10px; letter-spacing: 0.14em; color: #8B948F;">일반적인 접근</div>
             <div style="padding: 11px 14px 11px 13px; border-bottom: 1px solid #E4E9E6; font-size: 10px; letter-spacing: 0.14em; color: #2C7A6B; background: #EFF6F3;">올디테일</div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">약물</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">스테로이드 · PPC 등이 포함되어 부종과 통증 부담이 큰 경우가 있음</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">스테로이드 · PPC · 히알라제를 배제한 자체 구성</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>스테로이드 · PPC 등이 포함되어 부종과 통증 부담이 큰 경우가 있음</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>스테로이드 · PPC · 히알라제를 배제한 자체 구성</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">주입</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">손 주사로 압력이 일정하지 않아 뭉침과 멍이 생기기 쉬움</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">기기 자동 주입으로 압력과 깊이를 균일하게 유지</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>손 주사로 압력이 일정하지 않아 뭉침과 멍이 생기기 쉬움</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>기기 자동 주입으로 압력과 깊이를 균일하게 유지</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">설계</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">부위 구분 없이 동일하게 주입</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">계측 후 부위별 강도를 나눈 라인 디자인</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>부위 구분 없이 동일하게 주입</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>계측 후 부위별 강도를 나눈 라인 디자인</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">탄력</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">지방만 줄여 빠진 자리가 처지는 경우가 있음</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">바디온다로 탄력과 순환을 함께 관리</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>지방만 줄여 빠진 자리가 처지는 경우가 있음</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>바디온다로 탄력과 순환을 함께 관리</span></div>
             <div style="padding: 16px 0; border-bottom: 1px solid #EDF0EE; font-size: 12px; color: #8B948F;">관리</div>
-            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;">시술 당일 외 별도 관리 없음</div>
-            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;">의사 · 실장 2:1 데일리 식단 피드백</div>
+            <div style="padding: 16px 14px 16px 0; border-bottom: 1px solid #EDF0EE; line-height: 1.75; color: #8B948F;"><span data-cmp-body>시술 당일 외 별도 관리 없음</span></div>
+            <div style="padding: 16px 14px 16px 13px; border-bottom: 1px solid #EDF0EE; line-height: 1.75; background: #EFF6F3;"><span data-cmp-body>의사 · 실장 2:1 데일리 식단 피드백</span></div>
           </div>
 
           <p data-sec="E" data-sec-label="진료 여정" style="margin: 0 0 4px; font-size: 10.5px; letter-spacing: 0.2em; color: #8B948F;">FIG E. &nbsp; PROTOCOL &nbsp;·&nbsp; 진료 여정</p>
@@ -2531,6 +2550,14 @@ class Component extends DCLogic {
   componentDidUpdate() { this._sync(); }
   componentWillUnmount() { this._unbind(); }
 
+  // 헤더 축소 (모바일 CSS 에서만 보임): 48px 넘게 내리면 줄이고 8px 이하로 올라오면 다시 펼침. 경계에서 깜빡이지 않도록 기준을 둘로 둠
+  _heroMini(live) {
+    const panel = live.closest('[data-modal-panel]');
+    if (!panel) return;
+    const mini = panel.hasAttribute('data-hero-mini') ? live.scrollTop > 8 : live.scrollTop > 48;
+    if (mini !== panel.hasAttribute('data-hero-mini')) panel.toggleAttribute('data-hero-mini', mini);
+  }
+
   // the live scroll column, resolved fresh every time it is needed
   _live() {
     const sc = document.querySelector('.adc-scroll');
@@ -2600,8 +2627,10 @@ class Component extends DCLogic {
       if (Math.abs(pct - this.state.pct) > 0.4 || act !== this.state.active || cued !== this.state.cued) {
         this.setState({ pct: pct, active: act, cued: cued });
       }
+      this._heroMini(live);
     };
     sc.addEventListener('scroll', this._onScroll, { passive: true });
+    this._heroMini(sc);
 
     this.setState({ sections: sections, active: 0, pct: 0, cued: true });
   }

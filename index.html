@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="images/symbol.svg">
 <script src="./support.js"></script>
 <template id="__bundler_thumbnail">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#F9FAF9"/><g transform="translate(27.43 21.43) scale(0.26)" fill="#2C7A6B"><path d="M152.6,86.32c-5.52.73-11.08.43-16.63.8l-45.43.33-5.96-4.14,2.49-54.1,1.11-15.12,1.85,23.62s2.52,30.87,2.53,30.93c.67,8.19,9.56,10.9,16.39,12.05,7.47,1.26,15.01,2.04,22.53,2.88,7.05.78,14.13,1.93,21.13,2.76h0Z"/><path d="M80.63,104.99c-.6-6.41-5.79-9.64-11.49-11.23-7.48-2.08-15.34-2.54-23-3.64-7.65-1.09-15.29-2.18-22.94-3.28-.93-.13-1.87-.27-2.8-.4l62.78-.75,5.62,4.07-3.18,68.67s-4.98-53.37-4.99-53.45h0Z"/><path d="M88.14,8.49L88.32,0c-18.37-.19-36.42,4.91-51.8,15.92C15.86,30.72,2.62,54.07.32,79.39c-.66,7.26-.27,13.89.82,21.2l2.98-.65c-3.1-22.71,5.27-48.28,21.92-64.43,7.45-7.22,15.62-13.06,24.65-17.79,10.55-5.52,25.17-8.37,36.94-9.2,0,0,.28-.02.28-.02"/><path d="M171.93,69.52c-.87.12-1.92.16-2.79.28,1.12,6.77.89,13.19.08,19.99-1.83,15.35-6.95,29.51-16.76,41.49-8.55,10.43-18.97,18.9-30.96,25.18-8.56,4.48-17.84,7.63-27.43,8.57-4.29.16-7.24.27-7.24.27v8.21c19.62.06,39.6-7.24,54.45-19.22,2.7-2.18,5.62-4.74,8.03-7.24,2.38-2.49,4.64-5,6.7-7.76,2.04-2.74,3.99-5.5,5.69-8.48,1.7-2.97,3.37-6.08,4.71-9.22,1.34-3.14,2.51-6.16,3.48-9.44.97-3.28,1.77-6.6,2.38-9.98.61-3.41,1.03-7,1.27-10.46.12-1.74.05-3.57.07-5.31.07-4.32-.28-8.69-.97-12.95-.11-.69-.23-1.37-.37-2.06-.12-.6-.26-1.15-.33-1.84h0Z"/></g><text x="50" y="84" font-family="system-ui, sans-serif" font-size="4.6" font-weight="500" letter-spacing="0.72" fill="#8B948F" text-anchor="middle">ALL DETAIL CLINIC</text></svg>
@@ -73,13 +74,20 @@
     [data-sys-row] > div { grid-column: 1 / -1 !important; }
     [data-sticky-col] { position: static !important; top: auto !important; }
     [data-modal-panel] { grid-template-columns: 1fr !important; grid-template-rows: 34vh minmax(0, 1fr) !important; max-height: 100% !important; }
-    [data-cmp] { grid-template-columns: 1fr !important; }
+    [data-cmp] { grid-template-columns: minmax(0, 1fr) !important; counter-reset: cmp; padding-top: 2px; }
     [data-cmp] > :nth-child(-n+3) { display: none !important; }
-    [data-cmp] > :nth-child(3n+1) { padding: 20px 0 6px !important; border-bottom: 0 !important; font-size: 10.5px !important; letter-spacing: 0.18em !important; color: #2C7A6B !important; }
-    [data-cmp] > :nth-child(3n+2), [data-cmp] > :nth-child(3n+3) { padding: 4px 0 !important; }
-    [data-cmp] > :nth-child(3n+2)::before { content: '일반 '; color: #B2BBB7; }
-    [data-cmp] > :nth-child(3n+3)::before { content: '올디테일 '; color: #2C7A6B; }
-    [data-cmp] > :nth-child(3n+3) { padding-bottom: 18px !important; }
+    [data-cmp] > :nth-child(3n+4) { counter-increment: cmp; display: flex !important; align-items: baseline; gap: 10px; margin-top: 12px; padding: 15px 16px 12px !important; border: 1px solid #E4E9E6 !important; border-bottom: 0 !important; background: #FFFFFF; font-size: 15px !important; font-weight: 600; line-height: 1.4; letter-spacing: -0.025em !important; color: #121614 !important; }
+    [data-cmp] > :nth-child(3n+4)::before { content: counter(cmp, decimal-leading-zero); flex: none; min-width: 18px; font-family: 'Newsreader', serif; font-style: italic; font-weight: 400; font-size: 13px; letter-spacing: 0; color: #2C7A6B; }
+    [data-cmp] > :nth-child(3n+5), [data-cmp] > :nth-child(3n+6) { display: grid !important; grid-template-columns: 58px minmax(0, 1fr); column-gap: 12px; align-items: start; border: 1px solid #E4E9E6 !important; border-top: 0 !important; }
+    [data-cmp] > :nth-child(3n+5) { padding: 0 16px 14px !important; border-bottom: 0 !important; background: #FFFFFF; font-size: 12.5px; line-height: 1.7 !important; color: #6A736F !important; }
+    [data-cmp] > :nth-child(3n+6) { padding: 13px 16px 15px !important; border-top: 1px solid #E4E9E6 !important; background: #EFF6F3 !important; font-size: 14px; font-weight: 500; line-height: 1.6 !important; letter-spacing: -0.02em; color: #121614; }
+    [data-cmp] > :nth-child(3n+5)::before, [data-cmp] > :nth-child(3n+6)::before { margin-top: 1px; padding: 3px 0; font-size: 10.5px; font-weight: 500; line-height: 1.25; letter-spacing: 0.04em; text-align: center; }
+    [data-cmp] > :nth-child(3n+5)::before { content: '일반'; border: 1px solid #DCE2DF; color: #8B948F; }
+    [data-cmp] > :nth-child(3n+6)::before { content: '올디테일'; border: 1px solid #2C7A6B; background: #2C7A6B; color: #FFFFFF; }
+    [data-cmp] > :nth-child(3n+6) [data-cmp-sep] { display: none; }
+    [data-cmp] > :nth-child(3n+6) [data-cmp-item] { position: relative; display: block; padding-left: 18px; }
+    [data-cmp] > :nth-child(3n+6) [data-cmp-item] + [data-cmp-sep] + [data-cmp-item] { margin-top: 5px; }
+    [data-cmp] > :nth-child(3n+6) [data-cmp-item]::before { content: ''; position: absolute; left: 2px; top: 0.5em; width: 8px; height: 4px; border-left: 1.5px solid #2C7A6B; border-bottom: 1.5px solid #2C7A6B; transform: rotate(-45deg); }
     [data-lnb] { justify-content: flex-start !important; }
     [data-lnb] button { min-height: 44px !important; padding: 6px 10px !important; }
     [data-rail-nav] { width: 44px !important; height: 44px !important; }
@@ -88,6 +96,26 @@
     footer span > a { display: inline-block !important; padding: 10px 0 !important; }
   }
   @keyframes adcBoing { 0% { transform: scale(1) translateY(0); } 32% { transform: scale(1.1) translateY(-5px); } 58% { transform: scale(0.97) translateY(1px); } 80% { transform: scale(1.03) translateY(-2px); } 100% { transform: scale(1) translateY(0); } }
+  /* 히어로 제목 Design · Comfort: 흐르는 그라데이션. & 는 제외, 미지원 브라우저는 기본 color(#2C7A6B) 단색
+     h1 의 padding + 같은 크기 음수 margin 은 줄간격(0.92) 밖으로 나온 글자 윗부분이 잘리지 않게 칠할 영역만 넓힌 것 */
+  @keyframes adcFlow { from { background-position: 0% 50%; } to { background-position: -200% 50%; } }
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    [data-hero-flow] { background: linear-gradient(90deg, #1E5A4E 0%, #2C7A6B 28%, #86CFBC 50%, #2C7A6B 72%, #1E5A4E 100%) 0% 50% / 200% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: adcFlow 6s linear infinite; }
+    [data-hero-flow] [data-flow-off] { -webkit-text-fill-color: #121614; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-hero-flow] { animation: none; }
+  }
+  /* #design-comfort: 모바일은 각 사진 하단에 문구를 겹쳐 놓고, 아주 옅은 검은 그라데이션으로 가독성 확보 (PC 는 기존 배치 그대로) */
+  @media (max-width: 767px) {
+    [data-dc-row] { grid-template-columns: minmax(0, 1fr) !important; gap: 0 !important; }
+    [data-dc-row] > * { grid-area: 1 / 1; }
+    [data-dc-figure] img { aspect-ratio: 4 / 3 !important; }
+    [data-dc-shade] { display: block !important; }
+    [data-dc-copy] { align-self: end; z-index: 1; padding: 0 18px 16px; }
+    [data-dc-copy] h2 { font-size: 22px !important; color: #FFFFFF !important; text-shadow: 0 1px 12px rgba(0,0,0,0.3); }
+    [data-dc-copy] strong { color: #A6E3D3 !important; }
+  }
 </style>
 </helmet>
 
@@ -119,21 +147,21 @@
         <div style="position: absolute; inset: 0; background: radial-gradient(120% 82% at 80% 16%, rgba(168,214,203,0.3) 0%, rgba(249,250,249,0) 62%);"></div>
         <div style="position: absolute; left: 0; right: 0; bottom: 22%; height: 1px; background: linear-gradient(90deg, rgba(44,122,107,0) 0%, rgba(44,122,107,0.5) 50%, rgba(44,122,107,0) 100%); width: 30%; animation: adcSweep 5s cubic-bezier(.45,0,.55,1) infinite;"></div>
       </div>
-      <div style="position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 10.5px; letter-spacing: 0.2em; color: #8B948F; margin-bottom: clamp(36px, 8vh, 88px);">
-        <span>GANGNAM, SEOUL</span>
-        <span>DERMATOLOGY &amp; AESTHETICS</span>
+      <div style="position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; font-size: clamp(9.5px, 2.7vw, 10.5px); letter-spacing: 0.2em; line-height: 1.2; color: #8B948F; margin-bottom: clamp(36px, 8vh, 88px);">
+        <span style="padding: 2px 7px 2px 9px; border: 1px solid #DCE2DF;">GANGNAM, SEOUL</span>
+        <span style="padding: 2px 7px 2px 9px; border: 1px solid #DCE2DF;">DERMATOLOGY &amp; AESTHETICS</span>
         <sc-if value="{{ showOpeningBadge }}" hint-placeholder-val="{{ true }}">
-          <span style="color: #2C7A6B;">OPENING JAN 2027 — RESERVATIONS FROM OCT</span>
+          <span style="padding: 2px 7px 2px 9px; border: 1px solid #DCE2DF; color: #2C7A6B;">OPENING JAN 2027 — RESERVATIONS FROM OCT</span>
         </sc-if>
       </div>
-      <h1 style="position: relative; z-index: 1; margin: 0; font-family: 'Newsreader', serif; font-weight: 200; font-size: clamp(46px, 11.5vw, 190px); line-height: 0.92; letter-spacing: -0.035em;">Design<span style="font-style: italic; font-weight: 200;"> &amp; </span>Comfort</h1>
+      <h1 data-hero-flow style="position: relative; z-index: 1; margin: -0.15em -0.1em; padding: 0.15em 0.1em; font-family: 'Newsreader', serif; font-weight: 200; font-size: clamp(46px, 11.5vw, 190px); line-height: 0.92; letter-spacing: -0.035em; color: #2C7A6B;">Design<span data-flow-off style="font-style: italic; font-weight: 200; color: #121614;"> &amp; </span>Comfort</h1>
       <div style="position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; margin-top: clamp(24px, 4vh, 44px);">
-        <p style="margin: 0; max-width: 400px; font-size: 14px; line-height: 1.9; color: #4C5652;">서울대 의대 출신이 만든 올디테일 디자인 &amp; 마취 시스템</p>
+        <p style="margin: 0; max-width: 400px; font-size: 14px; line-height: 1.9; color: #4C5652;">서울대 의대 출신이 만든 <span style="color: #2C7A6B;">올디테일 디자인</span> &amp; <span style="color: #2C7A6B;">마취</span> 시스템</p>
       </div>
     </div>
 
     <figure style="margin: 0; position: relative; overflow: hidden;">
-      <div id="adc-hero-img" style="position: relative; overflow: hidden; height: clamp(340px, 64vh, 720px); background: #E9F2EF;">
+      <div id="adc-hero-img" style="position: relative; overflow: hidden; height: clamp(280px, 50vh, 560px); background: #E9F2EF;">
         <video src="images/hero-loop.mp4" poster="images/hero.jpg" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" style="position: absolute; left: 0; top: -8%; width: 100%; height: 116%; object-fit: cover;"></video>
       </div>
       <figcaption style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding: 14px clamp(16px, 3vw, 40px); border-bottom: 1px solid #E4E9E6; font-size: 10.5px; letter-spacing: 0.16em; color: #8B948F;">
@@ -147,24 +175,26 @@
     <div style="max-width: 1560px; margin: 0 auto;">
       
       <div style="border-top: 1px solid #121614;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(22px, 4vw, 80px); align-items: center; padding: clamp(28px, 5vh, 56px) 0; border-bottom: 1px solid #E4E9E6;">
-        <div>
+      <div data-dc-row style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(22px, 4vw, 80px); align-items: center; padding: clamp(28px, 5vh, 56px) 0; border-bottom: 1px solid #E4E9E6;">
+        <div data-dc-copy>
           <div>
             <h2 data-text-reveal style="margin: 0; font-size: clamp(22px, 2.3vw, 34px); font-weight: 400; line-height: 1.55; letter-spacing: -0.035em; color: #121614;"><span style="display: block; overflow: hidden; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-tr-line style="display: block;"><strong style="font-weight: 600; color: #2C7A6B;">디자인 없이</strong> 시작되는 시술에</span></span><span style="display: block; overflow: hidden; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-tr-line style="display: block;">실망하지 않으셨나요?</span></span></h2>
           </div>
         </div>
-        <figure style="margin: 0; min-width: 0;">
+        <figure data-dc-figure style="position: relative; margin: 0; min-width: 0;">
           <img loading="lazy" decoding="async" src="images/lift-anxious.jpg" alt="시술 직전 당황하는 환자" style="width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; background: #EDF1EF;" />
+          <span data-dc-shade aria-hidden="true" style="display: none; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, rgba(8,12,10,0.46) 0%, rgba(8,12,10,0.2) 34%, rgba(8,12,10,0) 62%);"></span>
         </figure>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(22px, 4vw, 80px); align-items: center; padding: clamp(28px, 5vh, 56px) 0; border-bottom: 1px solid #E4E9E6;">
-        <div>
+      <div data-dc-row style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(22px, 4vw, 80px); align-items: center; padding: clamp(28px, 5vh, 56px) 0; border-bottom: 1px solid #E4E9E6;">
+        <div data-dc-copy>
           <div>
             <h2 data-text-reveal style="margin: 0; font-size: clamp(22px, 2.3vw, 34px); font-weight: 400; line-height: 1.55; letter-spacing: -0.035em; color: #121614;"><span style="display: block; overflow: hidden; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-tr-line style="display: block;"><strong style="font-weight: 600; color: #2C7A6B;">너무 아파서</strong> 피부과 가기가</span></span><span style="display: block; overflow: hidden; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-tr-line style="display: block;">두려우신가요?</span></span></h2>
           </div>
         </div>
-        <figure style="margin: 0; min-width: 0;">
-          <img loading="lazy" decoding="async" src="images/bst-pain.jpg" alt="통증으로 힘들어하는 환자" style="width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; background: #EDF1EF;" />
+        <figure data-dc-figure style="position: relative; margin: 0; min-width: 0;">
+          <img loading="lazy" decoding="async" src="images/comfort-worry.jpg" alt="창가에 앉아 볼에 손을 대고 고민하는 여성" style="width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; background: #EDF1EF;" />
+          <span data-dc-shade aria-hidden="true" style="display: none; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, rgba(8,12,10,0.46) 0%, rgba(8,12,10,0.2) 34%, rgba(8,12,10,0) 62%);"></span>
         </figure>
       </div>
       </div>
@@ -916,19 +946,27 @@ class Component extends DCLogic {
       film.addEventListener('ended', () => { film.currentTime = 0; kick(); });
     }
 
-    // hero parallax
+    // hero parallax + 스크롤할수록 좌우가 좁아지는 프레임 (영상은 살짝 확대)
     const hero = document.getElementById('adc-hero-img');
     if (hero && !reduce) {
       const img = hero.querySelector('video, img');
-      this._onScroll = () => {
+      let raf = null;
+      const update = () => {
+        raf = null;
         const r = hero.getBoundingClientRect();
         if (r.bottom < 0 || r.top > window.innerHeight) return;
         const p = (window.innerHeight - r.top) / (window.innerHeight + r.height);
-        if (img) img.style.transform = 'translateY(' + (p * 7 - 3.5) + '%)';
+        // n: 페이지 맨 위 0 → 히어로가 화면 위로 절반 지나갔을 때 1
+        const y = window.scrollY;
+        const n = Math.min(Math.max(y / (r.top + y + r.height * 0.5), 0), 1);
+        const e = n * (2 - n);
+        hero.style.clipPath = 'inset(' + (e * 3).toFixed(2) + '% ' + (e * 8).toFixed(2) + '%)';
+        if (img) img.style.transform = 'translateY(' + (p * 7 - 3.5) + '%) scale(' + (1 + e * 0.06).toFixed(4) + ')';
       };
+      this._onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
       window.addEventListener('scroll', this._onScroll, { passive: true });
       document.addEventListener('scroll', this._onScroll, { passive: true, capture: true });
-      this._onScroll();
+      update();
     }
 
     // hover image preview on the signature index

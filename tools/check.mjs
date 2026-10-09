@@ -7,6 +7,8 @@
 //   2. 페이지 스크립트: 각 HTML 안의 컴포넌트 스크립트(data-dc-script), JSON-LD
 //   3. 파일 경로    : src · href · url() · import() · <dc-import>, 데이터 파일의 이미지 이름
 //                     대소문자까지 비교합니다 (Windows 에서는 열려도 Vercel 에서는 404)
+//                     src 에 {{ }} 를 쓰는 <img> · <iframe> 은 loading="lazy" 필수
+//                     (렌더링 전 템플릿 글자 그대로 요청되어 404)
 //   4. 칼럼 페이지  : columns-data.js 의 글마다 column-<slug>.html 이 있는지
 //   5. 설정 파일    : vercel.json 문법, sitemap.xml 주소
 
@@ -152,6 +154,13 @@ for (const f of htmlFiles) {
   }
   for (const m of html.matchAll(/<dc-import\b[^>]*\bname\s*=\s*"([^"]+)"/gi)) {
     checkRef(`${f}:${lineOf(html, m.index)}`, m[1] + '.dc.html');
+  }
+  // <x-dc> 는 렌더링 전 display:none 이지만, 즉시 로딩 이미지는 그 상태에서도 요청됩니다
+  for (const m of html.matchAll(/<(img|iframe)\b[^>]*>/gi)) {
+    const src = /\ssrc\s*=\s*"([^"]*)"/i.exec(m[0]);
+    if (src && src[1].includes('{{') && !/\sloading\s*=\s*"lazy"/i.test(m[0])) {
+      fail(`${f}:${lineOf(html, m.index)}`, `<${m[1]} src="${src[1]}"> 에 loading="lazy" 필요 (렌더링 전 템플릿 주소로 요청되어 404)`);
+    }
   }
 }
 
