@@ -1,0 +1,10 @@
+{
+  "name": "all-detail-clinic",
+  "private": true,
+  "description": "올디테일의원 홈페이지 (정적 사이트, 빌드 없음)",
+  "scripts": {
+    "dev": "node tools/dev-server.mjs",
+    "check": "node tools/check.mjs",
+    "columns": "node tools/build-columns.mjs"
+  }
+}

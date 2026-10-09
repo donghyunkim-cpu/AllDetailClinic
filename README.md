@@ -25,10 +25,26 @@
 - `map.html` — 오시는 길 지도
 - `images/` — 이미지 78개
 
+## 로컬 개발
+
+Node.js만 있으면 됩니다. 설치할 패키지는 없습니다(`npm install` 불필요).
+
+| 명령 | 내용 |
+| --- | --- |
+| `npm run dev` | 개발 서버 실행 → http://localhost:3000 (사용 중이면 다음 포트로 자동 이동, 종료 `Ctrl + C`) |
+| `npm run dev -- --host` | 같은 네트워크의 휴대폰 등에서 접속 허용 |
+| `npm run dev -- --port 4000` | 포트 지정 |
+| `npm run check` | 커밋 · push 전 점검 (JS 문법, 파일 경로 · 대소문자, 칼럼 페이지, `vercel.json` · `sitemap.xml`). 파일은 고치지 않습니다 |
+| `npm run columns` | 칼럼 글 페이지 다시 만들기 (아래 메디컬 칼럼 참고) |
+
+개발 서버는 `vercel.json`처럼 `/about` → `about.html`로 연결하고, 없는 주소는 `404.html`을 보여줍니다.
+
 ## 배포
 
 Vercel: Framework Preset을 **Other**, Build Command와 Output Directory는 비워둡니다.
 그 외 정적 호스팅도 이 폴더를 루트로 올리면 됩니다.
+
+`package.json`에 `build` 스크립트를 추가하지 않습니다. Vercel이 배포할 때 자동으로 실행합니다.
 
 ## 메디컬 칼럼
 
@@ -39,8 +55,10 @@ Vercel: Framework Preset을 **Other**, Build Command와 Output Directory는 비�
 3. 아래 명령으로 글 페이지를 다시 만들고, 바뀐 파일을 모두 커밋합니다. Node.js가 필요합니다.
 
 ```bash
-node tools/build-columns.mjs
+npm run columns
 ```
+
+(`node tools/build-columns.mjs`와 같습니다.) 커밋 전에 `npm run check`로 빠진 글 페이지가 없는지 확인합니다.
 
 생성기가 고치는 파일: `column-*.html`(글 페이지), `sitemap.xml`의 칼럼 항목, `index.html`의 홈 칼럼 미리보기(최신 3편), `column.html`의 크롤러용 링크 목록. `column-*.html`은 직접 고치지 않습니다. 다시 생성하면 덮어써집니다.
 
